@@ -45,9 +45,10 @@ class Sender(Thread):
             client_socket.settimeout(30)
             client_socket.connect((self.host, self.port))
             client_socket.settimeout(None)
+            logger.info(f"Sender{self.nick_id},{self.uid} init success")
             return True
         except Exception as e:
-            logger.error(f"Error connecting to server: {e} | trace stack:{traceback.print_exc()}")
+            logger.error(f"Error send{self.nick_id},{self.uid} connecting to server: {e} | trace stack:{traceback.print_exc()}")
             return False
         pass
     def set_image_dir(self,img_dir):
@@ -89,7 +90,7 @@ class Sender(Thread):
             try:
                 self.send_image()
             except Exception as e:
-                logger.error(f"Error sender to server: {e} | trace stack:{traceback.print_exc()}")
+                logger.error(f"Error sender{self.nick_id},{self.uid} to server: {e} | trace stack:{traceback.print_exc()}")
                 self.init_state=False
                 pass
             time.sleep(float(global_setting.get_setting("server_config")['Sender']['delay']))
@@ -111,6 +112,7 @@ class Sender(Thread):
 
         encrypted_data, tag,cipher=self.read_and_Encrypt_image()
         try:
+
             # Send the nonce (used instead of IV in GCM mode)
             self.client_socket.sendall(cipher.nonce)
 
@@ -128,14 +130,12 @@ class Sender(Thread):
 
             # Send the encrypted image data
             self.client_socket.sendall(encrypted_data)
-            logger.info(f" Image sent successfully to {self.host}:{self.port}")
+            logger.info(f" Image sent{self.nick_id},{self.uid} successfully to {self.host}:{self.port}")
         except Exception as e:
-            logger.error(f"Error sender image to server: {e} | trace stack:{traceback.print_exc()}")
+            logger.error(f"Error sender{self.nick_id},{self.uid} image to server: {e} | trace stack:{traceback.print_exc()}")
             self.init_state = False
         finally:
             if self.client_socket is not None:
                 self.client_socket.close()
 
-
-        return 0
 

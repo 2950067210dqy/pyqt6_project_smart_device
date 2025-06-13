@@ -104,9 +104,16 @@ if __name__ == "__main__" and os.path.basename(__file__) == "main.py":
     load_global_setting()
     logger.info("loading config finish")
 
-    # 终端模拟 模拟8个设备
-    send_nums = 8
-    sender_thread = Sender()
+    # 终端模拟 模拟16个设备 8个蝇类，8个另一个种类
+    send_nums = 16
+    sender_thread_list =[]
+    for i in range(send_nums):
+        if i<=7:
+            uid  = f"AAFL-{i:06d}-CAFAF"
+        else:
+            uid = f"AAYL-{i:06d}-CAFAF"
+        sender_thread = Sender(uid=uid)
+        sender_thread_list.append(sender_thread)
     # 工控机模拟
     server_thread=Server()
     # qt程序开始

@@ -104,6 +104,7 @@ class Server(threading.Thread):
         filename_time = now.strftime("%Y-%m-%d_%H-%M-%S")
 
         try:
+
             # Receive the nonce (used instead of IV in GCM mode)
             nonce = self.conn.recv(16)
 
