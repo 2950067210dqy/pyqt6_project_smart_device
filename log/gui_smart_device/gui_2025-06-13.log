@@ -1,0 +1,87 @@
+2025-06-13 16:25:01 | INFO |MainProcess | MainThread |  __main__ : main:91 | ----------------------------------------gui_start----------------------------------------
+2025-06-13 16:25:01 | INFO |MainProcess | MainThread |  __main__ : main:94 | loading config start
+2025-06-13 16:25:01 | INFO |MainProcess | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  'light'
+2025-06-13 16:25:01 | INFO |MainProcess | MainThread |  __main__ : main:96 | loading config finish
+2025-06-13 16:25:01 | INFO |MainProcess | MainThread |  __main__ : main:59 | start Qt
+2025-06-13 16:25:01 | ERROR |MainProcess | MainThread |  __main__ : main:67 | gui程序实例化失败，原因:list index out of range |  异常堆栈跟踪：None
+2025-06-13 16:30:34 | INFO |MainProcess | MainThread |  __main__ : main:91 | ----------------------------------------gui_start----------------------------------------
+2025-06-13 16:30:34 | INFO |MainProcess | MainThread |  __main__ : main:94 | loading config start
+2025-06-13 16:30:34 | INFO |MainProcess | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  'light'
+2025-06-13 16:30:34 | INFO |MainProcess | MainThread |  __main__ : main:96 | loading config finish
+2025-06-13 16:30:34 | INFO |MainProcess | MainThread |  __main__ : main:59 | start Qt
+2025-06-13 16:31:09 | INFO |MainProcess | MainThread |  __main__ : main:91 | ----------------------------------------gui_start----------------------------------------
+2025-06-13 16:31:09 | INFO |MainProcess | MainThread |  __main__ : main:94 | loading config start
+2025-06-13 16:31:09 | INFO |MainProcess | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  'light'
+2025-06-13 16:31:09 | INFO |MainProcess | MainThread |  __main__ : main:96 | loading config finish
+2025-06-13 16:31:09 | INFO |MainProcess | MainThread |  __main__ : main:59 | start Qt
+2025-06-13 16:31:09 | ERROR |MainProcess | MainThread |  __main__ : main:67 | gui程序实例化失败，原因:list index out of range |  异常堆栈跟踪：None
+2025-06-13 16:31:35 | INFO |MainProcess | MainThread |  __main__ : main:91 | ----------------------------------------gui_start----------------------------------------
+2025-06-13 16:31:35 | INFO |MainProcess | MainThread |  __main__ : main:94 | loading config start
+2025-06-13 16:31:35 | INFO |MainProcess | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  'light'
+2025-06-13 16:31:35 | INFO |MainProcess | MainThread |  __main__ : main:96 | loading config finish
+2025-06-13 16:31:35 | INFO |MainProcess | MainThread |  __main__ : main:59 | start Qt
+2025-06-13 16:31:35 | ERROR |MainProcess | MainThread |  __main__ : main:67 | gui程序实例化失败，原因:"'light'" |  异常堆栈跟踪：None
+2025-06-13 16:31:51 | INFO |MainProcess | MainThread |  __main__ : main:91 | ----------------------------------------gui_start----------------------------------------
+2025-06-13 16:31:51 | INFO |MainProcess | MainThread |  __main__ : main:94 | loading config start
+2025-06-13 16:31:51 | INFO |MainProcess | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  'light'
+2025-06-13 16:31:51 | INFO |MainProcess | MainThread |  __main__ : main:96 | loading config finish
+2025-06-13 16:31:51 | INFO |MainProcess | MainThread |  __main__ : main:59 | start Qt
+2025-06-13 16:33:58 | INFO |MainProcess | MainThread |  __main__ : main:91 | ----------------------------------------gui_start----------------------------------------
+2025-06-13 16:33:58 | INFO |MainProcess | MainThread |  __main__ : main:94 | loading config start
+2025-06-13 16:33:58 | INFO |MainProcess | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  'light'
+2025-06-13 16:33:58 | INFO |MainProcess | MainThread |  __main__ : main:96 | loading config finish
+2025-06-13 16:33:58 | INFO |MainProcess | MainThread |  __main__ : main:59 | start Qt
+2025-06-13 16:33:58 | ERROR |MainProcess | MainThread |  __main__ : main:67 | gui程序实例化失败，原因:"'light'" |  异常堆栈跟踪：None
+2025-06-13 16:35:07 | INFO |MainProcess | MainThread |  __main__ : main:91 | ----------------------------------------gui_start----------------------------------------
+2025-06-13 16:35:07 | INFO |MainProcess | MainThread |  __main__ : main:94 | loading config start
+2025-06-13 16:35:07 | INFO |MainProcess | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  'light'
+2025-06-13 16:35:07 | INFO |MainProcess | MainThread |  __main__ : main:96 | loading config finish
+2025-06-13 16:35:07 | INFO |MainProcess | MainThread |  __main__ : main:59 | start Qt
+2025-06-13 16:41:55 | INFO |MainProcess | MainThread |  __main__ : main:91 | ----------------------------------------gui_start----------------------------------------
+2025-06-13 16:41:55 | INFO |MainProcess | MainThread |  __main__ : main:94 | loading config start
+2025-06-13 16:41:55 | INFO |MainProcess | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  'light'
+2025-06-13 16:41:55 | INFO |MainProcess | MainThread |  __main__ : main:96 | loading config finish
+2025-06-13 16:41:55 | INFO |MainProcess | MainThread |  __main__ : main:59 | start Qt
+2025-06-13 16:41:55 | ERROR |MainProcess | MainThread |  __main__ : main:67 | gui程序实例化失败，原因:"'light'" |  异常堆栈跟踪：None
+2025-06-13 16:42:46 | INFO |MainProcess | MainThread |  __main__ : main:91 | ----------------------------------------gui_start----------------------------------------
+2025-06-13 16:42:46 | INFO |MainProcess | MainThread |  __main__ : main:94 | loading config start
+2025-06-13 16:42:46 | INFO |MainProcess | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-13 16:42:46 | INFO |MainProcess | MainThread |  __main__ : main:96 | loading config finish
+2025-06-13 16:42:46 | INFO |MainProcess | MainThread |  __main__ : main:59 | start Qt
+2025-06-13 16:42:46 | INFO |MainProcess | MainThread |  __main__ : main:70 | Appliacation start
+2025-06-13 16:42:51 | INFO |MainProcess | MainThread |  __main__ : main:43 | ----------------------------------------quit Qt application----------------------------------------
+2025-06-13 16:42:56 | INFO |MainProcess | MainThread |  __main__ : main:91 | ----------------------------------------gui_start----------------------------------------
+2025-06-13 16:42:56 | INFO |MainProcess | MainThread |  __main__ : main:94 | loading config start
+2025-06-13 16:42:56 | INFO |MainProcess | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-13 16:42:56 | INFO |MainProcess | MainThread |  __main__ : main:96 | loading config finish
+2025-06-13 16:42:56 | INFO |MainProcess | MainThread |  __main__ : main:59 | start Qt
+2025-06-13 16:42:57 | INFO |MainProcess | MainThread |  __main__ : main:70 | Appliacation start
+2025-06-13 16:42:59 | INFO |MainProcess | MainThread |  __main__ : main:43 | ----------------------------------------quit Qt application----------------------------------------
+2025-06-13 16:45:38 | INFO |MainProcess | MainThread |  __main__ : main:91 | ----------------------------------------gui_start----------------------------------------
+2025-06-13 16:45:38 | INFO |MainProcess | MainThread |  __main__ : main:94 | loading config start
+2025-06-13 16:45:38 | INFO |MainProcess | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-13 16:45:38 | INFO |MainProcess | MainThread |  __main__ : main:96 | loading config finish
+2025-06-13 16:45:38 | INFO |MainProcess | MainThread |  __main__ : main:59 | start Qt
+2025-06-13 16:45:38 | ERROR |MainProcess | MainThread |  __main__ : main:67 | gui程序实例化失败，原因:arguments did not match any overloaded call:
+  setGeometry(self, a0: QRect): argument 1 has unexpected type 'list'
+  setGeometry(self, ax: int, ay: int, aw: int, ah: int): argument 1 has unexpected type 'list' |  异常堆栈跟踪：None
+2025-06-13 16:47:20 | INFO |MainProcess | MainThread |  __main__ : main:91 | ----------------------------------------gui_start----------------------------------------
+2025-06-13 16:47:20 | INFO |MainProcess | MainThread |  __main__ : main:94 | loading config start
+2025-06-13 16:47:20 | INFO |MainProcess | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-13 16:47:20 | INFO |MainProcess | MainThread |  __main__ : main:96 | loading config finish
+2025-06-13 16:47:20 | INFO |MainProcess | MainThread |  __main__ : main:59 | start Qt
+2025-06-13 16:47:20 | INFO |MainProcess | MainThread |  __main__ : main:70 | Appliacation start
+2025-06-13 16:47:25 | INFO |MainProcess | MainThread |  __main__ : main:43 | ----------------------------------------quit Qt application----------------------------------------
+2025-06-13 16:48:45 | INFO |MainProcess | MainThread |  __main__ : main:91 | ----------------------------------------gui_start----------------------------------------
+2025-06-13 16:48:45 | INFO |MainProcess | MainThread |  __main__ : main:94 | loading config start
+2025-06-13 16:48:45 | INFO |MainProcess | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-13 16:48:45 | INFO |MainProcess | MainThread |  __main__ : main:96 | loading config finish
+2025-06-13 16:48:45 | INFO |MainProcess | MainThread |  __main__ : main:59 | start Qt
+2025-06-13 16:48:45 | INFO |MainProcess | MainThread |  __main__ : main:70 | Appliacation start
+2025-06-13 16:48:51 | INFO |MainProcess | MainThread |  __main__ : main:43 | ----------------------------------------quit Qt application----------------------------------------
+2025-06-13 17:10:38 | INFO |MainProcess | MainThread |  __main__ : main:91 | ----------------------------------------gui_start----------------------------------------
+2025-06-13 17:10:38 | INFO |MainProcess | MainThread |  __main__ : main:94 | loading config start
+2025-06-13 17:10:38 | INFO |MainProcess | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-13 17:10:38 | INFO |MainProcess | MainThread |  __main__ : main:96 | loading config finish
+2025-06-13 17:10:38 | INFO |MainProcess | MainThread |  __main__ : main:59 | start Qt
+2025-06-13 17:10:38 | INFO |MainProcess | MainThread |  __main__ : main:70 | Appliacation start
