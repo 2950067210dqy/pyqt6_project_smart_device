@@ -38,8 +38,8 @@ class Server(threading.Thread):
         self.server = None
         self.conn = None
 
-        self.init_state = False
-        self.client_init()
+        self.init_state = self.client_init()
+
         pass
     def client_init(self):
         # 初始化client
@@ -141,7 +141,7 @@ class Server(threading.Thread):
             image_size = int.from_bytes(image_size_bytes, byteorder='big')
             if self.DEBUG_SHOW_FILE_SIZE:
                 logger.debug(f"image_size:{image_size}")
-
+            print(f"-{type_code}{uid}")
             type_dir = f'{self.save_dir}\\{type_code}_Temp'  # Create subdirectory based on first two characters of UID
             if not os.path.exists(type_dir):
                 os.makedirs(type_dir)

@@ -31,8 +31,8 @@ class Sender(Thread):
         self.uid = uid
         self.running=False
         self.client_socket=None
-        self.init_state = False
-        self.client_init()
+        self.init_state = self.client_init()
+
         pass
     def client_init(self):
         """
@@ -41,10 +41,10 @@ class Sender(Thread):
         """
         # Connect to the remote PC
         try:
-            client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            client_socket.settimeout(30)
-            client_socket.connect((self.host, self.port))
-            client_socket.settimeout(None)
+            self.client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            self.client_socket.settimeout(30)
+            self.client_socket.connect((self.host, self.port))
+            self.client_socket.settimeout(None)
             logger.info(f"Sender{self.uid} init success")
             return True
         except Exception as e:
@@ -114,7 +114,6 @@ class Sender(Thread):
         try:
 
             # Send the nonce (used instead of IV in GCM mode)
-            print(cipher.nonce)
             self.client_socket.sendall(cipher.nonce)
 
             # Send the tag (for authentication)
@@ -137,6 +136,7 @@ class Sender(Thread):
             self.init_state = False
         finally:
             if self.client_socket is not None:
+                self.init_state=False
                 self.client_socket.close()
 
 
