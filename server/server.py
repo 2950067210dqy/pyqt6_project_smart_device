@@ -30,6 +30,7 @@ class Server(threading.Thread):
     KEY = b'MySuperSecretKey32BytesLongPassw'  # Must be 32 bytes for AES-256
 
     def __init__(self,save_dir,IP,port):
+        super().__init__()
         self.save_dir =save_dir
         self.IP =IP
         self.PORT = port
@@ -116,6 +117,7 @@ class Server(threading.Thread):
             uid = uid_bytes.rstrip(b'\x00').decode('utf-8')  # Remove null padding and decode
 
             # Parse UID format: AAAA-BBBBBB-CCCCC
+            type_code=""
             try:
                 parts = uid.split('-')
                 if len(parts) >= 2:

@@ -105,17 +105,23 @@ if __name__ == "__main__" and os.path.basename(__file__) == "main.py":
     logger.info("loading config finish")
 
     # 终端模拟 模拟16个设备 8个蝇类，8个另一个种类
-    send_nums = 16
+
+    port = 8000
+    # 工控机模拟
+    server_thread=Server(save_dir="./data_smart_device/",IP= '0.0.0.0',port=port)
+    server_thread.start()
+
+    send_nums = 2
     sender_thread_list =[]
     for i in range(send_nums):
-        if i<=7:
-            uid  = f"AAFL-{i:06d}-CAFAF"
+        if i<send_nums/2:
+            uid  = f"AAFL-{i+1:06d}-CAFAF"
         else:
-            uid = f"AAYL-{i:06d}-CAFAF"
-        sender_thread = Sender(uid=uid)
+            uid = f"AAYL-{i+1:06d}-CAFAF"
+        sender_thread = Sender(uid=uid,host='localhost',port=port,img_dir=f"./data_smart_device/send/1803.{655+i%3}.050.png")
         sender_thread_list.append(sender_thread)
-    # 工控机模拟
-    server_thread=Server()
+        sender_thread.start()
+
     # qt程序开始
     try:
         start_qt_application()
