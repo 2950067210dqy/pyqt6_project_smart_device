@@ -31,6 +31,8 @@ class Sender(Thread):
         self.uid = uid
         self.running=False
         self.client_socket=None
+        self.max_retries = 3 #最大重连次数
+        self.retry_delay = 1.0  # 初始重试延迟（秒）
         self.init_state = self.client_init()
 
         pass
@@ -40,17 +42,30 @@ class Sender(Thread):
         :return:
         """
         # Connect to the remote PC
-        try:
-            self.client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            self.client_socket.settimeout(30)
-            self.client_socket.connect((self.host, self.port))
-            self.client_socket.settimeout(None)
-            logger.info(f"Sender{self.uid} init success")
-            return True
-        except Exception as e:
-            logger.error(f"Error send{self.uid} connecting to server{(self.host, self.port)}: {e} | trace stack:{traceback.print_exc()}")
-            return False
-        pass
+
+        # 如果存在旧连接则关闭
+        if self.client_socket:
+            self.client_socket.close()
+            self.client_socket=None
+        # 重连机制
+        retry_count = 0
+        while retry_count < self.max_retries:
+            try:
+                # 创建新连接
+                self.client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                self.client_socket.settimeout(30)  # 连接超时
+                self.client_socket.connect((self.host, self.port))
+                logger.info(f"Sender({retry_count + 1}/{self.max_retries}) {self.uid} connected {self.host}:{self.port} successfully")
+                return True
+            except (socket.error, ConnectionRefusedError, socket.timeout) as e:
+                logger.error(
+                    f"Error({retry_count + 1}/{self.max_retries}) send{self.uid} connecting to server{(self.host, self.port)}: {e} | trace stack:{traceback.print_exc()}")
+                retry_count += 1
+                # 指数退避算法
+                time.sleep(self.retry_delay * (2 ** (retry_count - 1)))
+        return False
+
+
     def set_image_dir(self,img_dir):
         self.img_dir=img_dir
         pass
@@ -82,18 +97,21 @@ class Sender(Thread):
     def run(self):
         self.running = True
         while(self.running):
-            # 如果初始化client失败，则一直尝试初始化
-            if not self.init_state:
-                self.init_state = self.client_init()
-                if not self.init_state:
-                    continue
-            try:
-                self.send_image()
-            except Exception as e:
-                logger.error(f"Error sender{self.uid} to server: {e} | trace stack:{traceback.print_exc()}")
-                self.init_state=False
-                pass
+            self.send_handle()
             time.sleep(float(global_setting.get_setting("server_config")['Sender']['delay']))
+            pass
+        pass
+    def send_handle(self):
+        # 如果初始化client失败，则一直尝试初始化
+        if not self.init_state:
+            self.init_state = self.client_init()
+            if not self.init_state:
+                return
+        try:
+            self.send_image()
+        except Exception as e:
+            logger.error(f"Error sender{self.uid} to server: {e} | trace stack:{traceback.print_exc()}")
+            self.init_state = False
             pass
         pass
     def send_image(self):
@@ -111,32 +129,84 @@ class Sender(Thread):
         '''
 
         encrypted_data, tag,cipher=self.read_and_Encrypt_image()
-        try:
 
-            # Send the nonce (used instead of IV in GCM mode)
+
+        # Send the nonce (used instead of IV in GCM mode)
+        try:
             self.client_socket.sendall(cipher.nonce)
 
-            # Send the tag (for authentication)
+        except Exception as e:
+            logger.error(f"Error sender{self.uid} cipher.nonce to server: {e} | trace stack:{traceback.print_exc()}")
+            self.client_socket.shutdown(socket.SHUT_WR)  # 重要：半关闭发送端
+            self.init_state = False
+            if self.client_socket is not None:
+                self.client_socket.close()
+            # 重新在发一次
+            self.send_handle()
+
+        # Send the tag (for authentication)
+        try:
             self.client_socket.sendall(tag)
 
-            # Send UID as fixed 32-byte string (padded with null bytes if shorter)
-            uid_bytes = self.uid.encode('utf-8')[:32]  # Truncate if too long
-            uid_padded = uid_bytes.ljust(32, b'\x00')   # Pad with null bytes to 32 bytes
+        except Exception as e:
+            logger.error(f"Error sender{self.uid} tag to server: {e} | trace stack:{traceback.print_exc()}")
+            self.client_socket.shutdown(socket.SHUT_WR)  # 重要：半关闭发送端
+            self.init_state = False
+            if self.client_socket is not None:
+                self.client_socket.close()
+            # 重新在发一次
+            self.send_handle()
+
+
+
+        # Send UID as fixed 32-byte string (padded with null bytes if shorter)
+        uid_bytes = self.uid.encode('utf-8')[:32]  # Truncate if too long
+        uid_padded = uid_bytes.ljust(32, b'\x00')   # Pad with null bytes to 32 bytes
+        try:
             self.client_socket.sendall(uid_padded)
 
-            # Send the encrypted image size
-            encrypted_size = len(encrypted_data)
+        except Exception as e:
+            logger.error(f"Error sender{self.uid} uid_padded to server: {e} | trace stack:{traceback.print_exc()}")
+            self.client_socket.shutdown(socket.SHUT_WR)  # 重要：半关闭发送端
+            self.init_state = False
+            if self.client_socket is not None:
+                self.client_socket.close()
+            # 重新在发一次
+            self.send_handle()
+
+
+        # Send the encrypted image size
+        encrypted_size = len(encrypted_data)
+        try:
             self.client_socket.sendall(encrypted_size.to_bytes(4, byteorder='big'))
 
-            # Send the encrypted image data
-            self.client_socket.sendall(encrypted_data)
-            logger.info(f" Image sent{self.uid} successfully to {self.host}:{self.port}")
         except Exception as e:
-            logger.error(f"Error sender{self.uid} image to server: {e} | trace stack:{traceback.print_exc()}")
+            logger.error(f"Error sender{self.uid} encrypted_size to server: {e} | trace stack:{traceback.print_exc()}")
+            self.client_socket.shutdown(socket.SHUT_WR)  # 重要：半关闭发送端
             self.init_state = False
-        finally:
             if self.client_socket is not None:
-                self.init_state=False
                 self.client_socket.close()
+            # 重新在发一次
+            self.send_handle()
+
+
+        # Send the encrypted image data
+
+        try:
+            self.client_socket.sendall(encrypted_data)
+
+        except Exception as e:
+            logger.error(f"Error sender{self.uid} encrypted_data——image to server: {e} | trace stack:{traceback.print_exc()}")
+            self.client_socket.shutdown(socket.SHUT_WR)  # 重要：半关闭发送端
+            self.init_state = False
+            if self.client_socket is not None:
+                self.client_socket.close()
+            # 重新在发一次
+            self.send_handle()
+
+        logger.info(f" Image sent{self.uid} successfully to {self.host}:{self.port}")
+
+
+
 
 

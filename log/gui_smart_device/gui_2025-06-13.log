@@ -2074,3 +2074,1003 @@
 2025-06-13 21:02:57 | INFO |MainProcess | Thread-1 |  server.server : server:102 |   New connection from ('127.0.0.1', 3394) connected. 
 2025-06-13 21:02:57 | INFO |MainProcess | Thread-1 |  server.server : server:183 |  Saved to ./data_smart_device/\FL_Temp\FL_000001_2025-06-13_21-02-57.png (UID: AAFL-000001-CAFAF). Time elapsed: 0.0s
 2025-06-13 21:02:57 | INFO |MainProcess | Thread-1 |  server.server : server:70 | Active connections: 4
+2025-06-13 21:45:18 | INFO |MainProcess | MainThread |  __main__ : main:100 | ----------------------------------------gui_start----------------------------------------
+2025-06-13 21:45:18 | INFO |MainProcess | MainThread |  __main__ : main:103 | loading config start
+2025-06-13 21:45:18 | INFO |MainProcess | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-13 21:45:18 | INFO |MainProcess | MainThread |  __main__ : main:105 | loading config finish
+2025-06-13 21:45:18 | INFO |MainProcess | MainThread |  server.server : server:46 |  Server is init
+2025-06-13 21:45:18 | INFO |MainProcess | MainThread |  server.server : server:51 |  Server is listening on 0.0.0.0:8000.
+2025-06-13 21:45:18 | INFO |MainProcess | MainThread |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 21:45:18 | INFO |MainProcess | Thread-1 |  server.server : server:102 |   New connection from ('127.0.0.1', 60769) connected. 
+2025-06-13 21:45:18 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 21:45:18 | INFO |MainProcess | Thread-1 |  server.server : server:183 |  Saved to ./data_smart_device/\FL_Temp\FL_000001_2025-06-13_21-45-18.png (UID: AAFL-000001-CAFAF). Time elapsed: 0.0s
+2025-06-13 21:45:18 | INFO |MainProcess | Thread-1 |  server.server : server:70 | Active connections: 3
+2025-06-13 21:45:18 | INFO |MainProcess | Thread-1 |  server.server : server:102 |   New connection from ('127.0.0.1', 60770) connected. 
+2025-06-13 21:45:18 | INFO |MainProcess | MainThread |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 21:45:18 | INFO |MainProcess | MainThread |  __main__ : main:68 | start Qt
+2025-06-13 21:45:18 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 21:45:18 | INFO |MainProcess | Thread-1 |  server.server : server:183 |  Saved to ./data_smart_device/\YL_Temp\YL_000002_2025-06-13_21-45-18.png (UID: AAYL-000002-CAFAF). Time elapsed: 0.0s
+2025-06-13 21:45:18 | INFO |MainProcess | Thread-1 |  server.server : server:70 | Active connections: 4
+2025-06-13 21:45:19 | INFO |MainProcess | MainThread |  __main__ : main:79 | Appliacation start
+2025-06-13 21:45:21 | INFO |MainProcess | Thread-2 |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 21:45:21 | INFO |MainProcess | Thread-1 |  server.server : server:102 |   New connection from ('127.0.0.1', 60775) connected. 
+2025-06-13 21:45:21 | INFO |MainProcess | Thread-3 |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 21:45:21 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 21:45:21 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 21:45:21 | INFO |MainProcess | Thread-1 |  server.server : server:183 |  Saved to ./data_smart_device/\FL_Temp\FL_000001_2025-06-13_21-45-21.png (UID: AAFL-000001-CAFAF). Time elapsed: 0.0s
+2025-06-13 21:45:21 | INFO |MainProcess | Thread-1 |  server.server : server:70 | Active connections: 4
+2025-06-13 21:45:21 | INFO |MainProcess | Thread-1 |  server.server : server:102 |   New connection from ('127.0.0.1', 60776) connected. 
+2025-06-13 21:45:21 | INFO |MainProcess | Thread-1 |  server.server : server:183 |  Saved to ./data_smart_device/\YL_Temp\YL_000002_2025-06-13_21-45-21.png (UID: AAYL-000002-CAFAF). Time elapsed: 0.0s
+2025-06-13 21:45:21 | INFO |MainProcess | Thread-1 |  server.server : server:70 | Active connections: 4
+2025-06-13 21:45:23 | INFO |MainProcess | Thread-1 |  server.server : server:102 |   New connection from ('127.0.0.1', 60782) connected. 
+2025-06-13 21:45:23 | INFO |MainProcess | Thread-2 |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 21:45:23 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 21:45:23 | INFO |MainProcess | Thread-3 |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 21:45:23 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 21:45:23 | INFO |MainProcess | Thread-1 |  server.server : server:183 |  Saved to ./data_smart_device/\YL_Temp\YL_000002_2025-06-13_21-45-23.png (UID: AAYL-000002-CAFAF). Time elapsed: 0.0s
+2025-06-13 21:45:23 | INFO |MainProcess | Thread-1 |  server.server : server:70 | Active connections: 4
+2025-06-13 21:45:23 | INFO |MainProcess | Thread-1 |  server.server : server:102 |   New connection from ('127.0.0.1', 60783) connected. 
+2025-06-13 21:45:23 | INFO |MainProcess | Thread-1 |  server.server : server:183 |  Saved to ./data_smart_device/\FL_Temp\FL_000001_2025-06-13_21-45-23.png (UID: AAFL-000001-CAFAF). Time elapsed: 0.0s
+2025-06-13 21:45:23 | INFO |MainProcess | Thread-1 |  server.server : server:70 | Active connections: 4
+2025-06-13 21:45:25 | INFO |MainProcess | Thread-1 |  server.server : server:102 |   New connection from ('127.0.0.1', 60785) connected. 
+2025-06-13 21:45:25 | INFO |MainProcess | Thread-2 |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 21:45:25 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 21:45:25 | INFO |MainProcess | Thread-3 |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 21:45:25 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 21:45:25 | INFO |MainProcess | Thread-1 |  server.server : server:183 |  Saved to ./data_smart_device/\FL_Temp\FL_000001_2025-06-13_21-45-25.png (UID: AAFL-000001-CAFAF). Time elapsed: 0.0s
+2025-06-13 21:45:25 | INFO |MainProcess | Thread-1 |  server.server : server:70 | Active connections: 4
+2025-06-13 21:45:25 | INFO |MainProcess | Thread-1 |  server.server : server:102 |   New connection from ('127.0.0.1', 60786) connected. 
+2025-06-13 21:45:25 | INFO |MainProcess | Thread-1 |  server.server : server:183 |  Saved to ./data_smart_device/\YL_Temp\YL_000002_2025-06-13_21-45-25.png (UID: AAYL-000002-CAFAF). Time elapsed: 0.0s
+2025-06-13 21:45:25 | INFO |MainProcess | Thread-1 |  server.server : server:70 | Active connections: 4
+2025-06-13 21:45:27 | INFO |MainProcess | Thread-1 |  server.server : server:102 |   New connection from ('127.0.0.1', 60791) connected. 
+2025-06-13 21:45:27 | INFO |MainProcess | Thread-2 |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 21:45:27 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 21:45:27 | INFO |MainProcess | Thread-3 |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 21:45:27 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 21:45:27 | INFO |MainProcess | Thread-1 |  server.server : server:183 |  Saved to ./data_smart_device/\FL_Temp\FL_000001_2025-06-13_21-45-27.png (UID: AAFL-000001-CAFAF). Time elapsed: 0.0s
+2025-06-13 21:45:27 | INFO |MainProcess | Thread-1 |  server.server : server:70 | Active connections: 4
+2025-06-13 21:45:27 | INFO |MainProcess | Thread-1 |  server.server : server:102 |   New connection from ('127.0.0.1', 60792) connected. 
+2025-06-13 21:45:27 | INFO |MainProcess | Thread-1 |  server.server : server:183 |  Saved to ./data_smart_device/\YL_Temp\YL_000002_2025-06-13_21-45-27.png (UID: AAYL-000002-CAFAF). Time elapsed: 0.0s
+2025-06-13 21:45:27 | INFO |MainProcess | Thread-1 |  server.server : server:70 | Active connections: 4
+2025-06-13 22:13:41 | INFO |MainProcess | MainThread |  __main__ : main:108 | ----------------------------------------gui_start----------------------------------------
+2025-06-13 22:13:41 | INFO |MainProcess | MainThread |  __main__ : main:111 | loading config start
+2025-06-13 22:13:41 | INFO |MainProcess | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-13 22:13:41 | INFO |MainProcess | MainThread |  __main__ : main:113 | loading config finish
+2025-06-13 22:13:41 | INFO |MainProcess | MainThread |  server.server : server:46 |  Server is init
+2025-06-13 22:13:41 | INFO |MainProcess | MainThread |  server.server : server:51 |  Server is listening on 0.0.0.0:8000.
+2025-06-13 22:13:41 | INFO |MainProcess | MainThread |  __main__ : main:120 | server_thread子线程开始运行
+2025-06-13 22:13:41 | INFO |MainProcess | MainThread |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 22:13:41 | INFO |MainProcess | MainThread |  __main__ : main:142 | sender_thread |AAFL-000001-CAFAF |子线程开始运行
+2025-06-13 22:13:41 | INFO |MainProcess | Thread-1 |  server.server : server:102 |   New connection from ('127.0.0.1', 61396) connected. 
+2025-06-13 22:13:41 | INFO |MainProcess | MainThread |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 22:13:41 | INFO |MainProcess | MainThread |  __main__ : main:142 | sender_thread |AAYL-000002-CAFAF |子线程开始运行
+2025-06-13 22:13:41 | INFO |MainProcess | MainThread |  __main__ : main:155 | start Qt
+2025-06-13 22:13:41 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 22:13:41 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 22:13:41 | INFO |MainProcess | Thread-1 |  server.server : server:183 |  Saved to ./data_smart_device/\FL_Temp\FL_000001_2025-06-13_22-13-41.png (UID: AAFL-000001-CAFAF). Time elapsed: 0.0s
+2025-06-13 22:13:41 | INFO |MainProcess | Thread-1 |  server.server : server:70 | Active connections: 4
+2025-06-13 22:13:41 | INFO |MainProcess | Thread-1 |  server.server : server:102 |   New connection from ('127.0.0.1', 61397) connected. 
+2025-06-13 22:13:41 | INFO |MainProcess | Thread-1 |  server.server : server:183 |  Saved to ./data_smart_device/\YL_Temp\YL_000002_2025-06-13_22-13-41.png (UID: AAYL-000002-CAFAF). Time elapsed: 0.0s
+2025-06-13 22:13:41 | INFO |MainProcess | Thread-1 |  server.server : server:70 | Active connections: 4
+2025-06-13 22:13:41 | INFO |MainProcess | MainThread |  __main__ : main:174 | Appliacation start
+2025-06-13 22:13:43 | INFO |MainProcess | Thread-2 |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 22:13:43 | INFO |MainProcess | Thread-1 |  server.server : server:102 |   New connection from ('127.0.0.1', 61402) connected. 
+2025-06-13 22:13:43 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 22:13:43 | INFO |MainProcess | Thread-3 |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 22:13:43 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 22:13:43 | INFO |MainProcess | Thread-1 |  server.server : server:183 |  Saved to ./data_smart_device/\YL_Temp\YL_000002_2025-06-13_22-13-43.png (UID: AAYL-000002-CAFAF). Time elapsed: 0.0s
+2025-06-13 22:13:43 | INFO |MainProcess | Thread-1 |  server.server : server:70 | Active connections: 4
+2025-06-13 22:13:43 | INFO |MainProcess | Thread-1 |  server.server : server:102 |   New connection from ('127.0.0.1', 61403) connected. 
+2025-06-13 22:13:43 | INFO |MainProcess | Thread-1 |  server.server : server:183 |  Saved to ./data_smart_device/\FL_Temp\FL_000001_2025-06-13_22-13-43.png (UID: AAFL-000001-CAFAF). Time elapsed: 0.0s
+2025-06-13 22:13:43 | INFO |MainProcess | Thread-1 |  server.server : server:70 | Active connections: 4
+2025-06-13 22:13:44 | INFO |MainProcess | MainThread |  __main__ : main:53 | ----------------------------------------quit Qt application----------------------------------------
+2025-06-13 22:14:03 | INFO |MainProcess | MainThread |  __main__ : main:108 | ----------------------------------------gui_start----------------------------------------
+2025-06-13 22:14:03 | INFO |MainProcess | MainThread |  __main__ : main:111 | loading config start
+2025-06-13 22:14:03 | INFO |MainProcess | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-13 22:14:03 | INFO |MainProcess | MainThread |  __main__ : main:113 | loading config finish
+2025-06-13 22:14:03 | INFO |MainProcess | MainThread |  server.server : server:46 |  Server is init
+2025-06-13 22:14:03 | INFO |MainProcess | MainThread |  server.server : server:51 |  Server is listening on 0.0.0.0:8000.
+2025-06-13 22:14:03 | INFO |MainProcess | MainThread |  __main__ : main:120 | server_thread子线程开始运行
+2025-06-13 22:14:03 | INFO |MainProcess | MainThread |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 22:14:03 | INFO |MainProcess | MainThread |  __main__ : main:142 | sender_thread |AAFL-000001-CAFAF |子线程开始运行
+2025-06-13 22:14:03 | INFO |MainProcess | Thread-1 |  server.server : server:102 |   New connection from ('127.0.0.1', 61481) connected. 
+2025-06-13 22:14:03 | INFO |MainProcess | MainThread |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 22:14:03 | INFO |MainProcess | MainThread |  __main__ : main:142 | sender_thread |AAYL-000002-CAFAF |子线程开始运行
+2025-06-13 22:14:03 | INFO |MainProcess | MainThread |  __main__ : main:155 | start Qt
+2025-06-13 22:14:03 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 22:14:03 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 22:14:03 | INFO |MainProcess | Thread-1 |  server.server : server:183 |  Saved to ./data_smart_device/\FL_Temp\FL_000001_2025-06-13_22-14-03.png (UID: AAFL-000001-CAFAF). Time elapsed: 0.0s
+2025-06-13 22:14:03 | INFO |MainProcess | Thread-1 |  server.server : server:70 | Active connections: 4
+2025-06-13 22:14:03 | INFO |MainProcess | Thread-1 |  server.server : server:102 |   New connection from ('127.0.0.1', 61482) connected. 
+2025-06-13 22:14:03 | INFO |MainProcess | Thread-1 |  server.server : server:183 |  Saved to ./data_smart_device/\YL_Temp\YL_000002_2025-06-13_22-14-03.png (UID: AAYL-000002-CAFAF). Time elapsed: 0.0s
+2025-06-13 22:14:03 | INFO |MainProcess | Thread-1 |  server.server : server:70 | Active connections: 4
+2025-06-13 22:14:03 | INFO |MainProcess | MainThread |  __main__ : main:174 | Appliacation start
+2025-06-13 22:14:05 | INFO |MainProcess | Thread-1 |  server.server : server:102 |   New connection from ('127.0.0.1', 61509) connected. 
+2025-06-13 22:14:05 | INFO |MainProcess | Thread-3 |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 22:14:05 | INFO |MainProcess | Thread-2 |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 22:14:05 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 22:14:05 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 22:14:05 | INFO |MainProcess | Thread-1 |  server.server : server:183 |  Saved to ./data_smart_device/\FL_Temp\FL_000001_2025-06-13_22-14-05.png (UID: AAFL-000001-CAFAF). Time elapsed: 0.0s
+2025-06-13 22:14:05 | INFO |MainProcess | Thread-1 |  server.server : server:70 | Active connections: 4
+2025-06-13 22:14:05 | INFO |MainProcess | Thread-1 |  server.server : server:102 |   New connection from ('127.0.0.1', 61510) connected. 
+2025-06-13 22:14:05 | INFO |MainProcess | Thread-1 |  server.server : server:183 |  Saved to ./data_smart_device/\YL_Temp\YL_000002_2025-06-13_22-14-05.png (UID: AAYL-000002-CAFAF). Time elapsed: 0.0s
+2025-06-13 22:14:05 | INFO |MainProcess | Thread-1 |  server.server : server:70 | Active connections: 4
+2025-06-13 22:14:06 | INFO |MainProcess | MainThread |  __main__ : main:53 | ----------------------------------------quit Qt application----------------------------------------
+2025-06-13 22:14:34 | INFO |MainProcess | MainThread |  __main__ : main:108 | ----------------------------------------gui_start----------------------------------------
+2025-06-13 22:14:34 | INFO |MainProcess | MainThread |  __main__ : main:111 | loading config start
+2025-06-13 22:14:34 | INFO |MainProcess | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-13 22:14:34 | INFO |MainProcess | MainThread |  __main__ : main:113 | loading config finish
+2025-06-13 22:14:34 | INFO |MainProcess | MainThread |  server.server : server:46 |  Server is init
+2025-06-13 22:14:34 | INFO |MainProcess | MainThread |  server.server : server:51 |  Server is listening on 0.0.0.0:8000.
+2025-06-13 22:14:34 | INFO |MainProcess | MainThread |  __main__ : main:120 | server_thread子线程开始运行
+2025-06-13 22:14:34 | INFO |MainProcess | MainThread |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 22:14:34 | INFO |MainProcess | Thread-1 |  server.server : server:102 |   New connection from ('127.0.0.1', 61591) connected. 
+2025-06-13 22:14:34 | INFO |MainProcess | MainThread |  __main__ : main:142 | sender_thread |AAFL-000001-CAFAF |子线程开始运行
+2025-06-13 22:14:34 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 22:14:34 | INFO |MainProcess | Thread-1 |  server.server : server:183 |  Saved to ./data_smart_device/\FL_Temp\FL_000001_2025-06-13_22-14-34.png (UID: AAFL-000001-CAFAF). Time elapsed: 0.0s
+2025-06-13 22:14:34 | INFO |MainProcess | Thread-1 |  server.server : server:70 | Active connections: 3
+2025-06-13 22:14:34 | INFO |MainProcess | Thread-1 |  server.server : server:102 |   New connection from ('127.0.0.1', 61592) connected. 
+2025-06-13 22:14:34 | INFO |MainProcess | MainThread |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 22:14:34 | INFO |MainProcess | MainThread |  __main__ : main:142 | sender_thread |AAYL-000002-CAFAF |子线程开始运行
+2025-06-13 22:14:34 | INFO |MainProcess | MainThread |  __main__ : main:155 | start Qt
+2025-06-13 22:14:34 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 22:14:34 | INFO |MainProcess | Thread-1 |  server.server : server:183 |  Saved to ./data_smart_device/\YL_Temp\YL_000002_2025-06-13_22-14-34.png (UID: AAYL-000002-CAFAF). Time elapsed: 0.0s
+2025-06-13 22:14:34 | INFO |MainProcess | Thread-1 |  server.server : server:70 | Active connections: 4
+2025-06-13 22:14:34 | INFO |MainProcess | MainThread |  __main__ : main:174 | Appliacation start
+2025-06-13 22:14:36 | INFO |MainProcess | Thread-1 |  server.server : server:102 |   New connection from ('127.0.0.1', 61597) connected. 
+2025-06-13 22:14:36 | INFO |MainProcess | Thread-2 |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 22:14:36 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 22:14:36 | INFO |MainProcess | Thread-3 |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 22:14:36 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 22:14:36 | INFO |MainProcess | Thread-1 |  server.server : server:183 |  Saved to ./data_smart_device/\FL_Temp\FL_000001_2025-06-13_22-14-36.png (UID: AAFL-000001-CAFAF). Time elapsed: 0.0s
+2025-06-13 22:14:36 | INFO |MainProcess | Thread-1 |  server.server : server:70 | Active connections: 4
+2025-06-13 22:14:36 | INFO |MainProcess | Thread-1 |  server.server : server:102 |   New connection from ('127.0.0.1', 61598) connected. 
+2025-06-13 22:14:36 | INFO |MainProcess | Thread-1 |  server.server : server:183 |  Saved to ./data_smart_device/\YL_Temp\YL_000002_2025-06-13_22-14-36.png (UID: AAYL-000002-CAFAF). Time elapsed: 0.0s
+2025-06-13 22:14:36 | INFO |MainProcess | Thread-1 |  server.server : server:70 | Active connections: 4
+2025-06-13 22:14:37 | INFO |MainProcess | MainThread |  __main__ : main:53 | ----------------------------------------quit Qt application----------------------------------------
+2025-06-13 22:15:05 | INFO |MainProcess | MainThread |  __main__ : main:108 | ----------------------------------------gui_start----------------------------------------
+2025-06-13 22:15:05 | INFO |MainProcess | MainThread |  __main__ : main:111 | loading config start
+2025-06-13 22:15:05 | INFO |MainProcess | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-13 22:15:05 | INFO |MainProcess | MainThread |  __main__ : main:113 | loading config finish
+2025-06-13 22:15:05 | INFO |MainProcess | MainThread |  server.server : server:46 |  Server is init
+2025-06-13 22:15:05 | INFO |MainProcess | MainThread |  server.server : server:51 |  Server is listening on 0.0.0.0:8000.
+2025-06-13 22:15:05 | INFO |MainProcess | MainThread |  __main__ : main:120 | server_thread子线程开始运行
+2025-06-13 22:15:05 | INFO |MainProcess | MainThread |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 22:15:05 | INFO |MainProcess | MainThread |  __main__ : main:142 | sender_thread |AAFL-000001-CAFAF |子线程开始运行
+2025-06-13 22:15:05 | INFO |MainProcess | Thread-1 |  server.server : server:102 |   New connection from ('127.0.0.1', 61704) connected. 
+2025-06-13 22:15:05 | INFO |MainProcess | MainThread |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 22:15:05 | INFO |MainProcess | MainThread |  __main__ : main:142 | sender_thread |AAYL-000002-CAFAF |子线程开始运行
+2025-06-13 22:15:05 | INFO |MainProcess | MainThread |  __main__ : main:155 | start Qt
+2025-06-13 22:15:05 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 22:15:05 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 22:15:05 | INFO |MainProcess | Thread-1 |  server.server : server:183 |  Saved to ./data_smart_device/\FL_Temp\FL_000001_2025-06-13_22-15-05.png (UID: AAFL-000001-CAFAF). Time elapsed: 0.0s
+2025-06-13 22:15:05 | INFO |MainProcess | Thread-1 |  server.server : server:70 | Active connections: 4
+2025-06-13 22:15:05 | INFO |MainProcess | Thread-1 |  server.server : server:102 |   New connection from ('127.0.0.1', 61705) connected. 
+2025-06-13 22:15:05 | INFO |MainProcess | Thread-1 |  server.server : server:183 |  Saved to ./data_smart_device/\YL_Temp\YL_000002_2025-06-13_22-15-05.png (UID: AAYL-000002-CAFAF). Time elapsed: 0.0s
+2025-06-13 22:15:05 | INFO |MainProcess | Thread-1 |  server.server : server:70 | Active connections: 4
+2025-06-13 22:15:05 | INFO |MainProcess | MainThread |  __main__ : main:174 | Appliacation start
+2025-06-13 22:15:07 | INFO |MainProcess | MainThread |  __main__ : main:53 | ----------------------------------------quit Qt application----------------------------------------
+2025-06-13 22:59:34 | INFO |MainProcess | MainThread |  __main__ : main:109 | ----------------------------------------gui_start----------------------------------------
+2025-06-13 22:59:34 | INFO |MainProcess | MainThread |  __main__ : main:112 | loading config start
+2025-06-13 22:59:34 | INFO |MainProcess | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-13 22:59:34 | INFO |MainProcess | MainThread |  __main__ : main:114 | loading config finish
+2025-06-13 22:59:34 | INFO |MainProcess | MainThread |  server.server : server:48 |  Server is init
+2025-06-13 22:59:34 | INFO |MainProcess | MainThread |  server.server : server:53 |  Server is listening on 0.0.0.0:8000.
+2025-06-13 22:59:34 | INFO |MainProcess | MainThread |  __main__ : main:121 | server_thread子线程开始运行
+2025-06-13 22:59:34 | INFO |MainProcess | MainThread |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 22:59:34 | INFO |MainProcess | MainThread |  __main__ : main:143 | sender_thread |AAFL-000001-CAFAF |子线程开始运行
+2025-06-13 22:59:34 | INFO |MainProcess | Thread-1 |  server.server : server:104 |   New connection from ('127.0.0.1', 52991) connected. 
+2025-06-13 22:59:34 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 22:59:34 | ERROR |MainProcess | Thread-1 |  server.server : server:189 |  Error processing connection: 'NoneType' object is not iterable|trace stack :None
+2025-06-13 22:59:34 | INFO |MainProcess | Thread-1 |  server.server : server:72 | Active connections: 4
+2025-06-13 22:59:34 | INFO |MainProcess | Thread-1 |  server.server : server:104 |   New connection from ('127.0.0.1', 52992) connected. 
+2025-06-13 22:59:34 | INFO |MainProcess | MainThread |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 22:59:34 | INFO |MainProcess | MainThread |  __main__ : main:143 | sender_thread |AAYL-000002-CAFAF |子线程开始运行
+2025-06-13 22:59:34 | INFO |MainProcess | MainThread |  __main__ : main:156 | start Qt
+2025-06-13 22:59:34 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 22:59:34 | ERROR |MainProcess | Thread-1 |  server.server : server:189 |  Error processing connection: 'NoneType' object is not iterable|trace stack :None
+2025-06-13 22:59:34 | INFO |MainProcess | Thread-1 |  server.server : server:72 | Active connections: 5
+2025-06-13 22:59:34 | INFO |MainProcess | MainThread |  __main__ : main:175 | Appliacation start
+2025-06-13 22:59:36 | INFO |MainProcess | Thread-1 |  server.server : server:104 |   New connection from ('127.0.0.1', 52995) connected. 
+2025-06-13 22:59:36 | INFO |MainProcess | Thread-2 |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 22:59:36 | INFO |MainProcess | Thread-3 |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 22:59:36 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 22:59:36 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 22:59:36 | ERROR |MainProcess | Thread-1 |  server.server : server:189 |  Error processing connection: 'NoneType' object is not iterable|trace stack :None
+2025-06-13 22:59:36 | INFO |MainProcess | Thread-1 |  server.server : server:72 | Active connections: 5
+2025-06-13 22:59:36 | INFO |MainProcess | Thread-1 |  server.server : server:104 |   New connection from ('127.0.0.1', 52996) connected. 
+2025-06-13 22:59:36 | ERROR |MainProcess | Thread-1 |  server.server : server:189 |  Error processing connection: 'NoneType' object is not iterable|trace stack :None
+2025-06-13 22:59:36 | INFO |MainProcess | Thread-1 |  server.server : server:72 | Active connections: 5
+2025-06-13 22:59:38 | INFO |MainProcess | Thread-2 |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 22:59:38 | INFO |MainProcess | Thread-1 |  server.server : server:104 |   New connection from ('127.0.0.1', 53002) connected. 
+2025-06-13 22:59:38 | INFO |MainProcess | Thread-3 |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 22:59:38 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 22:59:38 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 22:59:38 | ERROR |MainProcess | Thread-1 |  server.server : server:189 |  Error processing connection: 'NoneType' object is not iterable|trace stack :None
+2025-06-13 22:59:38 | INFO |MainProcess | Thread-1 |  server.server : server:72 | Active connections: 5
+2025-06-13 22:59:38 | INFO |MainProcess | Thread-1 |  server.server : server:104 |   New connection from ('127.0.0.1', 53003) connected. 
+2025-06-13 22:59:38 | ERROR |MainProcess | Thread-1 |  server.server : server:189 |  Error processing connection: 'NoneType' object is not iterable|trace stack :None
+2025-06-13 22:59:38 | INFO |MainProcess | Thread-1 |  server.server : server:72 | Active connections: 5
+2025-06-13 22:59:40 | INFO |MainProcess | Thread-1 |  server.server : server:104 |   New connection from ('127.0.0.1', 53006) connected. 
+2025-06-13 22:59:40 | INFO |MainProcess | Thread-3 |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 22:59:40 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 22:59:40 | INFO |MainProcess | Thread-2 |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 22:59:40 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 22:59:40 | ERROR |MainProcess | Thread-1 |  server.server : server:189 |  Error processing connection: 'NoneType' object is not iterable|trace stack :None
+2025-06-13 22:59:40 | INFO |MainProcess | Thread-1 |  server.server : server:72 | Active connections: 5
+2025-06-13 22:59:40 | INFO |MainProcess | Thread-1 |  server.server : server:104 |   New connection from ('127.0.0.1', 53007) connected. 
+2025-06-13 22:59:40 | ERROR |MainProcess | Thread-1 |  server.server : server:189 |  Error processing connection: 'NoneType' object is not iterable|trace stack :None
+2025-06-13 22:59:40 | INFO |MainProcess | Thread-1 |  server.server : server:72 | Active connections: 5
+2025-06-13 22:59:42 | INFO |MainProcess | Thread-1 |  server.server : server:104 |   New connection from ('127.0.0.1', 53013) connected. 
+2025-06-13 22:59:42 | INFO |MainProcess | Thread-3 |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 22:59:42 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 22:59:42 | INFO |MainProcess | Thread-2 |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 22:59:42 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 22:59:42 | ERROR |MainProcess | Thread-1 |  server.server : server:189 |  Error processing connection: 'NoneType' object is not iterable|trace stack :None
+2025-06-13 22:59:42 | INFO |MainProcess | Thread-1 |  server.server : server:72 | Active connections: 5
+2025-06-13 22:59:42 | INFO |MainProcess | Thread-1 |  server.server : server:104 |   New connection from ('127.0.0.1', 53014) connected. 
+2025-06-13 22:59:42 | ERROR |MainProcess | Thread-1 |  server.server : server:189 |  Error processing connection: 'NoneType' object is not iterable|trace stack :None
+2025-06-13 22:59:42 | INFO |MainProcess | Thread-1 |  server.server : server:72 | Active connections: 5
+2025-06-13 22:59:44 | INFO |MainProcess | Thread-3 |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 22:59:44 | INFO |MainProcess | Thread-1 |  server.server : server:104 |   New connection from ('127.0.0.1', 53019) connected. 
+2025-06-13 22:59:44 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 22:59:44 | ERROR |MainProcess | Thread-1 |  server.server : server:189 |  Error processing connection: 'NoneType' object is not iterable|trace stack :None
+2025-06-13 22:59:44 | INFO |MainProcess | Thread-1 |  server.server : server:72 | Active connections: 5
+2025-06-13 22:59:44 | INFO |MainProcess | Thread-1 |  server.server : server:104 |   New connection from ('127.0.0.1', 53020) connected. 
+2025-06-13 22:59:44 | INFO |MainProcess | Thread-2 |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 22:59:44 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 22:59:44 | ERROR |MainProcess | Thread-1 |  server.server : server:189 |  Error processing connection: 'NoneType' object is not iterable|trace stack :None
+2025-06-13 22:59:44 | INFO |MainProcess | Thread-1 |  server.server : server:72 | Active connections: 5
+2025-06-13 22:59:46 | INFO |MainProcess | Thread-1 |  server.server : server:104 |   New connection from ('127.0.0.1', 53022) connected. 
+2025-06-13 22:59:46 | INFO |MainProcess | Thread-3 |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 22:59:46 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 22:59:46 | INFO |MainProcess | Thread-2 |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 22:59:46 | ERROR |MainProcess | Thread-1 |  server.server : server:189 |  Error processing connection: 'NoneType' object is not iterable|trace stack :None
+2025-06-13 22:59:46 | INFO |MainProcess | Thread-1 |  server.server : server:72 | Active connections: 5
+2025-06-13 22:59:46 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 22:59:46 | INFO |MainProcess | Thread-1 |  server.server : server:104 |   New connection from ('127.0.0.1', 53023) connected. 
+2025-06-13 22:59:46 | ERROR |MainProcess | Thread-1 |  server.server : server:189 |  Error processing connection: 'NoneType' object is not iterable|trace stack :None
+2025-06-13 22:59:46 | INFO |MainProcess | Thread-1 |  server.server : server:72 | Active connections: 5
+2025-06-13 22:59:48 | INFO |MainProcess | MainThread |  __main__ : main:53 | ----------------------------------------quit Qt application----------------------------------------
+2025-06-13 23:01:48 | INFO |MainProcess | MainThread |  __main__ : main:109 | ----------------------------------------gui_start----------------------------------------
+2025-06-13 23:01:48 | INFO |MainProcess | MainThread |  __main__ : main:112 | loading config start
+2025-06-13 23:01:48 | INFO |MainProcess | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-13 23:01:48 | INFO |MainProcess | MainThread |  __main__ : main:114 | loading config finish
+2025-06-13 23:01:48 | INFO |MainProcess | MainThread |  server.server : server:48 |  Server is init
+2025-06-13 23:01:48 | INFO |MainProcess | MainThread |  server.server : server:53 |  Server is listening on 0.0.0.0:8000.
+2025-06-13 23:01:48 | INFO |MainProcess | MainThread |  __main__ : main:121 | server_thread子线程开始运行
+2025-06-13 23:01:48 | INFO |MainProcess | MainThread |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 23:01:48 | INFO |MainProcess | MainThread |  __main__ : main:143 | sender_thread |AAFL-000001-CAFAF |子线程开始运行
+2025-06-13 23:01:48 | INFO |MainProcess | Thread-1 |  server.server : server:104 |   New connection from ('127.0.0.1', 53415) connected. 
+2025-06-13 23:01:48 | INFO |MainProcess | MainThread |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 23:01:48 | INFO |MainProcess | MainThread |  __main__ : main:143 | sender_thread |AAYL-000002-CAFAF |子线程开始运行
+2025-06-13 23:01:48 | INFO |MainProcess | MainThread |  __main__ : main:156 | start Qt
+2025-06-13 23:01:48 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 23:01:48 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 23:01:48 | ERROR |MainProcess | Thread-1 |  server.server : server:75 | Error connection:print_exception() missing 1 required positional argument: 'exc'|trace stack:None
+2025-06-13 23:01:48 | INFO |MainProcess | Thread-1 |  server.server : server:48 |  Server is init
+2025-06-13 23:01:48 | INFO |MainProcess | Thread-1 |  server.server : server:53 |  Server is listening on 0.0.0.0:8000.
+2025-06-13 23:01:48 | INFO |MainProcess | MainThread |  __main__ : main:175 | Appliacation start
+2025-06-13 23:01:50 | INFO |MainProcess | Thread-3 |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 23:01:50 | INFO |MainProcess | Thread-2 |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 23:01:50 | INFO |MainProcess | Thread-1 |  server.server : server:104 |   New connection from ('127.0.0.1', 53422) connected. 
+2025-06-13 23:01:50 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 23:01:50 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 23:01:50 | ERROR |MainProcess | Thread-1 |  server.server : server:75 | Error connection:print_exception() missing 1 required positional argument: 'exc'|trace stack:None
+2025-06-13 23:01:50 | INFO |MainProcess | Thread-1 |  server.server : server:48 |  Server is init
+2025-06-13 23:01:50 | INFO |MainProcess | Thread-1 |  server.server : server:53 |  Server is listening on 0.0.0.0:8000.
+2025-06-13 23:01:52 | INFO |MainProcess | Thread-2 |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 23:01:52 | INFO |MainProcess | Thread-1 |  server.server : server:104 |   New connection from ('127.0.0.1', 53425) connected. 
+2025-06-13 23:01:52 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 23:01:52 | INFO |MainProcess | Thread-3 |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 23:01:52 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 23:01:52 | ERROR |MainProcess | Thread-1 |  server.server : server:75 | Error connection:print_exception() missing 1 required positional argument: 'exc'|trace stack:None
+2025-06-13 23:01:52 | INFO |MainProcess | Thread-1 |  server.server : server:48 |  Server is init
+2025-06-13 23:01:52 | INFO |MainProcess | Thread-1 |  server.server : server:53 |  Server is listening on 0.0.0.0:8000.
+2025-06-13 23:01:54 | INFO |MainProcess | Thread-1 |  server.server : server:104 |   New connection from ('127.0.0.1', 53431) connected. 
+2025-06-13 23:01:54 | INFO |MainProcess | Thread-3 |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 23:01:54 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 23:01:54 | INFO |MainProcess | Thread-2 |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 23:01:54 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 23:01:54 | ERROR |MainProcess | Thread-1 |  server.server : server:75 | Error connection:print_exception() missing 1 required positional argument: 'exc'|trace stack:None
+2025-06-13 23:01:54 | INFO |MainProcess | Thread-1 |  server.server : server:48 |  Server is init
+2025-06-13 23:01:54 | INFO |MainProcess | Thread-1 |  server.server : server:53 |  Server is listening on 0.0.0.0:8000.
+2025-06-13 23:01:56 | INFO |MainProcess | Thread-1 |  server.server : server:104 |   New connection from ('127.0.0.1', 53438) connected. 
+2025-06-13 23:01:56 | INFO |MainProcess | Thread-2 |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 23:01:56 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 23:01:56 | INFO |MainProcess | Thread-3 |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 23:01:56 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 23:01:56 | ERROR |MainProcess | Thread-1 |  server.server : server:75 | Error connection:print_exception() missing 1 required positional argument: 'exc'|trace stack:None
+2025-06-13 23:01:56 | INFO |MainProcess | Thread-1 |  server.server : server:48 |  Server is init
+2025-06-13 23:01:56 | INFO |MainProcess | Thread-1 |  server.server : server:53 |  Server is listening on 0.0.0.0:8000.
+2025-06-13 23:01:58 | INFO |MainProcess | Thread-1 |  server.server : server:104 |   New connection from ('127.0.0.1', 53444) connected. 
+2025-06-13 23:01:58 | INFO |MainProcess | Thread-2 |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 23:01:58 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 23:01:58 | ERROR |MainProcess | Thread-1 |  server.server : server:75 | Error connection:print_exception() missing 1 required positional argument: 'exc'|trace stack:None
+2025-06-13 23:01:58 | INFO |MainProcess | Thread-1 |  server.server : server:48 |  Server is init
+2025-06-13 23:01:58 | INFO |MainProcess | Thread-1 |  server.server : server:53 |  Server is listening on 0.0.0.0:8000.
+2025-06-13 23:01:58 | INFO |MainProcess | Thread-3 |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 23:01:58 | ERROR |MainProcess | Thread-3 |  server.sender : sender:135 | Error senderAAYL-000002-CAFAF image to server: [WinError 10054] 远程主机强迫关闭了一个现有的连接。 | trace stack:None
+2025-06-13 23:02:00 | INFO |MainProcess | Thread-1 |  server.server : server:104 |   New connection from ('127.0.0.1', 53449) connected. 
+2025-06-13 23:02:00 | INFO |MainProcess | Thread-2 |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 23:02:00 | INFO |MainProcess | Thread-3 |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 23:02:00 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 23:02:00 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 23:02:00 | ERROR |MainProcess | Thread-1 |  server.server : server:75 | Error connection:print_exception() missing 1 required positional argument: 'exc'|trace stack:None
+2025-06-13 23:02:00 | INFO |MainProcess | Thread-1 |  server.server : server:48 |  Server is init
+2025-06-13 23:02:00 | INFO |MainProcess | Thread-1 |  server.server : server:53 |  Server is listening on 0.0.0.0:8000.
+2025-06-13 23:02:02 | INFO |MainProcess | Thread-1 |  server.server : server:104 |   New connection from ('127.0.0.1', 53454) connected. 
+2025-06-13 23:02:02 | INFO |MainProcess | Thread-2 |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 23:02:02 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 23:02:02 | ERROR |MainProcess | Thread-1 |  server.server : server:75 | Error connection:print_exception() missing 1 required positional argument: 'exc'|trace stack:None
+2025-06-13 23:02:02 | INFO |MainProcess | Thread-1 |  server.server : server:48 |  Server is init
+2025-06-13 23:02:02 | INFO |MainProcess | Thread-1 |  server.server : server:53 |  Server is listening on 0.0.0.0:8000.
+2025-06-13 23:02:02 | INFO |MainProcess | Thread-3 |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 23:02:02 | ERROR |MainProcess | Thread-3 |  server.sender : sender:135 | Error senderAAYL-000002-CAFAF image to server: [WinError 10054] 远程主机强迫关闭了一个现有的连接。 | trace stack:None
+2025-06-13 23:02:02 | INFO |MainProcess | MainThread |  __main__ : main:53 | ----------------------------------------quit Qt application----------------------------------------
+2025-06-13 23:02:32 | INFO |MainProcess | MainThread |  __main__ : main:109 | ----------------------------------------gui_start----------------------------------------
+2025-06-13 23:02:32 | INFO |MainProcess | MainThread |  __main__ : main:112 | loading config start
+2025-06-13 23:02:32 | INFO |MainProcess | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-13 23:02:32 | INFO |MainProcess | MainThread |  __main__ : main:114 | loading config finish
+2025-06-13 23:02:32 | INFO |MainProcess | MainThread |  server.server : server:48 |  Server is init
+2025-06-13 23:02:32 | INFO |MainProcess | MainThread |  server.server : server:53 |  Server is listening on 0.0.0.0:8000.
+2025-06-13 23:02:32 | INFO |MainProcess | MainThread |  __main__ : main:121 | server_thread子线程开始运行
+2025-06-13 23:02:32 | INFO |MainProcess | MainThread |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 23:02:32 | INFO |MainProcess | MainThread |  __main__ : main:143 | sender_thread |AAFL-000001-CAFAF |子线程开始运行
+2025-06-13 23:02:32 | INFO |MainProcess | Thread-1 |  server.server : server:104 |   New connection from ('127.0.0.1', 53706) connected. 
+2025-06-13 23:02:32 | INFO |MainProcess | MainThread |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 23:02:32 | INFO |MainProcess | MainThread |  __main__ : main:143 | sender_thread |AAYL-000002-CAFAF |子线程开始运行
+2025-06-13 23:02:32 | INFO |MainProcess | MainThread |  __main__ : main:156 | start Qt
+2025-06-13 23:02:32 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 23:02:32 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 23:02:32 | ERROR |MainProcess | Thread-1 |  server.server : server:189 |  Error processing connection: 'NoneType' object is not iterable|trace stack :None
+2025-06-13 23:02:32 | INFO |MainProcess | Thread-1 |  server.server : server:72 | Active connections: 5
+2025-06-13 23:02:32 | INFO |MainProcess | Thread-1 |  server.server : server:104 |   New connection from ('127.0.0.1', 53707) connected. 
+2025-06-13 23:02:32 | ERROR |MainProcess | Thread-1 |  server.server : server:189 |  Error processing connection: 'NoneType' object is not iterable|trace stack :None
+2025-06-13 23:02:32 | INFO |MainProcess | Thread-1 |  server.server : server:72 | Active connections: 5
+2025-06-13 23:02:32 | INFO |MainProcess | MainThread |  __main__ : main:175 | Appliacation start
+2025-06-13 23:02:34 | INFO |MainProcess | Thread-2 |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 23:02:34 | INFO |MainProcess | Thread-3 |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 23:02:34 | INFO |MainProcess | Thread-1 |  server.server : server:104 |   New connection from ('127.0.0.1', 53712) connected. 
+2025-06-13 23:02:34 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 23:02:34 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 23:02:34 | ERROR |MainProcess | Thread-1 |  server.server : server:189 |  Error processing connection: 'NoneType' object is not iterable|trace stack :None
+2025-06-13 23:02:34 | INFO |MainProcess | Thread-1 |  server.server : server:72 | Active connections: 5
+2025-06-13 23:02:34 | INFO |MainProcess | Thread-1 |  server.server : server:104 |   New connection from ('127.0.0.1', 53713) connected. 
+2025-06-13 23:02:34 | ERROR |MainProcess | Thread-1 |  server.server : server:189 |  Error processing connection: 'NoneType' object is not iterable|trace stack :None
+2025-06-13 23:02:34 | INFO |MainProcess | Thread-1 |  server.server : server:72 | Active connections: 5
+2025-06-13 23:02:36 | INFO |MainProcess | Thread-1 |  server.server : server:104 |   New connection from ('127.0.0.1', 53718) connected. 
+2025-06-13 23:02:36 | INFO |MainProcess | Thread-2 |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 23:02:36 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 23:02:36 | INFO |MainProcess | Thread-3 |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 23:02:36 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 23:02:36 | ERROR |MainProcess | Thread-1 |  server.server : server:189 |  Error processing connection: 'NoneType' object is not iterable|trace stack :None
+2025-06-13 23:02:36 | INFO |MainProcess | Thread-1 |  server.server : server:72 | Active connections: 5
+2025-06-13 23:02:36 | INFO |MainProcess | Thread-1 |  server.server : server:104 |   New connection from ('127.0.0.1', 53719) connected. 
+2025-06-13 23:02:36 | ERROR |MainProcess | Thread-1 |  server.server : server:189 |  Error processing connection: 'NoneType' object is not iterable|trace stack :None
+2025-06-13 23:02:36 | INFO |MainProcess | Thread-1 |  server.server : server:72 | Active connections: 5
+2025-06-13 23:02:37 | INFO |MainProcess | MainThread |  __main__ : main:53 | ----------------------------------------quit Qt application----------------------------------------
+2025-06-13 23:07:08 | INFO |MainProcess | MainThread |  __main__ : main:109 | ----------------------------------------gui_start----------------------------------------
+2025-06-13 23:07:08 | INFO |MainProcess | MainThread |  __main__ : main:112 | loading config start
+2025-06-13 23:07:08 | INFO |MainProcess | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-13 23:07:08 | INFO |MainProcess | MainThread |  __main__ : main:114 | loading config finish
+2025-06-13 23:07:08 | INFO |MainProcess | MainThread |  server.server : server:48 |  Server is init
+2025-06-13 23:07:08 | INFO |MainProcess | MainThread |  server.server : server:53 |  Server is listening on 0.0.0.0:8000.
+2025-06-13 23:07:08 | INFO |MainProcess | MainThread |  __main__ : main:121 | server_thread子线程开始运行
+2025-06-13 23:07:08 | INFO |MainProcess | MainThread |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 23:07:08 | INFO |MainProcess | MainThread |  __main__ : main:143 | sender_thread |AAFL-000001-CAFAF |子线程开始运行
+2025-06-13 23:07:08 | INFO |MainProcess | Thread-1 |  server.server : server:104 |   New connection from ('127.0.0.1', 54441) connected. 
+2025-06-13 23:07:08 | INFO |MainProcess | MainThread |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 23:07:08 | INFO |MainProcess | MainThread |  __main__ : main:143 | sender_thread |AAYL-000002-CAFAF |子线程开始运行
+2025-06-13 23:07:08 | INFO |MainProcess | MainThread |  __main__ : main:156 | start Qt
+2025-06-13 23:07:08 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 23:07:08 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 23:07:08 | ERROR |MainProcess | Thread-1 |  server.server : server:75 | Error connection:'NoneType' object is not iterable|trace stack:None
+2025-06-13 23:07:08 | INFO |MainProcess | Thread-1 |  server.server : server:48 |  Server is init
+2025-06-13 23:07:08 | INFO |MainProcess | Thread-1 |  server.server : server:53 |  Server is listening on 0.0.0.0:8000.
+2025-06-13 23:07:08 | INFO |MainProcess | MainThread |  __main__ : main:175 | Appliacation start
+2025-06-13 23:07:10 | INFO |MainProcess | Thread-3 |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 23:07:10 | INFO |MainProcess | Thread-1 |  server.server : server:104 |   New connection from ('127.0.0.1', 54449) connected. 
+2025-06-13 23:07:10 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 23:07:10 | ERROR |MainProcess | Thread-1 |  server.server : server:75 | Error connection:'NoneType' object is not iterable|trace stack:None
+2025-06-13 23:07:10 | INFO |MainProcess | Thread-1 |  server.server : server:48 |  Server is init
+2025-06-13 23:07:10 | INFO |MainProcess | Thread-1 |  server.server : server:53 |  Server is listening on 0.0.0.0:8000.
+2025-06-13 23:07:10 | INFO |MainProcess | Thread-2 |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 23:07:10 | ERROR |MainProcess | Thread-2 |  server.sender : sender:135 | Error senderAAFL-000001-CAFAF image to server: [WinError 10054] 远程主机强迫关闭了一个现有的连接。 | trace stack:None
+2025-06-13 23:07:12 | INFO |MainProcess | Thread-3 |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 23:07:12 | INFO |MainProcess | Thread-1 |  server.server : server:104 |   New connection from ('127.0.0.1', 54453) connected. 
+2025-06-13 23:07:12 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 23:07:12 | ERROR |MainProcess | Thread-1 |  server.server : server:75 | Error connection:'NoneType' object is not iterable|trace stack:None
+2025-06-13 23:07:12 | INFO |MainProcess | Thread-1 |  server.server : server:48 |  Server is init
+2025-06-13 23:07:12 | INFO |MainProcess | Thread-1 |  server.server : server:53 |  Server is listening on 0.0.0.0:8000.
+2025-06-13 23:07:12 | INFO |MainProcess | Thread-2 |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 23:07:12 | ERROR |MainProcess | Thread-2 |  server.sender : sender:135 | Error senderAAFL-000001-CAFAF image to server: [WinError 10054] 远程主机强迫关闭了一个现有的连接。 | trace stack:None
+2025-06-13 23:07:13 | INFO |MainProcess | MainThread |  __main__ : main:53 | ----------------------------------------quit Qt application----------------------------------------
+2025-06-13 23:07:48 | INFO |MainProcess | MainThread |  __main__ : main:109 | ----------------------------------------gui_start----------------------------------------
+2025-06-13 23:07:48 | INFO |MainProcess | MainThread |  __main__ : main:112 | loading config start
+2025-06-13 23:07:48 | INFO |MainProcess | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-13 23:07:48 | INFO |MainProcess | MainThread |  __main__ : main:114 | loading config finish
+2025-06-13 23:07:48 | INFO |MainProcess | MainThread |  server.server : server:48 |  Server is init
+2025-06-13 23:07:48 | INFO |MainProcess | MainThread |  server.server : server:53 |  Server is listening on 0.0.0.0:8000.
+2025-06-13 23:07:48 | INFO |MainProcess | MainThread |  __main__ : main:121 | server_thread子线程开始运行
+2025-06-13 23:07:48 | INFO |MainProcess | MainThread |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 23:07:48 | INFO |MainProcess | MainThread |  __main__ : main:143 | sender_thread |AAFL-000001-CAFAF |子线程开始运行
+2025-06-13 23:07:48 | INFO |MainProcess | Thread-1 |  server.server : server:104 |   New connection from ('127.0.0.1', 54552) connected. 
+2025-06-13 23:07:48 | INFO |MainProcess | MainThread |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 23:07:48 | INFO |MainProcess | MainThread |  __main__ : main:143 | sender_thread |AAYL-000002-CAFAF |子线程开始运行
+2025-06-13 23:07:48 | INFO |MainProcess | MainThread |  __main__ : main:156 | start Qt
+2025-06-13 23:07:48 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 23:07:48 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 23:07:48 | INFO |MainProcess | MainThread |  __main__ : main:175 | Appliacation start
+2025-06-13 23:07:50 | INFO |MainProcess | Thread-2 |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 23:07:50 | INFO |MainProcess | Thread-3 |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 23:07:50 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 23:07:50 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 23:07:50 | INFO |MainProcess | MainThread |  __main__ : main:53 | ----------------------------------------quit Qt application----------------------------------------
+2025-06-13 23:14:15 | INFO |MainProcess | MainThread |  __main__ : main:116 | ----------------------------------------gui_start----------------------------------------
+2025-06-13 23:14:15 | INFO |MainProcess | MainThread |  __main__ : main:119 | loading config start
+2025-06-13 23:14:15 | INFO |MainProcess | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-13 23:14:15 | INFO |MainProcess | MainThread |  __main__ : main:121 | loading config finish
+2025-06-13 23:14:15 | INFO |MainProcess | MainThread |  server.server : server:47 |  Server is init
+2025-06-13 23:14:15 | INFO |MainProcess | MainThread |  server.server : server:52 |  Server is listening on 0.0.0.0:8000.
+2025-06-13 23:14:15 | INFO |MainProcess | MainThread |  __main__ : main:128 | server_thread子线程开始运行
+2025-06-13 23:14:15 | INFO |MainProcess | MainThread |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 23:14:15 | INFO |MainProcess | MainThread |  __main__ : main:150 | sender_thread |AAFL-000001-CAFAF |子线程开始运行
+2025-06-13 23:14:15 | INFO |MainProcess | Thread-1 |  server.server : server:103 |   New connection from ('127.0.0.1', 55523) connected. 
+2025-06-13 23:14:15 | INFO |MainProcess | MainThread |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 23:14:15 | INFO |MainProcess | MainThread |  __main__ : main:150 | sender_thread |AAYL-000002-CAFAF |子线程开始运行
+2025-06-13 23:14:15 | INFO |MainProcess | MainThread |  __main__ : main:163 | start Qt
+2025-06-13 23:14:15 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 23:14:15 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 23:14:15 | INFO |MainProcess | Thread-1 |  server.server : server:183 | FL000001上传图片
+2025-06-13 23:14:15 | INFO |MainProcess | Thread-1 |  server.server : server:184 |  Saved to ./data_smart_device/\FL_Temp\FL_000001_2025-06-13_23-14-15.png (UID: AAFL-000001-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:14:15 | INFO |MainProcess | Thread-1 |  server.server : server:71 | Active connections: 5
+2025-06-13 23:14:15 | INFO |MainProcess | Thread-1 |  server.server : server:103 |   New connection from ('127.0.0.1', 55524) connected. 
+2025-06-13 23:14:15 | INFO |MainProcess | Thread-1 |  server.server : server:183 | YL000002上传图片
+2025-06-13 23:14:15 | INFO |MainProcess | Thread-1 |  server.server : server:184 |  Saved to ./data_smart_device/\YL_Temp\YL_000002_2025-06-13_23-14-15.png (UID: AAYL-000002-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:14:15 | INFO |MainProcess | Thread-1 |  server.server : server:71 | Active connections: 5
+2025-06-13 23:14:15 | INFO |MainProcess | MainThread |  __main__ : main:182 | Appliacation start
+2025-06-13 23:14:17 | INFO |MainProcess | Thread-2 |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 23:14:17 | INFO |MainProcess | Thread-1 |  server.server : server:103 |   New connection from ('127.0.0.1', 55528) connected. 
+2025-06-13 23:14:17 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 23:14:17 | INFO |MainProcess | Thread-3 |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 23:14:17 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 23:14:17 | INFO |MainProcess | Thread-1 |  server.server : server:183 | FL000001上传图片
+2025-06-13 23:14:17 | INFO |MainProcess | Thread-1 |  server.server : server:184 |  Saved to ./data_smart_device/\FL_Temp\FL_000001_2025-06-13_23-14-17.png (UID: AAFL-000001-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:14:17 | INFO |MainProcess | Thread-1 |  server.server : server:71 | Active connections: 5
+2025-06-13 23:14:17 | INFO |MainProcess | Thread-1 |  server.server : server:103 |   New connection from ('127.0.0.1', 55529) connected. 
+2025-06-13 23:14:17 | INFO |MainProcess | Thread-1 |  server.server : server:183 | YL000002上传图片
+2025-06-13 23:14:17 | INFO |MainProcess | Thread-1 |  server.server : server:184 |  Saved to ./data_smart_device/\YL_Temp\YL_000002_2025-06-13_23-14-17.png (UID: AAYL-000002-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:14:17 | INFO |MainProcess | Thread-1 |  server.server : server:71 | Active connections: 5
+2025-06-13 23:14:19 | INFO |MainProcess | Thread-1 |  server.server : server:103 |   New connection from ('127.0.0.1', 55532) connected. 
+2025-06-13 23:14:19 | INFO |MainProcess | Thread-3 |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 23:14:19 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 23:14:19 | INFO |MainProcess | Thread-2 |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 23:14:19 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 23:14:19 | INFO |MainProcess | Thread-1 |  server.server : server:183 | FL000001上传图片
+2025-06-13 23:14:19 | INFO |MainProcess | Thread-1 |  server.server : server:184 |  Saved to ./data_smart_device/\FL_Temp\FL_000001_2025-06-13_23-14-19.png (UID: AAFL-000001-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:14:19 | INFO |MainProcess | Thread-1 |  server.server : server:71 | Active connections: 5
+2025-06-13 23:14:19 | INFO |MainProcess | Thread-1 |  server.server : server:103 |   New connection from ('127.0.0.1', 55533) connected. 
+2025-06-13 23:14:19 | INFO |MainProcess | Thread-1 |  server.server : server:183 | YL000002上传图片
+2025-06-13 23:14:19 | INFO |MainProcess | Thread-1 |  server.server : server:184 |  Saved to ./data_smart_device/\YL_Temp\YL_000002_2025-06-13_23-14-19.png (UID: AAYL-000002-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:14:19 | INFO |MainProcess | Thread-1 |  server.server : server:71 | Active connections: 5
+2025-06-13 23:14:21 | INFO |MainProcess | Thread-1 |  server.server : server:103 |   New connection from ('127.0.0.1', 55539) connected. 
+2025-06-13 23:14:21 | INFO |MainProcess | Thread-3 |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 23:14:21 | INFO |MainProcess | Thread-2 |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 23:14:21 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 23:14:21 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 23:14:21 | INFO |MainProcess | Thread-1 |  server.server : server:183 | YL000002上传图片
+2025-06-13 23:14:21 | INFO |MainProcess | Thread-1 |  server.server : server:184 |  Saved to ./data_smart_device/\YL_Temp\YL_000002_2025-06-13_23-14-21.png (UID: AAYL-000002-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:14:21 | INFO |MainProcess | Thread-1 |  server.server : server:71 | Active connections: 5
+2025-06-13 23:14:21 | INFO |MainProcess | Thread-1 |  server.server : server:103 |   New connection from ('127.0.0.1', 55540) connected. 
+2025-06-13 23:14:21 | INFO |MainProcess | Thread-1 |  server.server : server:183 | FL000001上传图片
+2025-06-13 23:14:21 | INFO |MainProcess | Thread-1 |  server.server : server:184 |  Saved to ./data_smart_device/\FL_Temp\FL_000001_2025-06-13_23-14-21.png (UID: AAFL-000001-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:14:21 | INFO |MainProcess | Thread-1 |  server.server : server:71 | Active connections: 5
+2025-06-13 23:14:23 | INFO |MainProcess | Thread-3 |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 23:14:23 | INFO |MainProcess | Thread-1 |  server.server : server:103 |   New connection from ('127.0.0.1', 55573) connected. 
+2025-06-13 23:14:23 | INFO |MainProcess | Thread-2 |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 23:14:23 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 23:14:23 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 23:14:23 | INFO |MainProcess | Thread-1 |  server.server : server:183 | YL000002上传图片
+2025-06-13 23:14:23 | INFO |MainProcess | Thread-1 |  server.server : server:184 |  Saved to ./data_smart_device/\YL_Temp\YL_000002_2025-06-13_23-14-23.png (UID: AAYL-000002-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:14:23 | INFO |MainProcess | Thread-1 |  server.server : server:71 | Active connections: 5
+2025-06-13 23:14:23 | INFO |MainProcess | Thread-1 |  server.server : server:103 |   New connection from ('127.0.0.1', 55574) connected. 
+2025-06-13 23:14:23 | INFO |MainProcess | Thread-1 |  server.server : server:183 | FL000001上传图片
+2025-06-13 23:14:23 | INFO |MainProcess | Thread-1 |  server.server : server:184 |  Saved to ./data_smart_device/\FL_Temp\FL_000001_2025-06-13_23-14-23.png (UID: AAFL-000001-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:14:23 | INFO |MainProcess | Thread-1 |  server.server : server:71 | Active connections: 5
+2025-06-13 23:14:25 | INFO |MainProcess | Thread-1 |  server.server : server:103 |   New connection from ('127.0.0.1', 55580) connected. 
+2025-06-13 23:14:25 | INFO |MainProcess | Thread-2 |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 23:14:25 | INFO |MainProcess | Thread-3 |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 23:14:25 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 23:14:25 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 23:14:25 | INFO |MainProcess | Thread-1 |  server.server : server:183 | YL000002上传图片
+2025-06-13 23:14:25 | INFO |MainProcess | Thread-1 |  server.server : server:184 |  Saved to ./data_smart_device/\YL_Temp\YL_000002_2025-06-13_23-14-25.png (UID: AAYL-000002-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:14:25 | INFO |MainProcess | Thread-1 |  server.server : server:71 | Active connections: 5
+2025-06-13 23:14:25 | INFO |MainProcess | Thread-1 |  server.server : server:103 |   New connection from ('127.0.0.1', 55581) connected. 
+2025-06-13 23:14:25 | INFO |MainProcess | Thread-1 |  server.server : server:183 | FL000001上传图片
+2025-06-13 23:14:25 | INFO |MainProcess | Thread-1 |  server.server : server:184 |  Saved to ./data_smart_device/\FL_Temp\FL_000001_2025-06-13_23-14-25.png (UID: AAFL-000001-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:14:25 | INFO |MainProcess | Thread-1 |  server.server : server:71 | Active connections: 5
+2025-06-13 23:14:27 | INFO |MainProcess | Thread-2 |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 23:14:27 | INFO |MainProcess | Thread-1 |  server.server : server:103 |   New connection from ('127.0.0.1', 55586) connected. 
+2025-06-13 23:14:27 | INFO |MainProcess | Thread-3 |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 23:14:27 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 23:14:27 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 23:14:27 | INFO |MainProcess | Thread-1 |  server.server : server:183 | FL000001上传图片
+2025-06-13 23:14:27 | INFO |MainProcess | Thread-1 |  server.server : server:184 |  Saved to ./data_smart_device/\FL_Temp\FL_000001_2025-06-13_23-14-27.png (UID: AAFL-000001-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:14:27 | INFO |MainProcess | Thread-1 |  server.server : server:71 | Active connections: 5
+2025-06-13 23:14:27 | INFO |MainProcess | Thread-1 |  server.server : server:103 |   New connection from ('127.0.0.1', 55587) connected. 
+2025-06-13 23:14:27 | INFO |MainProcess | Thread-1 |  server.server : server:183 | YL000002上传图片
+2025-06-13 23:14:27 | INFO |MainProcess | Thread-1 |  server.server : server:184 |  Saved to ./data_smart_device/\YL_Temp\YL_000002_2025-06-13_23-14-27.png (UID: AAYL-000002-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:14:27 | INFO |MainProcess | Thread-1 |  server.server : server:71 | Active connections: 5
+2025-06-13 23:14:29 | INFO |MainProcess | Thread-1 |  server.server : server:103 |   New connection from ('127.0.0.1', 55589) connected. 
+2025-06-13 23:14:29 | INFO |MainProcess | Thread-3 |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 23:14:29 | INFO |MainProcess | Thread-2 |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 23:14:29 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 23:14:29 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 23:14:29 | INFO |MainProcess | Thread-1 |  server.server : server:183 | FL000001上传图片
+2025-06-13 23:14:29 | INFO |MainProcess | Thread-1 |  server.server : server:184 |  Saved to ./data_smart_device/\FL_Temp\FL_000001_2025-06-13_23-14-29.png (UID: AAFL-000001-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:14:29 | INFO |MainProcess | Thread-1 |  server.server : server:71 | Active connections: 5
+2025-06-13 23:14:29 | INFO |MainProcess | Thread-1 |  server.server : server:103 |   New connection from ('127.0.0.1', 55590) connected. 
+2025-06-13 23:14:29 | INFO |MainProcess | Thread-1 |  server.server : server:183 | YL000002上传图片
+2025-06-13 23:14:29 | INFO |MainProcess | Thread-1 |  server.server : server:184 |  Saved to ./data_smart_device/\YL_Temp\YL_000002_2025-06-13_23-14-29.png (UID: AAYL-000002-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:14:29 | INFO |MainProcess | Thread-1 |  server.server : server:71 | Active connections: 5
+2025-06-13 23:14:31 | INFO |MainProcess | Thread-1 |  server.server : server:103 |   New connection from ('127.0.0.1', 55595) connected. 
+2025-06-13 23:14:31 | INFO |MainProcess | Thread-2 |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 23:14:31 | INFO |MainProcess | Thread-3 |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 23:14:31 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 23:14:31 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 23:14:31 | INFO |MainProcess | Thread-1 |  server.server : server:183 | YL000002上传图片
+2025-06-13 23:14:31 | INFO |MainProcess | Thread-1 |  server.server : server:184 |  Saved to ./data_smart_device/\YL_Temp\YL_000002_2025-06-13_23-14-31.png (UID: AAYL-000002-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:14:31 | INFO |MainProcess | Thread-1 |  server.server : server:71 | Active connections: 5
+2025-06-13 23:14:31 | INFO |MainProcess | Thread-1 |  server.server : server:103 |   New connection from ('127.0.0.1', 55596) connected. 
+2025-06-13 23:14:31 | INFO |MainProcess | Thread-1 |  server.server : server:183 | FL000001上传图片
+2025-06-13 23:14:31 | INFO |MainProcess | Thread-1 |  server.server : server:184 |  Saved to ./data_smart_device/\FL_Temp\FL_000001_2025-06-13_23-14-31.png (UID: AAFL-000001-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:14:31 | INFO |MainProcess | Thread-1 |  server.server : server:71 | Active connections: 5
+2025-06-13 23:14:33 | INFO |MainProcess | Thread-1 |  server.server : server:103 |   New connection from ('127.0.0.1', 55601) connected. 
+2025-06-13 23:14:33 | INFO |MainProcess | Thread-3 |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 23:14:33 | INFO |MainProcess | Thread-2 |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 23:14:33 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 23:14:33 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 23:14:33 | INFO |MainProcess | Thread-1 |  server.server : server:183 | FL000001上传图片
+2025-06-13 23:14:33 | INFO |MainProcess | Thread-1 |  server.server : server:184 |  Saved to ./data_smart_device/\FL_Temp\FL_000001_2025-06-13_23-14-33.png (UID: AAFL-000001-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:14:33 | INFO |MainProcess | Thread-1 |  server.server : server:71 | Active connections: 5
+2025-06-13 23:14:33 | INFO |MainProcess | Thread-1 |  server.server : server:103 |   New connection from ('127.0.0.1', 55602) connected. 
+2025-06-13 23:14:33 | INFO |MainProcess | Thread-1 |  server.server : server:183 | YL000002上传图片
+2025-06-13 23:14:33 | INFO |MainProcess | Thread-1 |  server.server : server:184 |  Saved to ./data_smart_device/\YL_Temp\YL_000002_2025-06-13_23-14-33.png (UID: AAYL-000002-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:14:33 | INFO |MainProcess | Thread-1 |  server.server : server:71 | Active connections: 5
+2025-06-13 23:14:35 | INFO |MainProcess | Thread-3 |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 23:14:35 | INFO |MainProcess | Thread-1 |  server.server : server:103 |   New connection from ('127.0.0.1', 55606) connected. 
+2025-06-13 23:14:35 | INFO |MainProcess | Thread-2 |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 23:14:35 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 23:14:35 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 23:14:35 | INFO |MainProcess | Thread-1 |  server.server : server:183 | YL000002上传图片
+2025-06-13 23:14:35 | INFO |MainProcess | Thread-1 |  server.server : server:184 |  Saved to ./data_smart_device/\YL_Temp\YL_000002_2025-06-13_23-14-35.png (UID: AAYL-000002-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:14:35 | INFO |MainProcess | Thread-1 |  server.server : server:71 | Active connections: 5
+2025-06-13 23:14:35 | INFO |MainProcess | Thread-1 |  server.server : server:103 |   New connection from ('127.0.0.1', 55607) connected. 
+2025-06-13 23:14:35 | INFO |MainProcess | Thread-1 |  server.server : server:183 | FL000001上传图片
+2025-06-13 23:14:35 | INFO |MainProcess | Thread-1 |  server.server : server:184 |  Saved to ./data_smart_device/\FL_Temp\FL_000001_2025-06-13_23-14-35.png (UID: AAFL-000001-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:14:35 | INFO |MainProcess | Thread-1 |  server.server : server:71 | Active connections: 5
+2025-06-13 23:14:37 | INFO |MainProcess | Thread-1 |  server.server : server:103 |   New connection from ('127.0.0.1', 55612) connected. 
+2025-06-13 23:14:37 | INFO |MainProcess | Thread-2 |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 23:14:37 | INFO |MainProcess | Thread-3 |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 23:14:37 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 23:14:37 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 23:14:37 | INFO |MainProcess | Thread-1 |  server.server : server:183 | YL000002上传图片
+2025-06-13 23:14:37 | INFO |MainProcess | Thread-1 |  server.server : server:184 |  Saved to ./data_smart_device/\YL_Temp\YL_000002_2025-06-13_23-14-37.png (UID: AAYL-000002-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:14:37 | INFO |MainProcess | Thread-1 |  server.server : server:71 | Active connections: 5
+2025-06-13 23:14:37 | INFO |MainProcess | Thread-1 |  server.server : server:103 |   New connection from ('127.0.0.1', 55613) connected. 
+2025-06-13 23:14:37 | INFO |MainProcess | Thread-1 |  server.server : server:183 | FL000001上传图片
+2025-06-13 23:14:37 | INFO |MainProcess | Thread-1 |  server.server : server:184 |  Saved to ./data_smart_device/\FL_Temp\FL_000001_2025-06-13_23-14-37.png (UID: AAFL-000001-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:14:37 | INFO |MainProcess | Thread-1 |  server.server : server:71 | Active connections: 5
+2025-06-13 23:14:39 | INFO |MainProcess | Thread-1 |  server.server : server:103 |   New connection from ('127.0.0.1', 55616) connected. 
+2025-06-13 23:14:39 | INFO |MainProcess | Thread-2 |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 23:14:39 | INFO |MainProcess | Thread-3 |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 23:14:39 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 23:14:39 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 23:14:39 | INFO |MainProcess | Thread-1 |  server.server : server:183 | FL000001上传图片
+2025-06-13 23:14:39 | INFO |MainProcess | Thread-1 |  server.server : server:184 |  Saved to ./data_smart_device/\FL_Temp\FL_000001_2025-06-13_23-14-39.png (UID: AAFL-000001-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:14:39 | INFO |MainProcess | Thread-1 |  server.server : server:71 | Active connections: 5
+2025-06-13 23:14:39 | INFO |MainProcess | Thread-1 |  server.server : server:103 |   New connection from ('127.0.0.1', 55617) connected. 
+2025-06-13 23:14:39 | INFO |MainProcess | Thread-1 |  server.server : server:183 | YL000002上传图片
+2025-06-13 23:14:39 | INFO |MainProcess | Thread-1 |  server.server : server:184 |  Saved to ./data_smart_device/\YL_Temp\YL_000002_2025-06-13_23-14-39.png (UID: AAYL-000002-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:14:39 | INFO |MainProcess | Thread-1 |  server.server : server:71 | Active connections: 5
+2025-06-13 23:14:41 | INFO |MainProcess | Thread-1 |  server.server : server:103 |   New connection from ('127.0.0.1', 55621) connected. 
+2025-06-13 23:14:41 | INFO |MainProcess | Thread-3 |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 23:14:41 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 23:14:41 | INFO |MainProcess | Thread-2 |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 23:14:41 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 23:14:41 | INFO |MainProcess | Thread-1 |  server.server : server:183 | FL000001上传图片
+2025-06-13 23:14:41 | INFO |MainProcess | Thread-1 |  server.server : server:184 |  Saved to ./data_smart_device/\FL_Temp\FL_000001_2025-06-13_23-14-41.png (UID: AAFL-000001-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:14:41 | INFO |MainProcess | Thread-1 |  server.server : server:71 | Active connections: 5
+2025-06-13 23:14:41 | INFO |MainProcess | Thread-1 |  server.server : server:103 |   New connection from ('127.0.0.1', 55622) connected. 
+2025-06-13 23:14:41 | INFO |MainProcess | Thread-1 |  server.server : server:183 | YL000002上传图片
+2025-06-13 23:14:41 | INFO |MainProcess | Thread-1 |  server.server : server:184 |  Saved to ./data_smart_device/\YL_Temp\YL_000002_2025-06-13_23-14-41.png (UID: AAYL-000002-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:14:41 | INFO |MainProcess | Thread-1 |  server.server : server:71 | Active connections: 5
+2025-06-13 23:14:43 | INFO |MainProcess | Thread-3 |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 23:14:43 | INFO |MainProcess | Thread-1 |  server.server : server:103 |   New connection from ('127.0.0.1', 55627) connected. 
+2025-06-13 23:14:43 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 23:14:43 | INFO |MainProcess | Thread-1 |  server.server : server:183 | YL000002上传图片
+2025-06-13 23:14:43 | INFO |MainProcess | Thread-1 |  server.server : server:184 |  Saved to ./data_smart_device/\YL_Temp\YL_000002_2025-06-13_23-14-43.png (UID: AAYL-000002-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:14:43 | INFO |MainProcess | Thread-1 |  server.server : server:71 | Active connections: 5
+2025-06-13 23:14:43 | INFO |MainProcess | Thread-2 |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 23:14:43 | INFO |MainProcess | Thread-1 |  server.server : server:103 |   New connection from ('127.0.0.1', 55628) connected. 
+2025-06-13 23:14:43 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 23:14:43 | INFO |MainProcess | Thread-1 |  server.server : server:183 | FL000001上传图片
+2025-06-13 23:14:43 | INFO |MainProcess | Thread-1 |  server.server : server:184 |  Saved to ./data_smart_device/\FL_Temp\FL_000001_2025-06-13_23-14-43.png (UID: AAFL-000001-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:14:43 | INFO |MainProcess | Thread-1 |  server.server : server:71 | Active connections: 5
+2025-06-13 23:36:52 | INFO |MainProcess | MainThread |  __main__ : main:116 | ----------------------------------------gui_start----------------------------------------
+2025-06-13 23:36:52 | INFO |MainProcess | MainThread |  __main__ : main:119 | loading config start
+2025-06-13 23:36:52 | INFO |MainProcess | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-13 23:36:52 | INFO |MainProcess | MainThread |  __main__ : main:121 | loading config finish
+2025-06-13 23:36:52 | INFO |MainProcess | MainThread |  server.server : server:47 |  Server is init
+2025-06-13 23:36:52 | INFO |MainProcess | MainThread |  server.server : server:52 |  Server is listening on 0.0.0.0:8000.
+2025-06-13 23:36:52 | INFO |MainProcess | MainThread |  __main__ : main:128 | server_thread子线程开始运行
+2025-06-13 23:36:52 | INFO |MainProcess | MainThread |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 23:36:52 | INFO |MainProcess | MainThread |  __main__ : main:150 | sender_thread |AAFL-000001-CAFAF |子线程开始运行
+2025-06-13 23:36:52 | INFO |MainProcess | Thread-1 |  server.server : server:104 |   New connection from ('127.0.0.1', 58890) connected. 
+2025-06-13 23:36:52 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 23:36:52 | INFO |MainProcess | Thread-1 |  server.server : server:184 | FL000001上传图片
+2025-06-13 23:36:52 | INFO |MainProcess | Thread-1 |  server.server : server:185 |  Saved to ./data_smart_device/\FL_Temp\FL_000001_2025-06-13_23-36-52.png (UID: AAFL-000001-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:36:52 | INFO |MainProcess | Thread-1 |  server.server : server:71 | Active connections: 4
+2025-06-13 23:36:52 | INFO |MainProcess | MainThread |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 23:36:52 | INFO |MainProcess | MainThread |  __main__ : main:150 | sender_thread |AAYL-000002-CAFAF |子线程开始运行
+2025-06-13 23:36:52 | INFO |MainProcess | MainThread |  __main__ : main:163 | start Qt
+2025-06-13 23:36:52 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 23:36:52 | INFO |MainProcess | MainThread |  tab_7 : tab_7:81 | status update thread start
+2025-06-13 23:36:52 | INFO |MainProcess | MainThread |  __main__ : main:182 | Appliacation start
+2025-06-13 23:36:54 | INFO |MainProcess | Thread-3 |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 23:36:54 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 23:36:54 | INFO |MainProcess | Thread-2 |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 23:36:54 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 23:36:56 | INFO |MainProcess | Thread-3 |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 23:36:56 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 23:36:56 | INFO |MainProcess | Thread-2 |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 23:36:56 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 23:36:58 | INFO |MainProcess | Thread-3 |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 23:36:58 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 23:36:58 | INFO |MainProcess | Thread-2 |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 23:36:58 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 23:36:59 | INFO |MainProcess | MainThread |  __main__ : main:53 | ----------------------------------------quit Qt application----------------------------------------
+2025-06-13 23:44:15 | INFO |MainProcess | MainThread |  __main__ : main:116 | ----------------------------------------gui_start----------------------------------------
+2025-06-13 23:44:15 | INFO |MainProcess | MainThread |  __main__ : main:119 | loading config start
+2025-06-13 23:44:15 | INFO |MainProcess | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-13 23:44:15 | INFO |MainProcess | MainThread |  __main__ : main:121 | loading config finish
+2025-06-13 23:44:15 | INFO |MainProcess | MainThread |  server.server : server:47 |  Server is init
+2025-06-13 23:44:15 | INFO |MainProcess | MainThread |  server.server : server:52 |  Server is listening on 0.0.0.0:8000.
+2025-06-13 23:44:15 | INFO |MainProcess | MainThread |  __main__ : main:128 | server_thread子线程开始运行
+2025-06-13 23:44:15 | INFO |MainProcess | MainThread |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 23:44:15 | INFO |MainProcess | MainThread |  __main__ : main:150 | sender_thread |AAFL-000001-CAFAF |子线程开始运行
+2025-06-13 23:44:15 | INFO |MainProcess | Thread-1 |  server.server : server:104 |   New connection from ('127.0.0.1', 60010) connected. 
+2025-06-13 23:44:15 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 23:44:15 | INFO |MainProcess | Thread-1 |  server.server : server:184 | FL000001上传图片
+2025-06-13 23:44:15 | INFO |MainProcess | Thread-1 |  server.server : server:185 |  Saved to ./data_smart_device/\FL_Temp\FL_000001_2025-06-13_23-44-15.png (UID: AAFL-000001-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:44:15 | INFO |MainProcess | Thread-1 |  server.server : server:71 | Active connections: 4
+2025-06-13 23:44:15 | INFO |MainProcess | MainThread |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 23:44:15 | INFO |MainProcess | MainThread |  __main__ : main:150 | sender_thread |AAYL-000002-CAFAF |子线程开始运行
+2025-06-13 23:44:15 | INFO |MainProcess | MainThread |  __main__ : main:163 | start Qt
+2025-06-13 23:44:15 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 23:44:15 | INFO |MainProcess | MainThread |  tab_7 : tab_7:132 | status update thread start
+2025-06-13 23:44:15 | INFO |MainProcess | MainThread |  __main__ : main:182 | Appliacation start
+2025-06-13 23:44:17 | INFO |MainProcess | Thread-2 |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 23:44:17 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 23:44:17 | INFO |MainProcess | Thread-3 |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 23:44:17 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 23:44:18 | INFO |MainProcess | MainThread |  __main__ : main:53 | ----------------------------------------quit Qt application----------------------------------------
+2025-06-13 23:44:29 | INFO |MainProcess | MainThread |  __main__ : main:116 | ----------------------------------------gui_start----------------------------------------
+2025-06-13 23:44:29 | INFO |MainProcess | MainThread |  __main__ : main:119 | loading config start
+2025-06-13 23:44:29 | INFO |MainProcess | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-13 23:44:29 | INFO |MainProcess | MainThread |  __main__ : main:121 | loading config finish
+2025-06-13 23:44:29 | INFO |MainProcess | MainThread |  server.server : server:49 |  Server is init
+2025-06-13 23:44:29 | INFO |MainProcess | MainThread |  server.server : server:54 |  Server is listening on 0.0.0.0:8000.
+2025-06-13 23:44:29 | INFO |MainProcess | MainThread |  __main__ : main:128 | server_thread子线程开始运行
+2025-06-13 23:44:29 | INFO |MainProcess | MainThread |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 23:44:29 | INFO |MainProcess | MainThread |  __main__ : main:150 | sender_thread |AAFL-000001-CAFAF |子线程开始运行
+2025-06-13 23:44:29 | INFO |MainProcess | Thread-1 |  server.server : server:106 |   New connection from ('127.0.0.1', 60040) connected. 
+2025-06-13 23:44:29 | INFO |MainProcess | MainThread |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 23:44:29 | INFO |MainProcess | MainThread |  __main__ : main:150 | sender_thread |AAYL-000002-CAFAF |子线程开始运行
+2025-06-13 23:44:29 | INFO |MainProcess | MainThread |  __main__ : main:163 | start Qt
+2025-06-13 23:44:29 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 23:44:29 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 23:44:29 | INFO |MainProcess | Thread-1 |  server.server : server:186 | FL000001上传图片
+2025-06-13 23:44:29 | INFO |MainProcess | Thread-1 |  server.server : server:187 |  Saved to ./data_smart_device/\FL_Temp\FL_000001_2025-06-13_23-44-29.png (UID: AAFL-000001-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:44:29 | INFO |MainProcess | Thread-1 |  server.server : server:73 | Active connections: 5
+2025-06-13 23:44:29 | INFO |MainProcess | MainThread |  tab_7 : tab_7:132 | status update thread start
+2025-06-13 23:44:29 | INFO |MainProcess | MainThread |  __main__ : main:182 | Appliacation start
+2025-06-13 23:44:30 | INFO |MainProcess | Thread-1 |  server.server : server:106 |   New connection from ('127.0.0.1', 60041) connected. 
+2025-06-13 23:44:30 | INFO |MainProcess | Thread-1 |  server.server : server:186 | YL000002上传图片
+2025-06-13 23:44:30 | INFO |MainProcess | Thread-1 |  server.server : server:187 |  Saved to ./data_smart_device/\YL_Temp\YL_000002_2025-06-13_23-44-30.png (UID: AAYL-000002-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:44:30 | INFO |MainProcess | Thread-1 |  server.server : server:73 | Active connections: 5
+2025-06-13 23:44:31 | INFO |MainProcess | Thread-1 |  server.server : server:106 |   New connection from ('127.0.0.1', 60043) connected. 
+2025-06-13 23:44:31 | INFO |MainProcess | Thread-2 |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 23:44:31 | INFO |MainProcess | Thread-3 |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 23:44:31 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 23:44:31 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 23:44:31 | INFO |MainProcess | Thread-1 |  server.server : server:186 | YL000002上传图片
+2025-06-13 23:44:31 | INFO |MainProcess | Thread-1 |  server.server : server:187 |  Saved to ./data_smart_device/\YL_Temp\YL_000002_2025-06-13_23-44-31.png (UID: AAYL-000002-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:44:31 | INFO |MainProcess | Thread-1 |  server.server : server:73 | Active connections: 5
+2025-06-13 23:44:32 | INFO |MainProcess | Thread-1 |  server.server : server:106 |   New connection from ('127.0.0.1', 60044) connected. 
+2025-06-13 23:44:32 | INFO |MainProcess | Thread-1 |  server.server : server:186 | FL000001上传图片
+2025-06-13 23:44:32 | INFO |MainProcess | Thread-1 |  server.server : server:187 |  Saved to ./data_smart_device/\FL_Temp\FL_000001_2025-06-13_23-44-32.png (UID: AAFL-000001-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:44:32 | INFO |MainProcess | Thread-1 |  server.server : server:73 | Active connections: 5
+2025-06-13 23:44:33 | INFO |MainProcess | Thread-3 |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 23:44:33 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 23:44:33 | INFO |MainProcess | Thread-1 |  server.server : server:106 |   New connection from ('127.0.0.1', 60050) connected. 
+2025-06-13 23:44:33 | INFO |MainProcess | Thread-2 |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 23:44:33 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 23:44:33 | INFO |MainProcess | Thread-1 |  server.server : server:186 | FL000001上传图片
+2025-06-13 23:44:33 | INFO |MainProcess | Thread-1 |  server.server : server:187 |  Saved to ./data_smart_device/\FL_Temp\FL_000001_2025-06-13_23-44-33.png (UID: AAFL-000001-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:44:33 | INFO |MainProcess | Thread-1 |  server.server : server:73 | Active connections: 5
+2025-06-13 23:44:34 | INFO |MainProcess | Thread-1 |  server.server : server:106 |   New connection from ('127.0.0.1', 60051) connected. 
+2025-06-13 23:44:34 | INFO |MainProcess | Thread-1 |  server.server : server:186 | YL000002上传图片
+2025-06-13 23:44:34 | INFO |MainProcess | Thread-1 |  server.server : server:187 |  Saved to ./data_smart_device/\YL_Temp\YL_000002_2025-06-13_23-44-34.png (UID: AAYL-000002-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:44:34 | INFO |MainProcess | Thread-1 |  server.server : server:73 | Active connections: 5
+2025-06-13 23:44:35 | INFO |MainProcess | Thread-3 |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 23:44:35 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 23:44:35 | INFO |MainProcess | Thread-1 |  server.server : server:106 |   New connection from ('127.0.0.1', 60055) connected. 
+2025-06-13 23:44:35 | INFO |MainProcess | Thread-1 |  server.server : server:186 | YL000002上传图片
+2025-06-13 23:44:35 | INFO |MainProcess | Thread-1 |  server.server : server:187 |  Saved to ./data_smart_device/\YL_Temp\YL_000002_2025-06-13_23-44-35.png (UID: AAYL-000002-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:44:35 | INFO |MainProcess | Thread-1 |  server.server : server:73 | Active connections: 5
+2025-06-13 23:44:35 | INFO |MainProcess | Thread-2 |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 23:44:35 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 23:44:36 | INFO |MainProcess | Thread-1 |  server.server : server:106 |   New connection from ('127.0.0.1', 60056) connected. 
+2025-06-13 23:44:36 | INFO |MainProcess | Thread-1 |  server.server : server:186 | FL000001上传图片
+2025-06-13 23:44:36 | INFO |MainProcess | Thread-1 |  server.server : server:187 |  Saved to ./data_smart_device/\FL_Temp\FL_000001_2025-06-13_23-44-36.png (UID: AAFL-000001-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:44:36 | INFO |MainProcess | Thread-1 |  server.server : server:73 | Active connections: 5
+2025-06-13 23:44:37 | INFO |MainProcess | Thread-3 |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 23:44:37 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 23:44:37 | INFO |MainProcess | Thread-1 |  server.server : server:106 |   New connection from ('127.0.0.1', 60060) connected. 
+2025-06-13 23:44:37 | INFO |MainProcess | Thread-1 |  server.server : server:186 | YL000002上传图片
+2025-06-13 23:44:37 | INFO |MainProcess | Thread-1 |  server.server : server:187 |  Saved to ./data_smart_device/\YL_Temp\YL_000002_2025-06-13_23-44-37.png (UID: AAYL-000002-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:44:37 | INFO |MainProcess | Thread-1 |  server.server : server:73 | Active connections: 5
+2025-06-13 23:44:37 | INFO |MainProcess | Thread-2 |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 23:44:37 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 23:44:38 | INFO |MainProcess | Thread-1 |  server.server : server:106 |   New connection from ('127.0.0.1', 60061) connected. 
+2025-06-13 23:44:38 | INFO |MainProcess | Thread-1 |  server.server : server:186 | FL000001上传图片
+2025-06-13 23:44:38 | INFO |MainProcess | Thread-1 |  server.server : server:187 |  Saved to ./data_smart_device/\FL_Temp\FL_000001_2025-06-13_23-44-38.png (UID: AAFL-000001-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:44:38 | INFO |MainProcess | Thread-1 |  server.server : server:73 | Active connections: 5
+2025-06-13 23:44:39 | INFO |MainProcess | Thread-3 |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 23:44:39 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 23:44:39 | INFO |MainProcess | Thread-1 |  server.server : server:106 |   New connection from ('127.0.0.1', 60065) connected. 
+2025-06-13 23:44:39 | INFO |MainProcess | Thread-1 |  server.server : server:186 | YL000002上传图片
+2025-06-13 23:44:39 | INFO |MainProcess | Thread-1 |  server.server : server:187 |  Saved to ./data_smart_device/\YL_Temp\YL_000002_2025-06-13_23-44-39.png (UID: AAYL-000002-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:44:39 | INFO |MainProcess | Thread-1 |  server.server : server:73 | Active connections: 5
+2025-06-13 23:44:39 | INFO |MainProcess | Thread-2 |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 23:44:39 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 23:44:40 | INFO |MainProcess | MainThread |  __main__ : main:53 | ----------------------------------------quit Qt application----------------------------------------
+2025-06-13 23:56:07 | INFO |MainProcess | MainThread |  __main__ : main:116 | ----------------------------------------gui_start----------------------------------------
+2025-06-13 23:56:07 | INFO |MainProcess | MainThread |  __main__ : main:119 | loading config start
+2025-06-13 23:56:07 | INFO |MainProcess | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-13 23:56:07 | INFO |MainProcess | MainThread |  __main__ : main:121 | loading config finish
+2025-06-13 23:56:07 | INFO |MainProcess | MainThread |  server.server : server:49 |  Server is init
+2025-06-13 23:56:07 | INFO |MainProcess | MainThread |  server.server : server:54 |  Server is listening on 0.0.0.0:8000.
+2025-06-13 23:56:07 | INFO |MainProcess | MainThread |  __main__ : main:128 | server_thread子线程开始运行
+2025-06-13 23:56:07 | INFO |MainProcess | MainThread |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 23:56:07 | INFO |MainProcess | MainThread |  __main__ : main:150 | sender_thread |AAFL-000001-CAFAF |子线程开始运行
+2025-06-13 23:56:07 | INFO |MainProcess | Thread-1 |  server.server : server:106 |   New connection from ('127.0.0.1', 61836) connected. 
+2025-06-13 23:56:07 | INFO |MainProcess | MainThread |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 23:56:07 | INFO |MainProcess | MainThread |  __main__ : main:150 | sender_thread |AAYL-000002-CAFAF |子线程开始运行
+2025-06-13 23:56:07 | INFO |MainProcess | MainThread |  __main__ : main:163 | start Qt
+2025-06-13 23:56:07 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 23:56:07 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 23:56:07 | INFO |MainProcess | Thread-1 |  server.server : server:186 | FL000001上传图片
+2025-06-13 23:56:07 | INFO |MainProcess | Thread-1 |  server.server : server:187 |  Saved to ./data_smart_device/\FL_Temp\FL_000001_2025-06-13_23-56-07.png (UID: AAFL-000001-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:56:07 | INFO |MainProcess | Thread-1 |  server.server : server:73 | Active connections: 5
+2025-06-13 23:56:07 | INFO |MainProcess | MainThread |  tab_7 : tab_7:118 | status update thread start
+2025-06-13 23:56:07 | INFO |MainProcess | MainThread |  __main__ : main:182 | Appliacation start
+2025-06-13 23:56:58 | INFO |MainProcess | MainThread |  __main__ : main:116 | ----------------------------------------gui_start----------------------------------------
+2025-06-13 23:56:58 | INFO |MainProcess | MainThread |  __main__ : main:119 | loading config start
+2025-06-13 23:56:58 | INFO |MainProcess | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-13 23:56:58 | INFO |MainProcess | MainThread |  __main__ : main:121 | loading config finish
+2025-06-13 23:56:58 | INFO |MainProcess | MainThread |  server.server : server:49 |  Server is init
+2025-06-13 23:56:58 | INFO |MainProcess | MainThread |  server.server : server:54 |  Server is listening on 0.0.0.0:8000.
+2025-06-13 23:56:58 | INFO |MainProcess | MainThread |  __main__ : main:128 | server_thread子线程开始运行
+2025-06-13 23:56:58 | INFO |MainProcess | MainThread |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 23:56:58 | INFO |MainProcess | MainThread |  __main__ : main:150 | sender_thread |AAFL-000001-CAFAF |子线程开始运行
+2025-06-13 23:56:58 | INFO |MainProcess | Thread-1 |  server.server : server:106 |   New connection from ('127.0.0.1', 61967) connected. 
+2025-06-13 23:56:58 | INFO |MainProcess | MainThread |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 23:56:58 | INFO |MainProcess | MainThread |  __main__ : main:150 | sender_thread |AAYL-000002-CAFAF |子线程开始运行
+2025-06-13 23:56:58 | INFO |MainProcess | MainThread |  __main__ : main:163 | start Qt
+2025-06-13 23:56:58 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 23:56:58 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 23:56:58 | INFO |MainProcess | Thread-1 |  server.server : server:186 | FL000001上传图片
+2025-06-13 23:56:58 | INFO |MainProcess | Thread-1 |  server.server : server:187 |  Saved to ./data_smart_device/\FL_Temp\FL_000001_2025-06-13_23-56-58.png (UID: AAFL-000001-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:56:58 | INFO |MainProcess | Thread-1 |  server.server : server:73 | Active connections: 5
+2025-06-13 23:56:58 | INFO |MainProcess | MainThread |  tab_7 : tab_7:121 | status update thread start
+2025-06-13 23:56:58 | INFO |MainProcess | MainThread |  __main__ : main:182 | Appliacation start
+2025-06-13 23:57:41 | INFO |MainProcess | MainThread |  __main__ : main:116 | ----------------------------------------gui_start----------------------------------------
+2025-06-13 23:57:41 | INFO |MainProcess | MainThread |  __main__ : main:119 | loading config start
+2025-06-13 23:57:41 | INFO |MainProcess | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-13 23:57:41 | INFO |MainProcess | MainThread |  __main__ : main:121 | loading config finish
+2025-06-13 23:57:41 | INFO |MainProcess | MainThread |  server.server : server:49 |  Server is init
+2025-06-13 23:57:41 | INFO |MainProcess | MainThread |  server.server : server:54 |  Server is listening on 0.0.0.0:8000.
+2025-06-13 23:57:41 | INFO |MainProcess | MainThread |  __main__ : main:128 | server_thread子线程开始运行
+2025-06-13 23:57:41 | INFO |MainProcess | Thread-1 |  server.server : server:106 |   New connection from ('127.0.0.1', 62081) connected. 
+2025-06-13 23:57:41 | INFO |MainProcess | MainThread |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 23:57:41 | INFO |MainProcess | MainThread |  __main__ : main:150 | sender_thread |AAFL-000001-CAFAF |子线程开始运行
+2025-06-13 23:57:41 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 23:57:41 | INFO |MainProcess | Thread-1 |  server.server : server:186 | FL000001上传图片
+2025-06-13 23:57:41 | INFO |MainProcess | Thread-1 |  server.server : server:187 |  Saved to ./data_smart_device/\FL_Temp\FL_000001_2025-06-13_23-57-41.png (UID: AAFL-000001-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:57:41 | INFO |MainProcess | Thread-1 |  server.server : server:73 | Active connections: 4
+2025-06-13 23:57:41 | INFO |MainProcess | MainThread |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 23:57:41 | INFO |MainProcess | MainThread |  __main__ : main:150 | sender_thread |AAYL-000002-CAFAF |子线程开始运行
+2025-06-13 23:57:41 | INFO |MainProcess | MainThread |  __main__ : main:163 | start Qt
+2025-06-13 23:57:41 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 23:57:41 | INFO |MainProcess | MainThread |  tab_7 : tab_7:121 | status update thread start
+2025-06-13 23:57:41 | INFO |MainProcess | MainThread |  __main__ : main:182 | Appliacation start
+2025-06-13 23:59:08 | INFO |MainProcess | MainThread |  __main__ : main:116 | ----------------------------------------gui_start----------------------------------------
+2025-06-13 23:59:08 | INFO |MainProcess | MainThread |  __main__ : main:119 | loading config start
+2025-06-13 23:59:08 | INFO |MainProcess | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-13 23:59:08 | INFO |MainProcess | MainThread |  __main__ : main:121 | loading config finish
+2025-06-13 23:59:08 | INFO |MainProcess | MainThread |  server.server : server:49 |  Server is init
+2025-06-13 23:59:08 | INFO |MainProcess | MainThread |  server.server : server:54 |  Server is listening on 0.0.0.0:8000.
+2025-06-13 23:59:08 | INFO |MainProcess | MainThread |  __main__ : main:128 | server_thread子线程开始运行
+2025-06-13 23:59:08 | INFO |MainProcess | MainThread |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 23:59:08 | INFO |MainProcess | MainThread |  __main__ : main:150 | sender_thread |AAFL-000001-CAFAF |子线程开始运行
+2025-06-13 23:59:08 | INFO |MainProcess | Thread-1 |  server.server : server:106 |   New connection from ('127.0.0.1', 62347) connected. 
+2025-06-13 23:59:08 | INFO |MainProcess | MainThread |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 23:59:08 | INFO |MainProcess | MainThread |  __main__ : main:150 | sender_thread |AAYL-000002-CAFAF |子线程开始运行
+2025-06-13 23:59:08 | INFO |MainProcess | MainThread |  __main__ : main:163 | start Qt
+2025-06-13 23:59:08 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 23:59:08 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 23:59:08 | INFO |MainProcess | Thread-1 |  server.server : server:186 | FL000001上传图片
+2025-06-13 23:59:08 | INFO |MainProcess | Thread-1 |  server.server : server:187 |  Saved to ./data_smart_device/\FL_Temp\FL_000001_2025-06-13_23-59-08.png (UID: AAFL-000001-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:59:08 | INFO |MainProcess | Thread-1 |  server.server : server:73 | Active connections: 5
+2025-06-13 23:59:08 | INFO |MainProcess | MainThread |  tab_7 : tab_7:121 | status update thread start
+2025-06-13 23:59:08 | INFO |MainProcess | MainThread |  __main__ : main:182 | Appliacation start
+2025-06-13 23:59:09 | INFO |MainProcess | Thread-1 |  server.server : server:106 |   New connection from ('127.0.0.1', 62348) connected. 
+2025-06-13 23:59:09 | INFO |MainProcess | Thread-1 |  server.server : server:186 | YL000002上传图片
+2025-06-13 23:59:09 | INFO |MainProcess | Thread-1 |  server.server : server:187 |  Saved to ./data_smart_device/\YL_Temp\YL_000002_2025-06-13_23-59-09.png (UID: AAYL-000002-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:59:09 | INFO |MainProcess | Thread-1 |  server.server : server:73 | Active connections: 5
+2025-06-13 23:59:10 | INFO |MainProcess | Thread-3 |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 23:59:10 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 23:59:10 | INFO |MainProcess | Thread-1 |  server.server : server:106 |   New connection from ('127.0.0.1', 62353) connected. 
+2025-06-13 23:59:10 | INFO |MainProcess | Thread-1 |  server.server : server:186 | YL000002上传图片
+2025-06-13 23:59:10 | INFO |MainProcess | Thread-1 |  server.server : server:187 |  Saved to ./data_smart_device/\YL_Temp\YL_000002_2025-06-13_23-59-10.png (UID: AAYL-000002-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:59:10 | INFO |MainProcess | Thread-1 |  server.server : server:73 | Active connections: 5
+2025-06-13 23:59:10 | INFO |MainProcess | Thread-2 |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 23:59:10 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 23:59:11 | INFO |MainProcess | Thread-1 |  server.server : server:106 |   New connection from ('127.0.0.1', 62354) connected. 
+2025-06-13 23:59:11 | INFO |MainProcess | Thread-1 |  server.server : server:186 | FL000001上传图片
+2025-06-13 23:59:11 | INFO |MainProcess | Thread-1 |  server.server : server:187 |  Saved to ./data_smart_device/\FL_Temp\FL_000001_2025-06-13_23-59-11.png (UID: AAFL-000001-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:59:11 | INFO |MainProcess | Thread-1 |  server.server : server:73 | Active connections: 5
+2025-06-13 23:59:12 | INFO |MainProcess | Thread-3 |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 23:59:12 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 23:59:12 | INFO |MainProcess | Thread-1 |  server.server : server:106 |   New connection from ('127.0.0.1', 62356) connected. 
+2025-06-13 23:59:12 | INFO |MainProcess | Thread-1 |  server.server : server:186 | YL000002上传图片
+2025-06-13 23:59:12 | INFO |MainProcess | Thread-1 |  server.server : server:187 |  Saved to ./data_smart_device/\YL_Temp\YL_000002_2025-06-13_23-59-12.png (UID: AAYL-000002-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:59:12 | INFO |MainProcess | Thread-1 |  server.server : server:73 | Active connections: 5
+2025-06-13 23:59:12 | INFO |MainProcess | Thread-2 |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 23:59:12 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 23:59:13 | INFO |MainProcess | Thread-1 |  server.server : server:106 |   New connection from ('127.0.0.1', 62357) connected. 
+2025-06-13 23:59:13 | INFO |MainProcess | Thread-1 |  server.server : server:186 | FL000001上传图片
+2025-06-13 23:59:13 | INFO |MainProcess | Thread-1 |  server.server : server:187 |  Saved to ./data_smart_device/\FL_Temp\FL_000001_2025-06-13_23-59-13.png (UID: AAFL-000001-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:59:13 | INFO |MainProcess | Thread-1 |  server.server : server:73 | Active connections: 5
+2025-06-13 23:59:14 | INFO |MainProcess | Thread-3 |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 23:59:14 | INFO |MainProcess | Thread-2 |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 23:59:14 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 23:59:14 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 23:59:14 | INFO |MainProcess | Thread-1 |  server.server : server:106 |   New connection from ('127.0.0.1', 62362) connected. 
+2025-06-13 23:59:14 | INFO |MainProcess | Thread-1 |  server.server : server:186 | YL000002上传图片
+2025-06-13 23:59:14 | INFO |MainProcess | Thread-1 |  server.server : server:187 |  Saved to ./data_smart_device/\YL_Temp\YL_000002_2025-06-13_23-59-14.png (UID: AAYL-000002-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:59:14 | INFO |MainProcess | Thread-1 |  server.server : server:73 | Active connections: 5
+2025-06-13 23:59:15 | INFO |MainProcess | Thread-1 |  server.server : server:106 |   New connection from ('127.0.0.1', 62363) connected. 
+2025-06-13 23:59:15 | INFO |MainProcess | Thread-1 |  server.server : server:186 | FL000001上传图片
+2025-06-13 23:59:15 | INFO |MainProcess | Thread-1 |  server.server : server:187 |  Saved to ./data_smart_device/\FL_Temp\FL_000001_2025-06-13_23-59-15.png (UID: AAFL-000001-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:59:15 | INFO |MainProcess | Thread-1 |  server.server : server:73 | Active connections: 5
+2025-06-13 23:59:16 | INFO |MainProcess | Thread-2 |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 23:59:16 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 23:59:16 | INFO |MainProcess | Thread-1 |  server.server : server:106 |   New connection from ('127.0.0.1', 62368) connected. 
+2025-06-13 23:59:16 | INFO |MainProcess | Thread-3 |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 23:59:16 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 23:59:16 | INFO |MainProcess | Thread-1 |  server.server : server:186 | YL000002上传图片
+2025-06-13 23:59:16 | INFO |MainProcess | Thread-1 |  server.server : server:187 |  Saved to ./data_smart_device/\YL_Temp\YL_000002_2025-06-13_23-59-16.png (UID: AAYL-000002-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:59:16 | INFO |MainProcess | Thread-1 |  server.server : server:73 | Active connections: 5
+2025-06-13 23:59:17 | INFO |MainProcess | Thread-1 |  server.server : server:106 |   New connection from ('127.0.0.1', 62369) connected. 
+2025-06-13 23:59:17 | INFO |MainProcess | Thread-1 |  server.server : server:186 | FL000001上传图片
+2025-06-13 23:59:17 | INFO |MainProcess | Thread-1 |  server.server : server:187 |  Saved to ./data_smart_device/\FL_Temp\FL_000001_2025-06-13_23-59-17.png (UID: AAFL-000001-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:59:17 | INFO |MainProcess | Thread-1 |  server.server : server:73 | Active connections: 5
+2025-06-13 23:59:18 | INFO |MainProcess | Thread-3 |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 23:59:18 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 23:59:18 | INFO |MainProcess | Thread-2 |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 23:59:18 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 23:59:18 | INFO |MainProcess | Thread-1 |  server.server : server:106 |   New connection from ('127.0.0.1', 62374) connected. 
+2025-06-13 23:59:18 | INFO |MainProcess | Thread-1 |  server.server : server:186 | FL000001上传图片
+2025-06-13 23:59:18 | INFO |MainProcess | Thread-1 |  server.server : server:187 |  Saved to ./data_smart_device/\FL_Temp\FL_000001_2025-06-13_23-59-18.png (UID: AAFL-000001-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:59:18 | INFO |MainProcess | Thread-1 |  server.server : server:73 | Active connections: 5
+2025-06-13 23:59:19 | INFO |MainProcess | Thread-1 |  server.server : server:106 |   New connection from ('127.0.0.1', 62375) connected. 
+2025-06-13 23:59:19 | INFO |MainProcess | Thread-1 |  server.server : server:186 | YL000002上传图片
+2025-06-13 23:59:19 | INFO |MainProcess | Thread-1 |  server.server : server:187 |  Saved to ./data_smart_device/\YL_Temp\YL_000002_2025-06-13_23-59-19.png (UID: AAYL-000002-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:59:19 | INFO |MainProcess | Thread-1 |  server.server : server:73 | Active connections: 5
+2025-06-13 23:59:20 | INFO |MainProcess | Thread-2 |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 23:59:20 | INFO |MainProcess | Thread-3 |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 23:59:20 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 23:59:20 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 23:59:20 | INFO |MainProcess | Thread-1 |  server.server : server:106 |   New connection from ('127.0.0.1', 62380) connected. 
+2025-06-13 23:59:20 | INFO |MainProcess | Thread-1 |  server.server : server:186 | YL000002上传图片
+2025-06-13 23:59:20 | INFO |MainProcess | Thread-1 |  server.server : server:187 |  Saved to ./data_smart_device/\YL_Temp\YL_000002_2025-06-13_23-59-20.png (UID: AAYL-000002-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:59:20 | INFO |MainProcess | Thread-1 |  server.server : server:73 | Active connections: 5
+2025-06-13 23:59:21 | INFO |MainProcess | Thread-1 |  server.server : server:106 |   New connection from ('127.0.0.1', 62381) connected. 
+2025-06-13 23:59:21 | INFO |MainProcess | Thread-1 |  server.server : server:186 | FL000001上传图片
+2025-06-13 23:59:21 | INFO |MainProcess | Thread-1 |  server.server : server:187 |  Saved to ./data_smart_device/\FL_Temp\FL_000001_2025-06-13_23-59-21.png (UID: AAFL-000001-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:59:21 | INFO |MainProcess | Thread-1 |  server.server : server:73 | Active connections: 5
+2025-06-13 23:59:22 | INFO |MainProcess | Thread-2 |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 23:59:22 | INFO |MainProcess | Thread-3 |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 23:59:22 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 23:59:22 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 23:59:22 | INFO |MainProcess | Thread-1 |  server.server : server:106 |   New connection from ('127.0.0.1', 62384) connected. 
+2025-06-13 23:59:22 | INFO |MainProcess | Thread-1 |  server.server : server:186 | FL000001上传图片
+2025-06-13 23:59:22 | INFO |MainProcess | Thread-1 |  server.server : server:187 |  Saved to ./data_smart_device/\FL_Temp\FL_000001_2025-06-13_23-59-22.png (UID: AAFL-000001-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:59:22 | INFO |MainProcess | Thread-1 |  server.server : server:73 | Active connections: 5
+2025-06-13 23:59:23 | INFO |MainProcess | Thread-1 |  server.server : server:106 |   New connection from ('127.0.0.1', 62385) connected. 
+2025-06-13 23:59:23 | INFO |MainProcess | Thread-1 |  server.server : server:186 | YL000002上传图片
+2025-06-13 23:59:23 | INFO |MainProcess | Thread-1 |  server.server : server:187 |  Saved to ./data_smart_device/\YL_Temp\YL_000002_2025-06-13_23-59-23.png (UID: AAYL-000002-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:59:23 | INFO |MainProcess | Thread-1 |  server.server : server:73 | Active connections: 5
+2025-06-13 23:59:24 | INFO |MainProcess | Thread-2 |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 23:59:24 | INFO |MainProcess | Thread-3 |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 23:59:24 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 23:59:24 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 23:59:24 | INFO |MainProcess | Thread-1 |  server.server : server:106 |   New connection from ('127.0.0.1', 62411) connected. 
+2025-06-13 23:59:24 | INFO |MainProcess | Thread-1 |  server.server : server:186 | FL000001上传图片
+2025-06-13 23:59:24 | INFO |MainProcess | Thread-1 |  server.server : server:187 |  Saved to ./data_smart_device/\FL_Temp\FL_000001_2025-06-13_23-59-24.png (UID: AAFL-000001-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:59:24 | INFO |MainProcess | Thread-1 |  server.server : server:73 | Active connections: 5
+2025-06-13 23:59:25 | INFO |MainProcess | Thread-1 |  server.server : server:106 |   New connection from ('127.0.0.1', 62412) connected. 
+2025-06-13 23:59:25 | INFO |MainProcess | Thread-1 |  server.server : server:186 | YL000002上传图片
+2025-06-13 23:59:25 | INFO |MainProcess | Thread-1 |  server.server : server:187 |  Saved to ./data_smart_device/\YL_Temp\YL_000002_2025-06-13_23-59-25.png (UID: AAYL-000002-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:59:25 | INFO |MainProcess | Thread-1 |  server.server : server:73 | Active connections: 5
+2025-06-13 23:59:26 | INFO |MainProcess | Thread-2 |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 23:59:26 | INFO |MainProcess | Thread-3 |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 23:59:26 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 23:59:26 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 23:59:26 | INFO |MainProcess | Thread-1 |  server.server : server:106 |   New connection from ('127.0.0.1', 62417) connected. 
+2025-06-13 23:59:26 | INFO |MainProcess | Thread-1 |  server.server : server:186 | YL000002上传图片
+2025-06-13 23:59:26 | INFO |MainProcess | Thread-1 |  server.server : server:187 |  Saved to ./data_smart_device/\YL_Temp\YL_000002_2025-06-13_23-59-26.png (UID: AAYL-000002-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:59:26 | INFO |MainProcess | Thread-1 |  server.server : server:73 | Active connections: 5
+2025-06-13 23:59:27 | INFO |MainProcess | Thread-1 |  server.server : server:106 |   New connection from ('127.0.0.1', 62418) connected. 
+2025-06-13 23:59:27 | INFO |MainProcess | Thread-1 |  server.server : server:186 | FL000001上传图片
+2025-06-13 23:59:27 | INFO |MainProcess | Thread-1 |  server.server : server:187 |  Saved to ./data_smart_device/\FL_Temp\FL_000001_2025-06-13_23-59-27.png (UID: AAFL-000001-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:59:27 | INFO |MainProcess | Thread-1 |  server.server : server:73 | Active connections: 5
+2025-06-13 23:59:28 | INFO |MainProcess | Thread-3 |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 23:59:28 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 23:59:28 | INFO |MainProcess | Thread-2 |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 23:59:28 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 23:59:28 | INFO |MainProcess | Thread-1 |  server.server : server:106 |   New connection from ('127.0.0.1', 62423) connected. 
+2025-06-13 23:59:28 | INFO |MainProcess | Thread-1 |  server.server : server:186 | FL000001上传图片
+2025-06-13 23:59:28 | INFO |MainProcess | Thread-1 |  server.server : server:187 |  Saved to ./data_smart_device/\FL_Temp\FL_000001_2025-06-13_23-59-28.png (UID: AAFL-000001-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:59:28 | INFO |MainProcess | Thread-1 |  server.server : server:73 | Active connections: 5
+2025-06-13 23:59:29 | INFO |MainProcess | Thread-1 |  server.server : server:106 |   New connection from ('127.0.0.1', 62424) connected. 
+2025-06-13 23:59:29 | INFO |MainProcess | Thread-1 |  server.server : server:186 | YL000002上传图片
+2025-06-13 23:59:29 | INFO |MainProcess | Thread-1 |  server.server : server:187 |  Saved to ./data_smart_device/\YL_Temp\YL_000002_2025-06-13_23-59-29.png (UID: AAYL-000002-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:59:29 | INFO |MainProcess | Thread-1 |  server.server : server:73 | Active connections: 5
+2025-06-13 23:59:30 | INFO |MainProcess | Thread-3 |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 23:59:30 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 23:59:30 | INFO |MainProcess | Thread-2 |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 23:59:30 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 23:59:30 | INFO |MainProcess | Thread-1 |  server.server : server:106 |   New connection from ('127.0.0.1', 62431) connected. 
+2025-06-13 23:59:30 | INFO |MainProcess | Thread-1 |  server.server : server:186 | YL000002上传图片
+2025-06-13 23:59:30 | INFO |MainProcess | Thread-1 |  server.server : server:187 |  Saved to ./data_smart_device/\YL_Temp\YL_000002_2025-06-13_23-59-30.png (UID: AAYL-000002-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:59:30 | INFO |MainProcess | Thread-1 |  server.server : server:73 | Active connections: 5
+2025-06-13 23:59:31 | INFO |MainProcess | Thread-1 |  server.server : server:106 |   New connection from ('127.0.0.1', 62432) connected. 
+2025-06-13 23:59:31 | INFO |MainProcess | Thread-1 |  server.server : server:186 | FL000001上传图片
+2025-06-13 23:59:31 | INFO |MainProcess | Thread-1 |  server.server : server:187 |  Saved to ./data_smart_device/\FL_Temp\FL_000001_2025-06-13_23-59-31.png (UID: AAFL-000001-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:59:31 | INFO |MainProcess | Thread-1 |  server.server : server:73 | Active connections: 5
+2025-06-13 23:59:32 | INFO |MainProcess | Thread-3 |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 23:59:32 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 23:59:32 | INFO |MainProcess | Thread-2 |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 23:59:32 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 23:59:32 | INFO |MainProcess | Thread-1 |  server.server : server:106 |   New connection from ('127.0.0.1', 62435) connected. 
+2025-06-13 23:59:32 | INFO |MainProcess | Thread-1 |  server.server : server:186 | YL000002上传图片
+2025-06-13 23:59:32 | INFO |MainProcess | Thread-1 |  server.server : server:187 |  Saved to ./data_smart_device/\YL_Temp\YL_000002_2025-06-13_23-59-32.png (UID: AAYL-000002-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:59:32 | INFO |MainProcess | Thread-1 |  server.server : server:73 | Active connections: 5
+2025-06-13 23:59:33 | INFO |MainProcess | Thread-1 |  server.server : server:106 |   New connection from ('127.0.0.1', 62438) connected. 
+2025-06-13 23:59:33 | INFO |MainProcess | Thread-1 |  server.server : server:186 | FL000001上传图片
+2025-06-13 23:59:33 | INFO |MainProcess | Thread-1 |  server.server : server:187 |  Saved to ./data_smart_device/\FL_Temp\FL_000001_2025-06-13_23-59-33.png (UID: AAFL-000001-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:59:33 | INFO |MainProcess | Thread-1 |  server.server : server:73 | Active connections: 5
+2025-06-13 23:59:34 | INFO |MainProcess | Thread-3 |  server.sender : sender:48 | SenderAAYL-000002-CAFAF init success
+2025-06-13 23:59:34 | INFO |MainProcess | Thread-3 |  server.sender : sender:133 |  Image sentAAYL-000002-CAFAF successfully to localhost:8000
+2025-06-13 23:59:34 | INFO |MainProcess | Thread-2 |  server.sender : sender:48 | SenderAAFL-000001-CAFAF init success
+2025-06-13 23:59:34 | INFO |MainProcess | Thread-2 |  server.sender : sender:133 |  Image sentAAFL-000001-CAFAF successfully to localhost:8000
+2025-06-13 23:59:34 | INFO |MainProcess | Thread-1 |  server.server : server:106 |   New connection from ('127.0.0.1', 62441) connected. 
+2025-06-13 23:59:34 | INFO |MainProcess | Thread-1 |  server.server : server:186 | YL000002上传图片
+2025-06-13 23:59:34 | INFO |MainProcess | Thread-1 |  server.server : server:187 |  Saved to ./data_smart_device/\YL_Temp\YL_000002_2025-06-13_23-59-34.png (UID: AAYL-000002-CAFAF). Time elapsed: 0.0s
+2025-06-13 23:59:34 | INFO |MainProcess | Thread-1 |  server.server : server:73 | Active connections: 5
+2025-06-13 23:59:34 | INFO |MainProcess | MainThread |  __main__ : main:53 | ----------------------------------------quit Qt application----------------------------------------
