@@ -46,9 +46,11 @@ class Img_process(Thread):
     """
     def __init__(self,type,temp_folder,record_folder,report_file_path):
         super().__init__()
-        #YL FL
+
         self.path =global_setting.get_setting('server_config')['Storage']['fold_path']
+        # YL FL
         self.type = type
+        self.is_first_run=True
         if not os.path.exists(self.path+temp_folder):
             os.makedirs(self.path+temp_folder)
         self.temp_folder=temp_folder
@@ -91,13 +93,19 @@ class Img_process(Thread):
     def run(self):
         self.running = True
         while (self.running):
-            # 为了保持图像识别在图像获取之后，所以先阻塞该线程
-            time.sleep(float(global_setting.get_setting("server_config")['Image_Process']['delay']))
+            # # 为了保持图像识别在图像获取之后，所以第一次运行先阻塞该线程
+            if self.is_first_run:
+                time.sleep(float(global_setting.get_setting("server_config")['Image_Process']['block_delay']))
             # 1.寻找temp文件夹中的图片
             images = self.get_image_files()
             # 没有文件
             if (len(images)==0):
                 report_logger.warning(f"{self.type}无上传数据")
+                if self.is_first_run:
+                    time.sleep(float(global_setting.get_setting("server_config")['Image_Process']['delay'])-float(global_setting.get_setting("server_config")['Image_Process']['block_delay']))
+                    self.is_first_run=False
+                else:
+                    time.sleep(float(global_setting.get_setting("server_config")['Image_Process']['delay']))
                 continue
             # 处理并更新报告
             self.data_save.csv_create()
@@ -112,7 +120,12 @@ class Img_process(Thread):
                 # 3.归档
                 shutil.move(self.path+self.temp_folder+image, self.path+self.record_folder)
             self.data_save.csv_close()
-
+            if self.is_first_run:
+                time.sleep(float(global_setting.get_setting("server_config")['Image_Process']['delay']) - float(
+                    global_setting.get_setting("server_config")['Image_Process']['block_delay']))
+                self.is_first_run = False
+            else:
+                time.sleep(float(global_setting.get_setting("server_config")['Image_Process']['delay']))
 
             pass
         pass

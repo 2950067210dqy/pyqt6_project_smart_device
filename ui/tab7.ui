@@ -43,9 +43,9 @@
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>0</y>
+       <y>20</y>
        <width>711</width>
-       <height>171</height>
+       <height>151</height>
       </rect>
      </property>
      <property name="verticalScrollBarPolicy">
@@ -68,57 +68,123 @@ li.checked::marker { content: &quot;\2612&quot;; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="openFL_btn">
+    <widget class="QLabel" name="label">
      <property name="geometry">
       <rect>
-       <x>750</x>
-       <y>10</y>
-       <width>121</width>
-       <height>24</height>
+       <x>20</x>
+       <y>0</y>
+       <width>54</width>
+       <height>16</height>
       </rect>
      </property>
      <property name="text">
-      <string>打开蜚蠊存档文件夹</string>
+      <string>状态栏</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="openYL_btn">
+    <widget class="QWidget" name="verticalLayoutWidget">
      <property name="geometry">
       <rect>
-       <x>750</x>
-       <y>50</y>
-       <width>121</width>
-       <height>24</height>
+       <x>730</x>
+       <y>0</y>
+       <width>161</width>
+       <height>171</height>
       </rect>
      </property>
-     <property name="text">
-      <string>打开蝇类存档文件夹</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="openSL_btn">
-     <property name="geometry">
-      <rect>
-       <x>750</x>
-       <y>90</y>
-       <width>121</width>
-       <height>24</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>打开鼠类存档文件夹</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="openReport_btn">
-     <property name="geometry">
-      <rect>
-       <x>770</x>
-       <y>140</y>
-       <width>75</width>
-       <height>24</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>打开报告</string>
-     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QPushButton" name="openFL_btn">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <family>宋体</family>
+          <pointsize>9</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>打开蜚蠊存档文件夹</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="openYL_btn">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <family>宋体</family>
+          <pointsize>9</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>打开蝇类存档文件夹</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="openSL_btn">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <family>宋体</family>
+          <pointsize>9</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>打开鼠类存档文件夹</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="openReport_btn">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <family>宋体</family>
+          <pointsize>9</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>打开报告</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </widget>
    </widget>
    <widget class="QFrame" name="graphic_frame">
@@ -144,6 +210,12 @@ li.checked::marker { content: &quot;\2612&quot;; }
        <width>311</width>
        <height>311</height>
       </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
      </property>
     </widget>
     <widget class="QPlainTextEdit" name="plainTextEdit">
@@ -192,6 +264,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
    </property>
   </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../pythonProjectAnimal/resource/mainPage.qrc"/>
+ </resources>
  <connections/>
 </ui>

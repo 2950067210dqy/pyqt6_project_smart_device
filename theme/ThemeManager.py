@@ -51,7 +51,7 @@ class ThemeManager(QObject):
             "light": {
                 "--primary": "#F0F0F0",
                 "--secondary": "#dcdcdc",
-                "--text": "#333333",
+                "--text": "#00000",
                 "--text_disabled": "#969696",
                 "--text_hover": "#000000",
                 "--highlight": "#E1E1E1",
@@ -162,7 +162,7 @@ class ThemeManager(QObject):
                 QPushButton{{
                     background-color: {theme['--selected']};
                     color:{theme['--text']};
-                   padding: 25px;
+                    border:1px solid {theme['--border']};;
                     border-radius: 4px;
                     font-size:13px;
                 }}
@@ -184,7 +184,7 @@ class ThemeManager(QObject):
                 QPushButton{{
                     background-color: {theme['--primary']};
                     color:{theme['--text']};
-                    padding: 25px;
+                    border:1px solid {theme['--border']};;
                     border-radius: 4px;
                     font-size:13px;
                 }}
@@ -213,6 +213,11 @@ class ThemeManager(QObject):
                 qproperty-themeBorder: {theme['--border']};
             }}
             QWidget {{
+                background-color: {theme['--primary']};
+                color: {theme['--text']};
+               
+            }}
+            QMainWindow {{
                 background-color: {theme['--primary']};
                 color: {theme['--text']};
                
