@@ -23,8 +23,9 @@ class Sender(Thread):
 
     # Encryption settings
     KEY = b'MySuperSecretKey32BytesLongPassw'  # Must be 32 bytes for AES-256
-    def __init__(self,img_dir,host,port,uid):
+    def __init__(self,type,img_dir,host,port,uid):
         super().__init__()
+        self.type = type
         self.img_dir=img_dir
         self.host  = host
         self.port = port
@@ -98,7 +99,7 @@ class Sender(Thread):
         self.running = True
         while(self.running):
             self.send_handle()
-            time.sleep(float(global_setting.get_setting("server_config")['Sender']['delay']))
+            time.sleep(float(global_setting.get_setting("server_config")[f'Sender_{self.type}']['delay']))
             pass
         pass
     def send_handle(self):

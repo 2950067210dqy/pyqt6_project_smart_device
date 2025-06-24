@@ -20,7 +20,10 @@ from server.sender import Sender
 from server.server import Server
 from theme.ThemeManager import ThemeManager
 
-
+# 终端模拟 模拟16个设备 8个蝇类，8个另一个种类
+sender_thread_list = []
+# 工控机模拟
+server_thread=None
 def load_global_setting():
     # 加载gui配置存储到全局类中
     ini_parser_obj = ini_parser()
@@ -46,7 +49,7 @@ def load_global_setting():
     pass
 
 
-def quit_qt_application(server_thread=None,sender_thread_list=[]):
+def quit_qt_application():
     """
     退出QT程序
     :return:
@@ -54,14 +57,20 @@ def quit_qt_application(server_thread=None,sender_thread_list=[]):
     logger.info(f"{'-' * 40}quit Qt application{'-' * 40}")
     #如果gui进程退出 则将其他的线程全部终止
     if server_thread is not None and server_thread.is_alive():
+
         server_thread.stop()
+        logger.error("server_thread子线程已退出")
         server_thread.join(timeout=2)
+
     if len(sender_thread_list) > 0:
+        i=1
         for sender_thread in sender_thread_list:
             if sender_thread is not None and sender_thread.is_alive():
                 sender_thread.stop()
+                logger.error(f"sender_thread{i}子线程已退出")
                 sender_thread.join(timeout=2)
 
+            i+=1
     # 等待5秒系统退出
     # step = 5
     # while step >= 0:
@@ -126,8 +135,9 @@ if __name__ == "__main__" and os.path.basename(__file__) == "main.py":
     except Exception as e:
         logger.error(f"server_config配置文件Server-port错误！{e}")
         sys.exit(0)
+
     # 工控机模拟
-    server_thread = Server(save_dir="./data_smart_device/", IP='0.0.0.0', port=port)
+    server_thread = Server(save_dir="./data_smart_device/", IP=global_setting.get_setting("server_config")["Server"]["ip"], port=port)
     try:
         logger.info(f"server_thread子线程开始运行")
         server_thread.start()
@@ -139,33 +149,67 @@ if __name__ == "__main__" and os.path.basename(__file__) == "main.py":
         pass
 
 
-
-    # 终端模拟 模拟16个设备 8个蝇类，8个另一个种类
+    # FL终端
     try:
-        send_nums = int(global_setting.get_setting("server_config")["Sender"]["device_nums"])
+        send_nums_FL = int(global_setting.get_setting("server_config")["Sender_FL"]["device_nums"])
     except Exception as e:
-        logger.error(f"server_config配置文件Send-device_nums错误！{e}")
+        logger.error(f"server_config配置文件Send_FL-device_nums错误！{e}")
         sys.exit(0)
-    sender_thread_list =[]
-    for i in range(send_nums):
-        if i<send_nums/2:
-            j = i%(send_nums//2)
-            uid  = f"AAFL-{(j+1):06d}-CAFAF"
-        else:
-            j = i % (send_nums // 2)
-            uid = f"AAYL-{(j+1):06d}-CAFAF"
-        sender_thread = Sender(uid=uid,host='localhost',port=port,img_dir=f"{global_setting.get_setting('server_config')['Storage']['fold_path']}{global_setting.get_setting('server_config')['Sender']['fold_path']}1803.{655+i%3}.050.png")
+
+    # 终端host ip
+    try:
+        sender_host = global_setting.get_setting("server_config")["Sender_FL"]["hosts"].split(",")
+        if len(sender_host) != send_nums_FL:
+            logger.error(f"server_config配置文件Send_FL-device_hosts数量和终端数量send_nums_FL不一致！{e}")
+            sys.exit(0)
+    except Exception as e:
+        logger.error(f"server_config配置文件Send_FL-device_hosts错误！{e}")
+        sys.exit(0)
+    for i in range(send_nums_FL):
+        uid = f"AAFL-{(i + 1):06d}-CAFAF"
+        sender_thread = Sender(type="FL",uid=uid,host=sender_host[i],port=port,img_dir=f"{global_setting.get_setting('server_config')['Storage']['fold_path']}{global_setting.get_setting('server_config')['Sender_FL']['fold_path']}1803.{655+i%3}.050.png")
         sender_thread_list.append(sender_thread)
         try:
-            logger.info(f"sender_thread |{uid} |子线程开始运行")
+            logger.info(f"sender_thread_FL_{i} |{uid} |子线程开始运行")
             sender_thread.start()
         except Exception as e:
-            logger.error(f"sender_thread |{uid} |子线程发生异常：{e}，准备终止该子线程")
+            logger.error(f"sender_thread_FL_{i} |{uid} |子线程发生异常：{e}，准备终止该子线程")
             if server_thread.is_alive():
                 server_thread.stop()
                 server_thread.join(timeout=5)
             pass
 
+
+    # YL终端
+    try:
+        send_nums_YL = int(global_setting.get_setting("server_config")["Sender_YL"]["device_nums"])
+    except Exception as e:
+        logger.error(f"server_config配置文件Send_YL-device_nums错误！{e}")
+        sys.exit(0)
+
+    # 终端host ip
+    try:
+        sender_host = global_setting.get_setting("server_config")["Sender_YL"]["hosts"].split(",")
+        if len(sender_host) != send_nums_YL:
+            logger.error(f"server_config配置文件Send_YL-device_hosts数量和终端数量send_nums_YL不一致！{e}")
+            sys.exit(0)
+    except Exception as e:
+        logger.error(f"server_config配置文件Send_YL-device_hosts错误！{e}")
+        sys.exit(0)
+    for i in range(send_nums_YL):
+        uid = f"AAYL-{(i + 1):06d}-CAFAF"
+        sender_thread = Sender(type="YL",uid=uid, host=sender_host[i], port=port,
+                               img_dir=f"{global_setting.get_setting('server_config')['Storage']['fold_path']}{global_setting.get_setting('server_config')['Sender_YL']['fold_path']}1803.{655 + i % 3}.050.png")
+        sender_thread_list.append(sender_thread)
+        try:
+            logger.info(f"sender_thread_YL_{i} |{uid} |子线程开始运行")
+            sender_thread.start()
+        except Exception as e:
+            logger.error(f"sender_thread_YL_{i} |{uid} |子线程发生异常：{e}，准备终止该子线程")
+            if server_thread.is_alive():
+                server_thread.stop()
+                server_thread.join(timeout=5)
+            pass
     # 图像识别算法线程
     types = ['FL','YL']
     image_process_thread_list = []
@@ -188,7 +232,7 @@ if __name__ == "__main__" and os.path.basename(__file__) == "main.py":
         logger.info("start Qt")
         app = QApplication(sys.argv)
         # 绑定突出事件
-        app.aboutToQuit.connect(lambda: quit_qt_application(server_thread,sender_thread_list))
+        app.aboutToQuit.connect(quit_qt_application)
         # 主窗口实例化
         try:
             allWindows = AllWindows()

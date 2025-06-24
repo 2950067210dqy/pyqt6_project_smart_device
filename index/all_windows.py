@@ -49,14 +49,14 @@ class AllWindows():
         # 找到主窗口中的所有QPushButton对象
         pushBtns = self.mainWindow.tab.frame.findChildren(QPushButton)
         # 给每个QPushButton对象 添加相关样式
-        print("tab", self.mainWindow.tab.styleSheet())
-        print("frame", self.mainWindow.tab.frame.styleSheet())
+        # print("tab", self.mainWindow.tab.styleSheet())
+        # print("frame", self.mainWindow.tab.frame.styleSheet())
 
         for btn in pushBtns:
             btn:QPushButton
-            print("before",btn.styleSheet())
+            # print("before",btn.styleSheet())
             btn.setStyleSheet(global_setting.get_setting("theme_manager").get_button_style(isSelected=False))
-            print("after", btn.styleSheet())
+            # print("after", btn.styleSheet())
 
 
 

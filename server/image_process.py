@@ -28,6 +28,69 @@ class report_writing:
             self.csv_writer = csv.writer(self.csv_file)
             self.csv_writer.writerow(["日期", "时间", "设备号", "数量"])
 
+    # 更新或添加数据
+    def update_data(self,date,time,equipment_number,nums):
+        # 读取现有数据
+        current_data = self.csv_read()
+
+
+        # 如果设备号已存在，更新数据，否则添加
+        current_data[equipment_number] = {
+            "日期": date,
+            "时间": time,
+            "设备号": equipment_number,
+            "数量": nums,
+        }
+
+        # 写回 CSV
+        self.csv_write_multiple( current_data)
+    # 定义一个函数来读取现有的 CSV 数据
+    def csv_read(self):
+        data = {}
+        """
+        data数据结构
+        {
+        '001': {'日期': '2025-06-24', '时间': '10:00', '设备号': '001', '数量': '10'},
+        '002': {'日期': '2025-06-24', '时间': '10:20', '设备号': '002', '数量': '15'}
+        }
+        """
+        try:
+            with open(self.file_path, mode='r', encoding='utf-8') as file:
+                reader = csv.DictReader(file)
+                for row in reader:
+                    # 使用设备号作为唯一标识
+                    data[row['设备号']] = row
+        except FileNotFoundError:
+            # 如果文件不存在，返回一个空的字典
+            pass
+        return data
+
+    def csv_read_not_dict(self):
+
+        """
+        data数据结构
+        [
+         {'日期': '2025-06-24', '时间': '10:00', '设备号': '001', '数量': '10'},
+         {'日期': '2025-06-24', '时间': '10:20', '设备号': '002', '数量': '15'}
+        ]
+        """
+        data=[]
+        try:
+            with open(self.file_path, mode='r', encoding='utf-8') as file:
+                reader = csv.DictReader(file)
+                for row in reader:
+                    data.append(row)
+                print(data)
+        except FileNotFoundError:
+            # 如果文件不存在，返回一个空的字典
+            pass
+        return data
+    def csv_write_multiple(self,data):
+        with open(self.file_path, mode='w', encoding='utf-8', newline='') as file:
+            fieldnames = ['日期', '时间', '设备号', '数量']
+            writer = csv.DictWriter(file, fieldnames=fieldnames)
+            writer.writeheader()
+            writer.writerows(data.values())
     def csv_write(self, date,time,equipment_number,nums):
         # 先读在写
         with open(self.file_path, mode='a', newline='', encoding='utf-8') as file:
@@ -115,7 +178,7 @@ class Img_process(Thread):
                 date= image.split('_')[2].replace("-","")
                 time_single = image.split('_')[3].split(".")[0].replace("-", ":")
                 # 2.更新报告
-                self.data_save.csv_write(date, time_single, name, nums)
+                self.data_save.update_data(date, time_single, name, nums)
                 report_logger.info(f"完成{name}数据分析")
                 # 3.归档
                 shutil.move(self.path+self.temp_folder+image, self.path+self.record_folder)
