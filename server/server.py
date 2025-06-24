@@ -41,7 +41,7 @@ class Server(threading.Thread):
         self.server = None
         self.conns = []
         self.addrs = []
-        self.conn_nums = 0
+
         self.init_state = self.client_init()
 
         pass
@@ -86,7 +86,7 @@ class Server(threading.Thread):
                conn.close()
         self.addrs=[]
         self.conns=[]
-        self.conn_nums=0
+
         pass
     def stop(self):
         self.running = False
@@ -95,7 +95,7 @@ class Server(threading.Thread):
                 conn.close()
         self.addrs = []
         self.conns = []
-        self.conn_nums = 0
+
         pass
     def handle_client(self):
         """
@@ -108,8 +108,8 @@ class Server(threading.Thread):
         conn, addr = self.server.accept()
         self.conns.append(conn)
         self.addrs.append(addr)
-        self.conn_nums += 1
-        logger.info(f" New connection from {addr} connected| Active connections: {self.conn_nums}")
+
+        logger.info(f" New connection from {addr} connected| Active connections: {threading.active_count() - 7}")
         # 默认保存路径
         if self.save_dir is None:
             self.save_dir = sys.path[0] + '\\saved'

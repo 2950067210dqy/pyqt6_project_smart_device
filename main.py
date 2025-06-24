@@ -164,7 +164,7 @@ if __name__ == "__main__" and os.path.basename(__file__) == "main.py":
         try:
             sender_host = global_setting.get_setting("server_config")["Sender_FL"]["hosts"].split(",")
             if len(sender_host) != send_nums_FL:
-                logger.error(f"server_config配置文件Send_FL-device_hosts数量和终端数量send_nums_FL不一致！{e}")
+                logger.error(f"server_config配置文件Send_FL-device_hosts数量和终端数量send_nums_FL不一致！")
                 sys.exit(0)
         except Exception as e:
             logger.error(f"server_config配置文件Send_FL-device_hosts错误！{e}")

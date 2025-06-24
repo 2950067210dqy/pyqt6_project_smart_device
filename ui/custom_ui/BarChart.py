@@ -1,6 +1,6 @@
 import time
 
-from PyQt6.QtCharts import QChart, QBarSet, QBarSeries, QBarCategoryAxis, QValueAxis, QChartView
+from PyQt6.QtCharts import QChart, QBarSet, QBarSeries, QBarCategoryAxis, QValueAxis, QChartView, QHorizontalBarSeries
 from PyQt6.QtCore import Qt, QThread, pyqtSignal
 from PyQt6.QtGui import QPainter
 from PyQt6.QtWidgets import QVBoxLayout, QGraphicsSimpleTextItem
@@ -19,6 +19,7 @@ class Data_thread(QThread):
         super().__init__()
         # 获取主线程更新界面信号
         self.update_status_main_signal: pyqtSignal = update_status_main_signal
+        self.is_first_run = True
         self.data= []
         self.data_save = report_writing(file_path=global_setting.get_setting('server_config')['Storage'][
                                                       'fold_path'] + f"/{global_setting.get_setting('server_config')['Image_Process']['report_file_name']}")
@@ -31,8 +32,14 @@ class Data_thread(QThread):
             self.data = self.data_save.csv_read_not_dict()
             self.data_save.csv_close()
             self.update_status_main_signal.emit(self.data)
-            time.sleep(float(global_setting.get_setting('server_config')['Image_Process'][
-                                                      'delay'])+1)
+            if self.is_first_run:
+                delay=  float(global_setting.get_setting("server_config")['Image_Process']['block_delay'])+float(global_setting.get_setting('server_config')['Image_Process'][
+                                                      'delay'])+1
+            else:
+                delay =float(global_setting.get_setting('server_config')['Image_Process'][
+                                                      'delay'])+1
+            self.is_first_run = False
+            time.sleep(delay)
             # time.sleep(1)
         pass
 
@@ -86,7 +93,7 @@ class BarChartApp(ThemedWidget):
         self.chart_view = QChartView()
         self.chart_view.setMouseTracking(True)  # 开启鼠标追踪
 
-        self.chart_view.setFixedSize(1600, 400)  # 固定大小
+        self.chart_view.setFixedSize(300, 600)  # 固定大小
 
         self.chart_view.setRenderHint(QPainter.RenderHint.Antialiasing)  # 关键设置 抗锯齿
         self.chart_view.setObjectName(f"{self.object_name}")
@@ -150,14 +157,14 @@ class BarChartApp(ThemedWidget):
             self._set_x_axis()
             self._set_y_axis()
 
-            # 为每个数据点添加一个标签
-            for i in range(len(self.yl_set)):
-                value = self.yl_set.at(i)
-                label_item = QGraphicsSimpleTextItem(str(value))
-                label_item.setPos(i, value)  # 设置标签的位置
-                # label_item.setDefaultTextColor(Qt.black)  # 设置文字颜色
-                label_item.setZValue(1)  # 将标签放在顶层
-                self.chart.scene().addItem(label_item)
+            # # 为每个数据点添加一个标签
+            # for i in range(len(self.yl_set)):
+            #     value = self.yl_set.at(i)
+            #     label_item = QGraphicsSimpleTextItem(str(value))
+            #     label_item.setPos(i, value)  # 设置标签的位置
+            #     # label_item.setDefaultTextColor(Qt.black)  # 设置文字颜色
+            #     label_item.setZValue(1)  # 将标签放在顶层
+            #     self.chart.scene().addItem(label_item)
         except Exception as  e:
             logger.error(f"charts报错，原因：{e}")
         pass
@@ -179,17 +186,20 @@ class BarChartApp(ThemedWidget):
     def _set_series(self):
         # 创建柱状系列
         if self.series is None:
-            self.series = QBarSeries()
+            self.series = QHorizontalBarSeries()
             self.series.append(self.fl_set)
             self.series.append(self.yl_set)
             self.chart.addSeries(self.series)
         else:
             self.series.clear()
-            self.series = QBarSeries()
+            self.series = QHorizontalBarSeries()
             self.series.append(self.fl_set)
             self.series.append(self.yl_set)
             self.chart.removeAllSeries()
             self.chart.addSeries(self.series)
+        # 显示数据标签
+        self.series.setLabelsVisible(True)  # 开启数据标签
+        # self.series.setLabelsFormat("{value}")  # 数据标签格式
         pass
 
 
@@ -199,45 +209,47 @@ class BarChartApp(ThemedWidget):
 
     def _set_x_axis(self):
         # 设置 X 轴
-        keys = []
-        for value in zip(list(self.fl_data.keys()),list(self.yl_data.keys())):
-            keys.append(value[0].split("_")[0]+"/"+value[1])
-
-        self.categories = keys
         if self.x_axis is None:
-            self.x_axis = QBarCategoryAxis()
-            self.x_axis.append(self.categories)
-            self.x_axis.setTitleText("设备名称")
-            self.chart.addAxis(self.x_axis, Qt.AlignmentFlag.AlignBottom)
+            self.x_axis = QValueAxis()
+            self.x_axis.setTitleText("数量")
+            self.x_axis.setRange(0, max(max([int(i) for i in list(self.fl_data.values())]),
+                                        max([int(i) for i in list(self.yl_data.values())])) + 5)
+            self.x_axis.setLabelFormat("%d")
+            self.chart.addAxis(self.x_axis, Qt.AlignmentFlag.AlignTop)
             self.series.attachAxis(self.x_axis)
         else:
-            self.x_axis.clear()
-            self.x_axis.append(self.categories)
+
+            self.x_axis.setRange(0, max(max([int(i) for i in list(self.fl_data.values())]),
+                                        max([int(i) for i in list(self.yl_data.values())])) + 5)
+            self.x_axis.setLabelFormat("%d")
             self.chart.removeAxis(self.x_axis)
-            self.chart.addAxis(self.x_axis, Qt.AlignmentFlag.AlignBottom)
+            self.chart.addAxis(self.x_axis, Qt.AlignmentFlag.AlignTop)
             self.series.detachAxis(self.x_axis)
             self.series.attachAxis(self.x_axis)
         pass
 
     def _set_y_axis(self):
-
         # 设置 Y 轴
+        keys = []
+        for value in zip(list(self.fl_data.keys()), list(self.yl_data.keys())):
+            keys.append(value[0].split("_")[0] + "/" + value[1].split("_")[0]+f"{int(value[1].split('_')[1])}")
+
+        self.categories = keys
         if self.y_axis is None:
-            self.y_axis = QValueAxis()
-            self.y_axis.setTitleText("数量")
-            self.y_axis.setRange(0, max(max([int(i) for i in list(self.fl_data.values())]), max([int(i) for i in list(self.yl_data.values())])) + 5)
-            self.y_axis.setLabelFormat("%d")
+            self.y_axis = QBarCategoryAxis()
+            self.y_axis.append(self.categories)
+            self.y_axis.setTitleText("设备名称")
             self.chart.addAxis(self.y_axis, Qt.AlignmentFlag.AlignLeft)
             self.series.attachAxis(self.y_axis)
         else:
-
-            self.y_axis.setRange(0, max(max([int(i) for i in list(self.fl_data.values())]), max([int(i) for i in list(self.yl_data.values())])) + 5)
-            self.y_axis.setLabelFormat("%d")
+            self.y_axis.clear()
+            self.y_axis.append(self.categories)
             self.chart.removeAxis(self.y_axis)
             self.chart.addAxis(self.y_axis, Qt.AlignmentFlag.AlignLeft)
             self.series.detachAxis(self.y_axis)
             self.series.attachAxis(self.y_axis)
         pass
+
 
     def set_style(self):
         pass

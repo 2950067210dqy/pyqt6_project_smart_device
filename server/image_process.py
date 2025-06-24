@@ -18,12 +18,12 @@ class report_writing:
     def __init__(self, file_path):
         self.csv_file = None
         self.csv_writer = None
-
+        self.encoding = 'gbk'
         self.file_path = file_path
 
     def csv_create(self):
 
-        with open(self.file_path, mode='w', newline='', encoding='utf-8') as file:
+        with open(self.file_path, mode='w', newline='', encoding=self.encoding) as file:
             self.csv_file = file
             self.csv_writer = csv.writer(self.csv_file)
             self.csv_writer.writerow(["日期", "时间", "设备号", "数量"])
@@ -55,11 +55,12 @@ class report_writing:
         }
         """
         try:
-            with open(self.file_path, mode='r', encoding='utf-8') as file:
+            with open(self.file_path, mode='r', encoding=self.encoding) as file:
                 reader = csv.DictReader(file)
                 for row in reader:
                     # 使用设备号作为唯一标识
-                    data[row['设备号']] = row
+                    if "设备号" in row.keys():
+                        data[row['设备号']] = row
         except FileNotFoundError:
             # 如果文件不存在，返回一个空的字典
             pass
@@ -76,7 +77,7 @@ class report_writing:
         """
         data=[]
         try:
-            with open(self.file_path, mode='r', encoding='utf-8') as file:
+            with open(self.file_path, mode='r', encoding=self.encoding) as file:
                 reader = csv.DictReader(file)
                 for row in reader:
                     data.append(row)
@@ -86,14 +87,14 @@ class report_writing:
             pass
         return data
     def csv_write_multiple(self,data):
-        with open(self.file_path, mode='w', encoding='utf-8', newline='') as file:
+        with open(self.file_path, mode='w', encoding=self.encoding, newline='') as file:
             fieldnames = ['日期', '时间', '设备号', '数量']
             writer = csv.DictWriter(file, fieldnames=fieldnames)
             writer.writeheader()
             writer.writerows(data.values())
     def csv_write(self, date,time,equipment_number,nums):
         # 先读在写
-        with open(self.file_path, mode='a', newline='', encoding='utf-8') as file:
+        with open(self.file_path, mode='a', newline='', encoding=self.encoding) as file:
             self.csv_file = file
             self.csv_writer = csv.writer(self.csv_file)
             self.csv_writer.writerow([date, time, equipment_number, nums])

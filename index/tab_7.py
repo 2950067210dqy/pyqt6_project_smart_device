@@ -1,15 +1,18 @@
 import os
 import time
+from pathlib import Path
 
 from loguru import logger
 
 from config.global_setting import global_setting
 from PyQt6 import QtCore
 from PyQt6.QtCore import QRect, QThread, pyqtSignal
-from PyQt6.QtWidgets import QWidget, QMainWindow, QTextBrowser, QVBoxLayout, QScrollArea
+from PyQt6.QtWidgets import QWidget, QMainWindow, QTextBrowser, QVBoxLayout, QScrollArea, QPushButton, QHBoxLayout, \
+    QTextEdit, QPlainTextEdit
 
 from theme.ThemeQt6 import ThemedWidget
 from ui.custom_ui.BarChart import BarChartApp
+from ui.custom_ui.VideoPlayer import VideoPlayer
 from ui.tab7 import Ui_tab7_frame
 class Status_thread(QThread):
     # 线程信号
@@ -103,6 +106,7 @@ class Tab_7(ThemedWidget):
         super().__init__()
         # 类型 0 是Qframe 1是Qmainwindow
         self.type = 1
+        self.video_component=None
         # 实例化ui
         self._init_ui(parent, geometry, title)
         # 实例化自定义ui
@@ -131,26 +135,90 @@ class Tab_7(ThemedWidget):
 
     # 实例化自定义ui
     def _init_customize_ui(self):
+        self.init_charts()
+        self.init_videos()
+
+
+        pass
+
+    def init_videos(self):
+        # 找到video的layout
+        video_layout: QVBoxLayout = self.frame.findChild(QVBoxLayout, "video_layout")
+        # 找到video_button
+        open_video_btn: QPushButton = self.frame.findChild(QPushButton, "open_video_btn")
+
+        start_video_btn: QPushButton =  self.frame.findChild(QPushButton, "start_video_btn")
+        stop_video_btn: QPushButton =  self.frame.findChild(QPushButton, "stop_video_btn")
+        plainTextEdit:QPlainTextEdit = self.frame.findChild(QPlainTextEdit, "plainTextEdit")
+        self.video_component = VideoPlayer(parent_frame=self.frame,parent_layout=video_layout,open_video_btn=open_video_btn,start_video_btn=start_video_btn,stop_video_btn=stop_video_btn,plainTextEdit=plainTextEdit)
+        pass
+
+    def init_charts(self):
         # 找到charts的layout
-        charts_layout:QVBoxLayout =  self.frame.findChild(QVBoxLayout, "charts_layout")
-        #找到 scrollarea
-        scrollArea :QScrollArea = self.frame.findChild(QScrollArea,"scrollArea")
+        charts_layout: QVBoxLayout = self.frame.findChild(QVBoxLayout, "charts_layout")
+        # 找到 scrollarea
+        scrollArea: QScrollArea = self.frame.findChild(QScrollArea, "scrollArea")
         scrollArea.setWidgetResizable(True)
         # 找到 scrollarea_container
-        scrollarea_container:QWidget = self.frame.findChild(QWidget,"scrollAreaWidget")
+        scrollarea_container: QWidget = self.frame.findChild(QWidget, "scrollAreaWidget")
 
         sub_layout = QVBoxLayout(scrollarea_container)
         sub_layout.setObjectName(f"layout_sub")
         self.charts = BarChartApp(parent=sub_layout, object_name="charts_data")
 
         scrollarea_container.setLayout(sub_layout)
-
-
         pass
-
     # 实例化功能
     def _init_function(self):
         self.show_status()
+        self.btn_functions()
+        pass
+
+    def btn_functions(self):
+        # 按钮功能
+        # 找到btn
+        openFL_btn: QPushButton = self.frame.findChild(QPushButton, "openFL_btn")
+        openReport_btn: QPushButton = self.frame.findChild(QPushButton, "openReport_btn")
+        openSL_btn: QPushButton = self.frame.findChild(QPushButton, "openSL_btn")
+        openYL_btn: QPushButton = self.frame.findChild(QPushButton, "openYL_btn")
+
+        openSL_btn.clicked.connect(self.openSL_Folder)
+        openFL_btn.clicked.connect(self.openFL_Folder)
+        openReport_btn.clicked.connect(self.openReport_Folder)
+        openYL_btn.clicked.connect(self.openYL_Folder)
+        pass
+
+    def openSL_Folder(self):
+
+        pass
+
+    def openFL_Folder(self):
+        # 获取当前工作目录
+        current_directory = Path.cwd()
+        open_direct = Path.joinpath(current_directory,
+                                    global_setting.get_setting("server_config")['Storage']['fold_path'],"FL_"+global_setting.get_setting("server_config")['Image_Process']['fold_suffix'])
+        open_direct.mkdir(parents=True, exist_ok=True)
+        os.startfile(open_direct)  # 替换为你要打开的文件夹路径
+        pass
+
+    def openReport_Folder(self):
+        # 获取当前工作目录
+        current_directory = Path.cwd()
+        open_direct = Path.joinpath(current_directory,
+                                    global_setting.get_setting("server_config")['Storage']['fold_path'],
+                                     global_setting.get_setting("server_config")['Image_Process']['report_file_name'])
+        # open_direct.mkdir(parents=True, exist_ok=True)
+        os.startfile(open_direct)  # 替换为你要打开的文件夹路径
+        pass
+
+    def openYL_Folder(self):
+        # 获取当前工作目录
+        current_directory = Path.cwd()
+        open_direct = Path.joinpath(current_directory,
+                                    global_setting.get_setting("server_config")['Storage']['fold_path'],
+                                    "YL_" + global_setting.get_setting("server_config")['Image_Process']['fold_suffix'])
+        open_direct.mkdir(parents=True, exist_ok=True)
+        os.startfile(open_direct)  # 替换为你要打开的文件夹路径
         pass
     def show_status(self):
         # 将更新status信号绑定更新status界面函数
@@ -183,3 +251,8 @@ class Tab_7(ThemedWidget):
     def show(self):
         self.frame.show()
         pass
+
+
+
+
+
