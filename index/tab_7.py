@@ -1,18 +1,15 @@
 import os
 import time
 
-from PyQt6.QtCharts import QChart, QBarSet, QBarSeries, QBarCategoryAxis, QValueAxis, QChartView
-from PyQt6.QtGui import QPainter
 from loguru import logger
 
 from config.global_setting import global_setting
-from server.image_process import report_writing
-from theme.ThemeQt6 import ThemedWidget
 from PyQt6 import QtCore
-from PyQt6.QtCore import QRect, QThread, pyqtSignal, Qt
-from PyQt6.QtWidgets import QWidget, QMainWindow, QTextBrowser, QVBoxLayout, QAbstractItemView
+from PyQt6.QtCore import QRect, QThread, pyqtSignal
+from PyQt6.QtWidgets import QWidget, QMainWindow, QTextBrowser, QVBoxLayout, QScrollArea
 
 from theme.ThemeQt6 import ThemedWidget
+from ui.custom_ui.BarChart import BarChartApp
 from ui.tab7 import Ui_tab7_frame
 class Status_thread(QThread):
     # 线程信号
@@ -98,121 +95,6 @@ class Status_thread(QThread):
 
     pass
 
-# 创建柱状图
-class BarChartApp():
-    def __init__(self,parent: QVBoxLayout = None, object_name: str = ""):
-        super().__init__()
-        # 父布局
-        self.parent_layout = parent
-        # obejctName
-        self.object_name = object_name
-        # 图表对象
-        self.chart: QChart = None
-        # 数据系列对象 可能有多个数据源 所以设置为列表
-        self.series:QBarSeries = None
-        # x轴
-        self.x_axis: QBarCategoryAxis = None
-        # y轴
-        self.y_axis: QValueAxis = None
-        # dataset
-        self.fl_set=None
-        self.yl_set=None
-        # 数据
-        self.data = []
-        self.fl_data={}
-        self.yl_data={}
-
-        self.categories=None
-        self.data_save = report_writing(file_path=global_setting.get_setting('server_config')['Storage']['fold_path'] + f"/{global_setting.get_setting('server_config')['Image_Process']['report_file_name']}")
-        self._init_ui()
-
-    def _init_ui(self):
-        self.chart_view = QChartView()
-        self.chart_view.setMouseTracking(True)  # 开启鼠标追踪
-
-        self.chart_view.setFixedSize(500 , 400)  # 固定大小
-
-        self.chart_view.setRenderHint(QPainter.RenderHint.Antialiasing)  # 关键设置 抗锯齿
-        self.chart_view.setObjectName(f"{self.object_name}")
-        self.parent_layout.addWidget(self.chart_view)
-        # 初始化图表
-        self._init_chart()
-        pass
-    def _init_chart(self):
-        # 创建图表对象
-
-        self.chart = QChart()
-        self.chart.setAnimationOptions(QChart.AnimationOption.SeriesAnimations)
-        self.chart.setObjectName(f"{self.object_name}_chart")
-        self.chart.setTitle("FL 和 YL 分组数量柱状图")
-
-        self.get_data()
-        self._set_data_set()
-        # 设置序列 和图表类型
-        self._set_series()
-
-        # 将数据放入series中 更新数据
-        self.set_data_to_series()
-        # 设置坐标轴
-        self._set_x_axis()
-        self._set_y_axis()
-
-        # 设置样式
-        self.set_style()
-        # 添加到视图
-        self.chart_view.setChart(self.chart)
-
-    def get_data(self):
-        self.data = self.data_save.csv_read_not_dict()
-        self.data_save.csv_close()
-        self.fl_data = {item["设备号"]: item["数量"] for item in self.data if item["设备号"].startswith("FL")}
-        self.yl_data = {item["设备号"]: item["数量"] for item in self.data if item["设备号"].startswith("YL")}
-        pass
-
-    def _set_data_set(self):
-        # 创建数据集
-        self.fl_set = QBarSet("FL")
-        self. yl_set = QBarSet("YL")
-
-        # 添加数据
-        print(self.fl_data)
-        self.fl_set.append(list(self.fl_data.values()))
-        self.yl_set.append(list(self.yl_data.values()))
-        pass
-    def _set_series(self):
-        # 创建柱状系列
-        self.series = QBarSeries()
-        self.series.append(self.fl_set)
-        self.series.append(self.yl_set)
-        self.chart.addSeries(self.series)
-        pass
-
-
-
-    def set_data_to_series(self):
-        pass
-
-    def _set_x_axis(self):
-        # 设置 X 轴
-        self.categories = list(self.fl_data.keys()) + list(self.yl_data.keys())
-        self.x_axis = QBarCategoryAxis()
-        self.x_axis.append(self.categories)
-        self.chart.addAxis(self.x_axis, Qt.AlignmentFlag.AlignBottom)
-        self.series.attachAxis(self.x_axis)
-        pass
-
-    def _set_y_axis(self):
-
-        # 设置 Y 轴
-        self.y_axis = QValueAxis()
-        self.y_axis.setRange(0, max(max(self.fl_data.values()), max(self.yl_data.values())) + 5)
-        self.chart.addAxis(self.y_axis, Qt.AlignmentFlag.AlignLeft)
-        self.series.attachAxis(self.y_axis)
-        pass
-
-    def set_style(self):
-        pass
-
 
 
 class Tab_7(ThemedWidget):
@@ -251,7 +133,19 @@ class Tab_7(ThemedWidget):
     def _init_customize_ui(self):
         # 找到charts的layout
         charts_layout:QVBoxLayout =  self.frame.findChild(QVBoxLayout, "charts_layout")
-        self.charts = BarChartApp(parent=charts_layout,object_name="charts_data")
+        #找到 scrollarea
+        scrollArea :QScrollArea = self.frame.findChild(QScrollArea,"scrollArea")
+        scrollArea.setWidgetResizable(True)
+        # 找到 scrollarea_container
+        scrollarea_container:QWidget = self.frame.findChild(QWidget,"scrollAreaWidget")
+
+        sub_layout = QVBoxLayout(scrollarea_container)
+        sub_layout.setObjectName(f"layout_sub")
+        self.charts = BarChartApp(parent=sub_layout, object_name="charts_data")
+
+        scrollarea_container.setLayout(sub_layout)
+
+
         pass
 
     # 实例化功能

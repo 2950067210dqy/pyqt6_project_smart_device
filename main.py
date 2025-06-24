@@ -20,6 +20,9 @@ from server.sender import Sender
 from server.server import Server
 from theme.ThemeManager import ThemeManager
 
+DEBUGGER = True
+
+
 # 终端模拟 模拟16个设备 8个蝇类，8个另一个种类
 sender_thread_list = []
 # 工控机模拟
@@ -148,68 +151,69 @@ if __name__ == "__main__" and os.path.basename(__file__) == "main.py":
             server_thread.join(timeout=5)
         pass
 
-
-    # FL终端
-    try:
-        send_nums_FL = int(global_setting.get_setting("server_config")["Sender_FL"]["device_nums"])
-    except Exception as e:
-        logger.error(f"server_config配置文件Send_FL-device_nums错误！{e}")
-        sys.exit(0)
-
-    # 终端host ip
-    try:
-        sender_host = global_setting.get_setting("server_config")["Sender_FL"]["hosts"].split(",")
-        if len(sender_host) != send_nums_FL:
-            logger.error(f"server_config配置文件Send_FL-device_hosts数量和终端数量send_nums_FL不一致！{e}")
-            sys.exit(0)
-    except Exception as e:
-        logger.error(f"server_config配置文件Send_FL-device_hosts错误！{e}")
-        sys.exit(0)
-    for i in range(send_nums_FL):
-        uid = f"AAFL-{(i + 1):06d}-CAFAF"
-        sender_thread = Sender(type="FL",uid=uid,host=sender_host[i],port=port,img_dir=f"{global_setting.get_setting('server_config')['Storage']['fold_path']}{global_setting.get_setting('server_config')['Sender_FL']['fold_path']}1803.{655+i%3}.050.png")
-        sender_thread_list.append(sender_thread)
+    if DEBUGGER:
+        # 模拟终端发送
+        # FL终端
         try:
-            logger.info(f"sender_thread_FL_{i} |{uid} |子线程开始运行")
-            sender_thread.start()
+            send_nums_FL = int(global_setting.get_setting("server_config")["Sender_FL"]["device_nums"])
         except Exception as e:
-            logger.error(f"sender_thread_FL_{i} |{uid} |子线程发生异常：{e}，准备终止该子线程")
-            if server_thread.is_alive():
-                server_thread.stop()
-                server_thread.join(timeout=5)
-            pass
-
-
-    # YL终端
-    try:
-        send_nums_YL = int(global_setting.get_setting("server_config")["Sender_YL"]["device_nums"])
-    except Exception as e:
-        logger.error(f"server_config配置文件Send_YL-device_nums错误！{e}")
-        sys.exit(0)
-
-    # 终端host ip
-    try:
-        sender_host = global_setting.get_setting("server_config")["Sender_YL"]["hosts"].split(",")
-        if len(sender_host) != send_nums_YL:
-            logger.error(f"server_config配置文件Send_YL-device_hosts数量和终端数量send_nums_YL不一致！{e}")
+            logger.error(f"server_config配置文件Send_FL-device_nums错误！{e}")
             sys.exit(0)
-    except Exception as e:
-        logger.error(f"server_config配置文件Send_YL-device_hosts错误！{e}")
-        sys.exit(0)
-    for i in range(send_nums_YL):
-        uid = f"AAYL-{(i + 1):06d}-CAFAF"
-        sender_thread = Sender(type="YL",uid=uid, host=sender_host[i], port=port,
-                               img_dir=f"{global_setting.get_setting('server_config')['Storage']['fold_path']}{global_setting.get_setting('server_config')['Sender_YL']['fold_path']}1803.{655 + i % 3}.050.png")
-        sender_thread_list.append(sender_thread)
+
+        # 终端host ip
         try:
-            logger.info(f"sender_thread_YL_{i} |{uid} |子线程开始运行")
-            sender_thread.start()
+            sender_host = global_setting.get_setting("server_config")["Sender_FL"]["hosts"].split(",")
+            if len(sender_host) != send_nums_FL:
+                logger.error(f"server_config配置文件Send_FL-device_hosts数量和终端数量send_nums_FL不一致！{e}")
+                sys.exit(0)
         except Exception as e:
-            logger.error(f"sender_thread_YL_{i} |{uid} |子线程发生异常：{e}，准备终止该子线程")
-            if server_thread.is_alive():
-                server_thread.stop()
-                server_thread.join(timeout=5)
-            pass
+            logger.error(f"server_config配置文件Send_FL-device_hosts错误！{e}")
+            sys.exit(0)
+        for i in range(send_nums_FL):
+            uid = f"AAFL-{(i + 1):06d}-CAFAF"
+            sender_thread = Sender(type="FL",uid=uid,host=sender_host[i],port=port,img_dir=f"{global_setting.get_setting('server_config')['Storage']['fold_path']}{global_setting.get_setting('server_config')['Sender_FL']['fold_path']}1803.{655+i%3}.050.png")
+            sender_thread_list.append(sender_thread)
+            try:
+                logger.info(f"sender_thread_FL_{i} |{uid} |子线程开始运行")
+                sender_thread.start()
+            except Exception as e:
+                logger.error(f"sender_thread_FL_{i} |{uid} |子线程发生异常：{e}，准备终止该子线程")
+                if server_thread.is_alive():
+                    server_thread.stop()
+                    server_thread.join(timeout=5)
+                pass
+
+
+        # YL终端
+        try:
+            send_nums_YL = int(global_setting.get_setting("server_config")["Sender_YL"]["device_nums"])
+        except Exception as e:
+            logger.error(f"server_config配置文件Send_YL-device_nums错误！{e}")
+            sys.exit(0)
+
+        # 终端host ip
+        try:
+            sender_host = global_setting.get_setting("server_config")["Sender_YL"]["hosts"].split(",")
+            if len(sender_host) != send_nums_YL:
+                logger.error(f"server_config配置文件Send_YL-device_hosts数量和终端数量send_nums_YL不一致！{e}")
+                sys.exit(0)
+        except Exception as e:
+            logger.error(f"server_config配置文件Send_YL-device_hosts错误！{e}")
+            sys.exit(0)
+        for i in range(send_nums_YL):
+            uid = f"AAYL-{(i + 1):06d}-CAFAF"
+            sender_thread = Sender(type="YL",uid=uid, host=sender_host[i], port=port,
+                                   img_dir=f"{global_setting.get_setting('server_config')['Storage']['fold_path']}{global_setting.get_setting('server_config')['Sender_YL']['fold_path']}1803.{655 + i % 3}.050.png")
+            sender_thread_list.append(sender_thread)
+            try:
+                logger.info(f"sender_thread_YL_{i} |{uid} |子线程开始运行")
+                sender_thread.start()
+            except Exception as e:
+                logger.error(f"sender_thread_YL_{i} |{uid} |子线程发生异常：{e}，准备终止该子线程")
+                if server_thread.is_alive():
+                    server_thread.stop()
+                    server_thread.join(timeout=5)
+                pass
     # 图像识别算法线程
     types = ['FL','YL']
     image_process_thread_list = []
@@ -236,25 +240,26 @@ if __name__ == "__main__" and os.path.basename(__file__) == "main.py":
         # 主窗口实例化
         try:
             allWindows = AllWindows()
+            logger.info("Appliacation start")
+            allWindows.show()
+            # 系统退出
+            sys.exit(app.exec())
         except Exception as e:
             logger.error(f"gui程序实例化失败，原因:{e} |  异常堆栈跟踪：{traceback.print_exc()}")
             # 如果gui线程死亡 则将其他的线程全部终止
             if server_thread.is_alive():
                 server_thread.stop()
-                server_thread.join(timeout=2)
+                server_thread.join()
             for send in sender_thread_list:
                 if send.is_alive():
                     send.stop()
-                    send.join(timeout=2)
+                    send.join()
             for image_process in image_process_thread_list:
                 if image_process.is_alive():
                     image_process.stop()
-                    image_process.join(timeout=2)
+                    image_process.join()
             sys.exit(0)
             # 主窗口显示
-        logger.info("Appliacation start")
-        allWindows.show()
-        # 系统退出
-        sys.exit(app.exec())
+
     except Exception as e:
         logger.error(f"gui程序运行异常，原因：{e} |  异常堆栈跟踪：{traceback.print_exc()}，终止gui进程和comm进程")
