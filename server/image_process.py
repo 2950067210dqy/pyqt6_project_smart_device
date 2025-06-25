@@ -157,42 +157,68 @@ class Img_process(Thread):
     def run(self):
         self.running = True
         while (self.running):
-            # # 为了保持图像识别在图像获取之后，所以第一次运行先阻塞该线程
-            if self.is_first_run:
-                time.sleep(float(global_setting.get_setting("server_config")['Image_Process']['block_delay']))
-            # 1.寻找temp文件夹中的图片
-            images = self.get_image_files()
-            # 没有文件
-            if (len(images)==0):
-                report_logger.warning(f"{self.type}无上传数据")
-                if self.is_first_run:
-                    time.sleep(float(global_setting.get_setting("server_config")['Image_Process']['delay'])-float(global_setting.get_setting("server_config")['Image_Process']['block_delay']))
-                    self.is_first_run=False
+                # 接收线程与图像处理线程同步
+                if self.type=="FL":
+                    with global_setting.get_setting("condition_FL"):
+                        # 等待直到所有发送 X 类型数据的线程发送完数据
+                        global_setting.get_setting("condition_FL").wait()
+                        # 处理数据
+                        if len(global_setting.get_setting("data_buffer_FL")) == int(
+                                global_setting.get_setting("server_config")['Sender_FL']['device_nums']):
+                            self.image_processing()
+                            # 清空数据缓冲区以准备下一轮发送
+                            global_setting.set_setting("data_buffer_FL",[])
+                    pass
                 else:
-                    time.sleep(float(global_setting.get_setting("server_config")['Image_Process']['delay']))
-                continue
-            # 处理并更新报告
-            self.data_save.csv_create()
-            for image in images:
-                name = image.split('_')[0]+'_'+image.split('_')[1]
-                nums = self.image_handle(image)
-                date= image.split('_')[2].replace("-","")
-                time_single = image.split('_')[3].split(".")[0].replace("-", ":")
-                # 2.更新报告
-                self.data_save.update_data(date, time_single, name, nums)
-                report_logger.info(f"完成{name}数据分析")
-                # 3.归档
-                shutil.move(self.path+self.temp_folder+image, self.path+self.record_folder)
-            self.data_save.csv_close()
+                    with global_setting.get_setting("condition_YL"):
+                        # 等待直到所有发送 X 类型数据的线程发送完数据
+                        global_setting.get_setting("condition_YL").wait()
+                        if len(global_setting.get_setting("data_buffer_YL")) == int(
+                                global_setting.get_setting("server_config")['Sender_YL']['device_nums']):
+                            # 处理数据
+                            self.image_processing()
+                            # 清空数据缓冲区以准备下一轮发送
+                            global_setting.set_setting("data_buffer_YL", [])
+                    pass
+
+                time.sleep(float(global_setting.get_setting("server_config")['Image_Process']['delay']))
+
+                pass
+        pass
+    def image_processing(self):
+        # # 为了保持图像识别在图像获取之后，所以第一次运行先阻塞该线程
+        # if self.is_first_run:
+        #     time.sleep(float(global_setting.get_setting("server_config")['Image_Process']['block_delay']))
+        # 1.寻找temp文件夹中的图片
+        images = self.get_image_files()
+        # 没有文件
+        if (len(images) == 0):
+            report_logger.warning(f"{self.type}无上传数据")
             if self.is_first_run:
                 time.sleep(float(global_setting.get_setting("server_config")['Image_Process']['delay']) - float(
                     global_setting.get_setting("server_config")['Image_Process']['block_delay']))
                 self.is_first_run = False
             else:
                 time.sleep(float(global_setting.get_setting("server_config")['Image_Process']['delay']))
-
-            pass
-        pass
+            return
+        # 处理并更新报告
+        self.data_save.csv_create()
+        for image in images:
+            name = image.split('_')[0] + '_' + image.split('_')[1]
+            nums = self.image_handle(image)
+            date = image.split('_')[2].replace("-", "")
+            time_single = image.split('_')[3].split(".")[0].replace("-", ":")
+            # 2.更新报告
+            self.data_save.update_data(date, time_single, name, nums)
+            report_logger.info(f"{self.type}完成{name}数据分析")
+            # 3.归档
+            shutil.move(self.path + self.temp_folder + image, self.path + self.record_folder)
+        self.data_save.csv_close()
+        # if self.is_first_run:
+        #     time.sleep(float(global_setting.get_setting("server_config")['Image_Process']['delay']) - float(
+        #         global_setting.get_setting("server_config")['Image_Process']['block_delay']))
+        #     self.is_first_run = False
+        # else:
     def image_handle(self,image_path):
         """
         图像识别算法

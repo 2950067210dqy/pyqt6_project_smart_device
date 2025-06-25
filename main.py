@@ -1,5 +1,6 @@
 import os
 import sys
+import threading
 import time
 import traceback
 
@@ -28,6 +29,13 @@ sender_thread_list = []
 # 工控机模拟
 server_thread=None
 def load_global_setting():
+    # 同步信号量
+    global_setting.set_setting("condition_FL",threading.Condition())
+    global_setting.set_setting("condition_YL",threading.Condition())
+    # 模拟接收的数据量
+    global_setting.set_setting("data_buffer_FL",[])
+    global_setting.set_setting("data_buffer_YL",[])
+
     # 加载gui配置存储到全局类中
     ini_parser_obj = ini_parser()
     configer = ini_parser_obj.read("./gui_smart_device_configer.ini")

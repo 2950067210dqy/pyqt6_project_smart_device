@@ -3,7 +3,7 @@ from pathlib import Path
 from PyQt6.QtCore import QUrl, QObject
 from PyQt6.QtMultimedia import QMediaPlayer, QAudioOutput
 from PyQt6.QtMultimediaWidgets import QVideoWidget
-from PyQt6.QtWidgets import QPushButton, QVBoxLayout, QFileDialog, QHBoxLayout, QWidget
+from PyQt6.QtWidgets import QPushButton, QVBoxLayout, QFileDialog, QHBoxLayout, QWidget, QSlider, QLabel
 from loguru import logger
 
 from config.global_setting import global_setting
@@ -11,11 +11,12 @@ from theme.ThemeQt6 import ThemedWidget
 
 
 class VideoPlayer(QObject):
-    def __init__(self,parent_frame:QWidget, parent_layout:QVBoxLayout,open_video_btn,start_video_btn,stop_video_btn,plainTextEdit):
+    def __init__(self,parent_frame:QWidget, parent_layout:QVBoxLayout,open_video_btn,start_video_btn,stop_video_btn,plainTextEdit,video_slider,video_slider_text):
         super().__init__()
-
-        self.parent_frame = parent_frame
-        self.parent_layout = parent_layout
+        self.video_slider:QSlider=video_slider
+        self.video_slider_text:QLabel=video_slider_text
+        self.parent_frame:QWidget = parent_frame
+        self.parent_layout:QVBoxLayout = parent_layout
 
         # 找到视频操作的三个按钮
         self.open_video_btn: QPushButton =open_video_btn
@@ -23,6 +24,10 @@ class VideoPlayer(QObject):
         self.stop_video_btn: QPushButton =stop_video_btn
 
         self.plainTextEdit = plainTextEdit
+
+        # 记录播放总时长和现在时长
+        self.video_all_duration =""
+        self.video_now_duration=""
         # 创建视频播放器
         self.media_player = QMediaPlayer()
 
@@ -44,6 +49,7 @@ class VideoPlayer(QObject):
 
 
     def open_file(self):
+        # self.stop_video()
         # 打开文件对话框选择视频文件
         self.stop_video_btn.setEnabled(True)
         self.start_video_btn.setEnabled(False)
@@ -65,13 +71,47 @@ class VideoPlayer(QObject):
             logger.error(f"打开视频文件错误：{e}")
 
     def init_function(self):
+        # 单击视频暂停/播放的功能
+        self.video_widget.mousePressEvent = self.toggle_play_pause
+
+        self.video_slider.sliderMoved.connect(self.set_video_position)
+        # 连接信号
+        self.media_player.positionChanged.connect(self.update_video_position)
+        self.media_player.durationChanged.connect(self.update_video_duration)
+
+        self.init_btn_function()
+
+        pass
+
+    def toggle_play_pause(self, event):
+        if self.media_player.playbackState() == QMediaPlayer.PlaybackState.PlayingState:
+            self.stop_video()
+        else:
+            self.start_video()
+    def set_video_position(self,position):
+        self.media_player.setPosition(position)
+        pass
+    def update_video_position(self,position):
+        self.video_slider.setValue(position)
+        minutes, seconds = divmod(position // 1000, 60)  # 转换为分钟和秒
+        self.video_now_duration = f"{minutes:02}:{seconds:02}"
+        self.display_duration()
+        pass
+    def update_video_duration(self,duration):
+        #视频加载完会执行一次
+        self.video_slider.setRange(0, duration)
+        minutes, seconds = divmod(duration // 1000, 60)  # 转换为分钟和秒
+        self.video_all_duration=f"{minutes:02}:{seconds:02}"
+        pass
+
+    def display_duration(self):
+        self.video_slider_text.setText(f"{self.video_now_duration}/{self.video_all_duration}")
+    def init_btn_function(self):
         self.start_video_btn.setEnabled(False)
         self.stop_video_btn.setEnabled(False)
         self.open_video_btn.clicked.connect(self.open_file)
         self.start_video_btn.clicked.connect(self.start_video)
         self.stop_video_btn.clicked.connect(self.stop_video)
-        pass
-
     def start_video(self):
         self.start_video_btn.setEnabled(False)
         self.stop_video_btn.setEnabled(True)
@@ -83,3 +123,4 @@ class VideoPlayer(QObject):
         self.stop_video_btn.setEnabled(False)
         self.media_player.pause()
         pass
+

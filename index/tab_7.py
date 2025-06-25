@@ -8,7 +8,7 @@ from config.global_setting import global_setting
 from PyQt6 import QtCore
 from PyQt6.QtCore import QRect, QThread, pyqtSignal
 from PyQt6.QtWidgets import QWidget, QMainWindow, QTextBrowser, QVBoxLayout, QScrollArea, QPushButton, QHBoxLayout, \
-    QTextEdit, QPlainTextEdit
+    QTextEdit, QPlainTextEdit, QSlider, QLabel
 
 from theme.ThemeQt6 import ThemedWidget
 from ui.custom_ui.BarChart import BarChartApp
@@ -150,7 +150,13 @@ class Tab_7(ThemedWidget):
         start_video_btn: QPushButton =  self.frame.findChild(QPushButton, "start_video_btn")
         stop_video_btn: QPushButton =  self.frame.findChild(QPushButton, "stop_video_btn")
         plainTextEdit:QPlainTextEdit = self.frame.findChild(QPlainTextEdit, "plainTextEdit")
-        self.video_component = VideoPlayer(parent_frame=self.frame,parent_layout=video_layout,open_video_btn=open_video_btn,start_video_btn=start_video_btn,stop_video_btn=stop_video_btn,plainTextEdit=plainTextEdit)
+
+        video_slider:QSlider=self.frame.findChild(QSlider,"video_slider")
+        video_slider_text:QLabel=self.frame.findChild(QLabel,"video_slider_text")
+
+        self.video_component = VideoPlayer(parent_frame=self.frame,parent_layout=video_layout,open_video_btn=open_video_btn,
+                                           start_video_btn=start_video_btn,stop_video_btn=stop_video_btn,plainTextEdit=plainTextEdit,
+                                           video_slider=video_slider,video_slider_text=video_slider_text)
         pass
 
     def init_charts(self):

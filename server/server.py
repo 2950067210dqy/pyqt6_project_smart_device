@@ -69,7 +69,6 @@ class Server(threading.Thread):
                 if not self.init_state:
                     continue
             try:
-
                 self.handle_client()
 
                 pass
@@ -109,7 +108,7 @@ class Server(threading.Thread):
         self.conns.append(conn)
         self.addrs.append(addr)
 
-        logger.info(f" New connection from {addr} connected| Active connections: {threading.active_count() - 7}")
+        logger.info(f" New connection from {addr} connected| Active connections: {threading.active_count() - 7}")# 图像处理线程2个 server线程自己1个 tab一直读取status1个，charts读取数据1个，
         # 默认保存路径
         if self.save_dir is None:
             self.save_dir = sys.path[0] + '\\saved'
@@ -202,6 +201,28 @@ class Server(threading.Thread):
                 f.write(image_data)
 
             logger.info(f' Saved to {filepath} (UID: {uid}). Time elapsed: {time_elapsed}s')
+            # 接收数据线程与图像处理线程同步处理
+            if type_code == "FL":
+                with  global_setting.get_setting("condition_FL"):
+                    # 接收到了数据
+                    global_setting.get_setting("data_buffer_FL").append(1)
+                    # 如果所有线程都发送完数据，通知处理线程
+                    if len(global_setting.get_setting("data_buffer_FL")) >= int(
+                        global_setting.get_setting("server_config")['Sender_FL']['device_nums']):
+
+                        global_setting.get_setting("condition_FL").notify()  # 通知处理线程开始处理
+                    pass
+            else:
+                with  global_setting.get_setting("condition_YL"):
+                    # 接收到了数据
+                    global_setting.get_setting("data_buffer_YL").append(1)
+                    # 如果所有线程都发送完数据，通知处理线程
+                    if len(global_setting.get_setting("data_buffer_YL")) >= int(
+                            global_setting.get_setting("server_config")['Sender_YL']['device_nums']):
+
+                        global_setting.get_setting("condition_YL").notify()  # 通知处理线程开始处理
+                    pass
+                pass
         except Exception as e:
             logger.error(f" Error processing connection: {e}|trace stack :{traceback.print_stack()}")
             if conn is not None:
