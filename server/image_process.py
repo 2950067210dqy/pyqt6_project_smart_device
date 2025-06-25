@@ -219,7 +219,7 @@ class Img_process(Thread):
             time_single = image.split('_')[3].split(".")[0].replace("-", ":")
             # 2.更新报告
             self.data_save.update_data(date, time_single, name, nums)
-            report_logger.info(f"{self.type}完成{name}数据分析")
+            report_logger.info(f"完成{name}数据分析")
             # 3.归档
             shutil.move(self.path + self.temp_folder + image, self.path + self.record_folder)
         self.data_save.csv_close()

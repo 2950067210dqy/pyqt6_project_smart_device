@@ -1,3 +1,5 @@
+import os
+import random
 import socket
 import time
 import traceback
@@ -70,18 +72,55 @@ class Sender(Thread):
     def set_image_dir(self,img_dir):
         self.img_dir=img_dir
         pass
+
     def read_and_Encrypt_image(self):
-        # Read the image
-        with open(self.img_dir, 'rb') as f:
-            image = f.read()
 
-        # Create cipher with GCM mode
-        cipher = AES.new(self.KEY, AES.MODE_GCM)
+        # 检查文件夹是否存在
+        if os.path.isdir(self.img_dir):
+            # 是文件夹就一直读文件夹里是否有文件
+            images = self.find_images(self.img_dir)
+            random_images_path = self.img_dir
+            if len(images) != 0:
+                random_images_path = images[random.randint(0, len(images) - 1)]
+                self.img_dir = random_images_path
+                # 是文件就读
+                if not os.path.exists(os.path.dirname(self.img_dir)):
+                    # 如果不存在，则创建文件夹
+                    os.makedirs(os.path.dirname(self.img_dir))
+                # Read the image
+                with open(self.img_dir, 'rb') as f:
+                    image = f.read()
 
-        # Encrypt the image data
-        encrypted_data, tag = cipher.encrypt_and_digest(image)
-        return encrypted_data,tag,cipher
+                # Create cipher with GCM mode
+                cipher = AES.new(self.KEY, AES.MODE_GCM)
+
+                # Encrypt the image data
+                encrypted_data, tag = cipher.encrypt_and_digest(image)
+                return encrypted_data, tag, cipher
+            else:
+                return None, None, None
+            pass
+        elif os.path.isfile(self.img_dir):
+            # 是文件就读
+            if not os.path.exists(os.path.dirname(self.img_dir)):
+                # 如果不存在，则创建文件夹
+                os.makedirs(os.path.dirname(self.img_dir))
+            # Read the image
+            with open(self.img_dir, 'rb') as f:
+                image = f.read()
+
+            # Create cipher with GCM mode
+            cipher = AES.new(self.KEY, AES.MODE_GCM)
+
+            # Encrypt the image data
+            encrypted_data, tag = cipher.encrypt_and_digest(image)
+            return encrypted_data, tag, cipher
+        else:
+            # 无效路径
+            return None, None, None
+
         pass
+
     # 运行结束
     def join(self):
         self.running = False
@@ -130,7 +169,10 @@ class Sender(Thread):
         '''
 
         encrypted_data, tag,cipher=self.read_and_Encrypt_image()
-
+        if encrypted_data is None or tag is None or cipher is None:
+            logger.error(
+                f"Error sender{self.uid} encrypted_data, tag, cipher to server: is None | trace stack:{traceback.print_exc()}")
+            return
 
         # Send the nonce (used instead of IV in GCM mode)
         try:
