@@ -114,7 +114,7 @@ class Img_process(Thread):
         self.path =global_setting.get_setting('server_config')['Storage']['fold_path']
         # YL FL
         self.type = type
-        self.is_first_run=True
+
         if not os.path.exists(self.path+temp_folder):
             os.makedirs(self.path+temp_folder)
         self.temp_folder=temp_folder
@@ -123,7 +123,7 @@ class Img_process(Thread):
         self.record_folder=record_folder
         self.report_file_path=report_file_path
         self.data_save = report_writing(file_path=self.path+report_file_path)
-
+        self.data_save.csv_create()
         self.running=False
 
     def get_image_files(self):
@@ -163,22 +163,36 @@ class Img_process(Thread):
                         # 等待直到所有发送 X 类型数据的线程发送完数据
                         global_setting.get_setting("condition_FL").wait()
                         # 处理数据
-                        if len(global_setting.get_setting("data_buffer_FL")) == int(
+                        if len(global_setting.get_setting("data_buffer_FL")) >= int(
                                 global_setting.get_setting("server_config")['Sender_FL']['device_nums']):
+                            # 如果是大于的说明上一次接收到的数据并不是所有的终端设备发过来的 有缺失
+                            if len(global_setting.get_setting("data_buffer_YL")) > int(
+                                    global_setting.get_setting("server_config")['Sender_YL']['device_nums']):
+                                report_logger.warning(f"{self.type}无上传数据")
+                                pass
                             self.image_processing()
                             # 清空数据缓冲区以准备下一轮发送
                             global_setting.set_setting("data_buffer_FL",[])
+                            # 给图表更新线程放行
+                            global_setting.get_setting("processing_done").set()
                     pass
                 else:
                     with global_setting.get_setting("condition_YL"):
                         # 等待直到所有发送 X 类型数据的线程发送完数据
                         global_setting.get_setting("condition_YL").wait()
-                        if len(global_setting.get_setting("data_buffer_YL")) == int(
+                        if len(global_setting.get_setting("data_buffer_YL")) >= int(
                                 global_setting.get_setting("server_config")['Sender_YL']['device_nums']):
+                            # 如果是大于的说明上一次接收到的数据并不是所有的终端设备发过来的 有缺失
+                            if len(global_setting.get_setting("data_buffer_YL")) > int(
+                                    global_setting.get_setting("server_config")['Sender_YL']['device_nums']):
+                                report_logger.warning(f"{self.type}无上传数据")
+                                pass
                             # 处理数据
                             self.image_processing()
                             # 清空数据缓冲区以准备下一轮发送
                             global_setting.set_setting("data_buffer_YL", [])
+                            # 给图表更新线程放行
+                            global_setting.get_setting("processing_done").set()
                     pass
 
                 time.sleep(float(global_setting.get_setting("server_config")['Image_Process']['delay']))
@@ -194,15 +208,10 @@ class Img_process(Thread):
         # 没有文件
         if (len(images) == 0):
             report_logger.warning(f"{self.type}无上传数据")
-            if self.is_first_run:
-                time.sleep(float(global_setting.get_setting("server_config")['Image_Process']['delay']) - float(
-                    global_setting.get_setting("server_config")['Image_Process']['block_delay']))
-                self.is_first_run = False
-            else:
-                time.sleep(float(global_setting.get_setting("server_config")['Image_Process']['delay']))
+
+            time.sleep(float(global_setting.get_setting("server_config")['Image_Process']['delay']))
             return
         # 处理并更新报告
-        self.data_save.csv_create()
         for image in images:
             name = image.split('_')[0] + '_' + image.split('_')[1]
             nums = self.image_handle(image)

@@ -35,7 +35,8 @@ def load_global_setting():
     # 模拟接收的数据量
     global_setting.set_setting("data_buffer_FL",[])
     global_setting.set_setting("data_buffer_YL",[])
-
+    # 用于指示图像处理任务的完成状态
+    global_setting.set_setting("processing_done",threading.Event())
     # 加载gui配置存储到全局类中
     ini_parser_obj = ini_parser()
     configer = ini_parser_obj.read("./gui_smart_device_configer.ini")

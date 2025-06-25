@@ -205,9 +205,11 @@ class Server(threading.Thread):
             if type_code == "FL":
                 with  global_setting.get_setting("condition_FL"):
                     # 接收到了数据
+
                     global_setting.get_setting("data_buffer_FL").append(1)
+                    logger.debug(f"data_buffer_FL - 加1-长度{len(global_setting.get_setting('data_buffer_FL'))}")
                     # 如果所有线程都发送完数据，通知处理线程
-                    if len(global_setting.get_setting("data_buffer_FL")) >= int(
+                    if len(global_setting.get_setting("data_buffer_FL")) == int(
                         global_setting.get_setting("server_config")['Sender_FL']['device_nums']):
 
                         global_setting.get_setting("condition_FL").notify()  # 通知处理线程开始处理
@@ -215,9 +217,11 @@ class Server(threading.Thread):
             else:
                 with  global_setting.get_setting("condition_YL"):
                     # 接收到了数据
+
                     global_setting.get_setting("data_buffer_YL").append(1)
+                    logger.debug(f"data_buffer_YL - 加1-长度{len(global_setting.get_setting('data_buffer_YL'))}")
                     # 如果所有线程都发送完数据，通知处理线程
-                    if len(global_setting.get_setting("data_buffer_YL")) >= int(
+                    if len(global_setting.get_setting("data_buffer_YL")) == int(
                             global_setting.get_setting("server_config")['Sender_YL']['device_nums']):
 
                         global_setting.get_setting("condition_YL").notify()  # 通知处理线程开始处理
