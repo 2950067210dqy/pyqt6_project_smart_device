@@ -1,8 +1,11 @@
 import os
+import random
 import sys
 import threading
 import time
 import traceback
+from itertools import chain
+from pathlib import Path
 
 import psutil
 from PyQt6.QtCore import QThreadPool
@@ -21,7 +24,7 @@ from server.sender import Sender
 from server.server import Server
 from theme.ThemeManager import ThemeManager
 
-DEBUGGER = True
+
 
 
 # 终端模拟 模拟16个设备 8个蝇类，8个另一个种类
@@ -113,7 +116,19 @@ def kill_process_tree(pid, including_parent=True):
             parent.terminate()
             parent.wait(5)
 
+def find_images(folder_path):
+    folder = Path(folder_path)
+    if not folder.exists():
+        folder.mkdir(parents=True, exist_ok=True)
+    # 定义可以被视为图片的文件扩展名
+    image_extensions = ('.jpg', '.jpeg', '.png', '.gif', '.bmp', '.tiff', '.svg')
 
+    # 创建生成器并使用 itertools.chain 合并
+    image_files = chain.from_iterable(
+        folder.rglob('*' + ext) for ext in image_extensions
+    )
+
+    return list(image_files)  # 转换为列表返回
 
 
 if __name__ == "__main__" and os.path.basename(__file__) == "main.py":
@@ -160,7 +175,7 @@ if __name__ == "__main__" and os.path.basename(__file__) == "main.py":
             server_thread.join(timeout=5)
         pass
 
-    if DEBUGGER:
+    if bool(global_setting.get_setting("server_config")["DeBug"]["send_debug"]):
         # 模拟终端发送
         # FL终端
         try:
@@ -180,7 +195,12 @@ if __name__ == "__main__" and os.path.basename(__file__) == "main.py":
             sys.exit(0)
         for i in range(send_nums_FL):
             uid = f"AAFL-{(i + 1):06d}-CAFAF"
-            sender_thread = Sender(type="FL",uid=uid,host=sender_host[i],port=port,img_dir=f"{global_setting.get_setting('server_config')['Storage']['fold_path']}{global_setting.get_setting('server_config')['Sender_FL']['fold_path']}1803.{655+i%3}.050.png")
+            send_full_fold_path =f"{global_setting.get_setting('server_config')['Storage']['fold_path']}{global_setting.get_setting('server_config')['Sender_FL']['fold_path']}"
+            images = find_images(send_full_fold_path)
+            random_images_path =""
+            if len(images)!=0:
+                random_images_path=images[random.randint(0,len(images)-1)]
+            sender_thread = Sender(type="FL",uid=uid,host=sender_host[i],port=port,img_dir=random_images_path)
             sender_thread_list.append(sender_thread)
             try:
                 logger.info(f"sender_thread_FL_{i} |{uid} |子线程开始运行")
@@ -211,8 +231,13 @@ if __name__ == "__main__" and os.path.basename(__file__) == "main.py":
             sys.exit(0)
         for i in range(send_nums_YL):
             uid = f"AAYL-{(i + 1):06d}-CAFAF"
+            send_full_fold_path = f"{global_setting.get_setting('server_config')['Storage']['fold_path']}{global_setting.get_setting('server_config')['Sender_YL']['fold_path']}"
+            images = find_images(send_full_fold_path)
+            random_images_path = ""
+            if len(images) != 0:
+                random_images_path = images[random.randint(0, len(images) - 1)]
             sender_thread = Sender(type="YL",uid=uid, host=sender_host[i], port=port,
-                                   img_dir=f"{global_setting.get_setting('server_config')['Storage']['fold_path']}{global_setting.get_setting('server_config')['Sender_YL']['fold_path']}1803.{655 + i % 3}.050.png")
+                                   img_dir=random_images_path)
             sender_thread_list.append(sender_thread)
             try:
                 logger.info(f"sender_thread_YL_{i} |{uid} |子线程开始运行")

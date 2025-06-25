@@ -17,13 +17,13 @@ from util.class_util import class_util
 
 class Tab(ThemedWidget):
     # 不同的菜单窗口类
-    # classes = [Tab_1, Tab_2, Tab_3, Tab_4, Tab_5, Tab_6, Tab_7]
+    classes = [ Tab_7]
 
     # 实例化
     def __init__(self, parent=None, geometry: QRect = None, title="", id=1):
         super().__init__()
         # 实例化ui
-        self.classes = class_util.get_class_obj_from_modules_names(path="./index/", mapping="Tab_")
+        # self.classes = class_util.get_class_obj_from_modules_names(path="./index/", mapping="Tab_")
         self._init_ui(parent, geometry, title, id)
         pass
 
