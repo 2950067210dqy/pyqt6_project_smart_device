@@ -22,6 +22,7 @@ from index.all_windows import AllWindows
 from server.image_process import Img_process
 from server.sender import Sender
 from server.server import Server
+from server.video_process import Video_process
 from theme.ThemeManager import ThemeManager
 
 
@@ -31,13 +32,15 @@ from theme.ThemeManager import ThemeManager
 sender_thread_list = []
 # 工控机模拟
 server_thread=None
+image_process_thread=None
+video_process_thread=None
 def load_global_setting():
     # 同步信号量
-    global_setting.set_setting("condition_FL",threading.Condition())
-    global_setting.set_setting("condition_YL",threading.Condition())
+    global_setting.set_setting("condition",threading.Condition())
+    global_setting.set_setting("condition_video", threading.Condition())
     # 模拟接收的数据量
-    global_setting.set_setting("data_buffer_FL",[])
-    global_setting.set_setting("data_buffer_YL",[])
+    global_setting.set_setting("data_buffer",[])
+    global_setting.set_setting("data_buffer_video",[])
     # 用于指示图像处理任务的完成状态
     global_setting.set_setting("processing_done",threading.Event())
     # 加载gui配置存储到全局类中
@@ -86,6 +89,12 @@ def quit_qt_application():
                 sender_thread.join(timeout=2)
 
             i+=1
+    if image_process_thread.is_alive():
+        image_process_thread.stop()
+        image_process_thread.join()
+    if video_process_thread.is_alive():
+        video_process_thread.stop()
+        video_process_thread.join()
     # 等待5秒系统退出
     # step = 5
     # while step >= 0:
@@ -250,20 +259,42 @@ if __name__ == "__main__" and os.path.basename(__file__) == "main.py":
                 pass
     # 图像识别算法线程
     types = ['FL','YL']
-    image_process_thread_list = []
-    for t in types:
-        image_process_thread =Img_process(type=t,temp_folder=f"/{t}_{global_setting.get_setting('server_config')['Server']['fold_suffix']}/",record_folder=f"/{t}_{global_setting.get_setting('server_config')['Image_Process']['fold_suffix']}/",report_file_path=f"/{global_setting.get_setting('server_config')['Image_Process']['report_file_name']}")
-        try:
-            logger.info(f"image_process_thread |{t} |子线程开始运行")
-            image_process_thread.start()
-            image_process_thread_list.append(image_process_thread)
-        except Exception as e:
-            logger.error(f"image_process_thread |{t} |子线程发生异常：{e}，准备终止该子线程")
-            if image_process_thread.is_alive():
-                image_process_thread.stop()
-                image_process_thread.join(timeout=5)
-            pass
+    image_process_thread =Img_process(types=types,
+                                      temp_folder=f"{global_setting.get_setting('server_config')['Server']['fold_suffix']}/",record_folder=f"{global_setting.get_setting('server_config')['Image_Process']['fold_suffix']}/",
+                                      report_fold_name=global_setting.get_setting('server_config')['Storage']['report_fold_name'],report_file_name_preffix=global_setting.get_setting('server_config')['Storage']['report_file_name_preffix'],report_file_name_suffix=global_setting.get_setting('server_config')['Storage']['report_file_name_suffix'])
+    # 开启线程之前，先把temp目录还未处理的剩余图像文件处理完的结果放到上一个report文件中后在开启线程
+    image_process_thread.image_process_remains()
+    try:
+        logger.info(f"image_process_thread |子线程开始运行")
+        image_process_thread.start()
+    except Exception as e:
+        logger.error(f"image_process_thread |子线程发生异常：{e}，准备终止该子线程")
+        if image_process_thread.is_alive():
+            image_process_thread.stop()
+            image_process_thread.join(timeout=5)
+        pass
 
+    # 视频识别算法线程
+    video_process_thread = Video_process(type="SL",
+                                       temp_folder=f"{global_setting.get_setting('server_config')['Server']['fold_suffix']}/",
+                                       record_folder=f"{global_setting.get_setting('server_config')['Video_Process']['fold_suffix']}/",
+                                       report_fold_name=global_setting.get_setting('server_config')['Storage'][
+                                           'report_fold_name'],
+                                       report_file_name_preffix=global_setting.get_setting('server_config')['Storage'][
+                                           'report_file_name_preffix'],
+                                       report_file_name_suffix=global_setting.get_setting('server_config')['Storage'][
+                                           'report_file_name_suffix'])
+    # 开启线程之前，先把temp目录还未处理的剩余文件处理完的结果放到上一个report文件中后在开启线程
+    video_process_thread.Video_Process_remains()
+    try:
+        logger.info(f"video_process_thread |子线程开始运行")
+        video_process_thread.start()
+    except Exception as e:
+        logger.error(f"video_process_thread |子线程发生异常：{e}，准备终止该子线程")
+        if video_process_thread.is_alive():
+            video_process_thread.stop()
+            video_process_thread.join(timeout=5)
+        pass
     # qt程序开始
     try:
         # 启动qt
@@ -271,6 +302,7 @@ if __name__ == "__main__" and os.path.basename(__file__) == "main.py":
         app = QApplication(sys.argv)
         # 绑定突出事件
         app.aboutToQuit.connect(quit_qt_application)
+        app.setStyleSheet("QWidget { color: black; }")
         # 主窗口实例化
         try:
             allWindows = AllWindows()
@@ -288,10 +320,10 @@ if __name__ == "__main__" and os.path.basename(__file__) == "main.py":
                 if send.is_alive():
                     send.stop()
                     send.join()
-            for image_process in image_process_thread_list:
-                if image_process.is_alive():
-                    image_process.stop()
-                    image_process.join()
+
+            if image_process_thread.is_alive():
+                image_process_thread.stop()
+                image_process_thread.join()
             sys.exit(0)
             # 主窗口显示
 

@@ -9,20 +9,38 @@ from cv2 import imread
 from loguru import logger
 
 from config.global_setting import global_setting
+from util.time_util import time_util
+
 report_logger = logger.bind(category="report_logger")
 class report_writing:
     """
     将处理的坐标写入csv文件
     """
 
-    def __init__(self, file_path):
+    def __init__(self, file_path,file_name_preffix,file_name_suffix):
         self.csv_file = None
         self.csv_writer = None
         self.encoding = 'gbk'
-        self.file_path = file_path
 
+        self.file_name_preffix = file_name_preffix
+        self.file_name_suffix = file_name_suffix
+        self.file_direct_path=file_path
+        self.file_path = file_path+self.file_name_preffix+time_util.get_format_file_from_time(time.time())+self.file_name_suffix
+
+    def get_latest_file(self, folder_path):
+        # 获取文件夹内所有文件的完整路径
+        files = [os.path.join(folder_path, f) for f in os.listdir(folder_path) if
+                 os.path.isfile(os.path.join(folder_path, f))]
+
+        if not files:  # 如果文件夹为空
+            return None
+
+        # 使用 max 函数找到修改时间最新的文件
+        latest_file = max(files, key=os.path.getmtime)
+        return latest_file
     def csv_create(self):
-
+        if not os.path.exists(self.file_direct_path):
+            os.makedirs(self.file_direct_path)
         with open(self.file_path, mode='w', newline='', encoding=self.encoding) as file:
             self.csv_file = file
             self.csv_writer = csv.writer(self.csv_file)
@@ -108,22 +126,34 @@ class Img_process(Thread):
     """
     图像识别算法线程
     """
-    def __init__(self,type,temp_folder,record_folder,report_file_path):
+
+    def __init__(self,types,temp_folder,record_folder, report_fold_name,report_file_name_preffix,report_file_name_suffix):
+        """
+
+        :param type:
+        :param temp_folder:
+        :param record_folder:
+        :param report_fold_name: 报告文件夹名称
+        :param report_file_name_preffix: 报告文件名称前缀
+        :param report_file_name_suffix: 报告文件名称后缀
+        """
         super().__init__()
 
         self.path =global_setting.get_setting('server_config')['Storage']['fold_path']
         # YL FL
-        self.type = type
+        self.types = types
+        self.temp_folder = temp_folder
+        self.record_folder = record_folder
+        for t in self.types:
+            if not os.path.exists(self.path+t+"_"+temp_folder):
+                os.makedirs(self.path+t+"_"+temp_folder)
+            if not os.path.exists(self.path+t+"_"+record_folder):
+                os.makedirs(self.path+t+"_"+record_folder)
 
-        if not os.path.exists(self.path+temp_folder):
-            os.makedirs(self.path+temp_folder)
-        self.temp_folder=temp_folder
-        if not os.path.exists(self.path+record_folder):
-            os.makedirs(self.path+record_folder)
-        self.record_folder=record_folder
-        self.report_file_path=report_file_path
-        self.data_save = report_writing(file_path=self.path+report_file_path)
-        self.data_save.csv_create()
+        self.report_fold_name=report_fold_name
+        self.report_file_name_preffix=report_file_name_preffix
+        self.report_file_name_suffix=report_file_name_suffix
+        self.data_save = report_writing(file_path=self.path+ self.report_fold_name,file_name_preffix=report_file_name_preffix,file_name_suffix=report_file_name_suffix)
         self.running=False
 
     def get_image_files(self):
@@ -135,14 +165,33 @@ class Img_process(Thread):
         }
 
         # 获取目录中所有文件（不包含子目录）
-        all_files = [f for f in os.listdir(self.path+self.temp_folder)
-                     if os.path.isfile(os.path.join(self.path+self.temp_folder, f))]
+        all_files = []
+        for t in self.types:
+            all_files .extend([f for f in os.listdir(self.path+t+"_"+self.temp_folder)
+                         if os.path.isfile(os.path.join(self.path+t+"_"+self.temp_folder, f))])
 
         # 筛选图片文件
         image_files = [f for f in all_files
                        if os.path.splitext(f)[1].lower() in image_extensions]
 
         return sorted(image_files)  # 返回排序后的文件列表
+    def image_process_remains(self):
+        # 如果打开软件temp文件夹还有上次上传的图片未处理则直接处理并把数据放到上次的report里
+        if self.has_files():
+            logger.info("处理上次temp文件夹未处理完的数据")
+            self.image_processing()
+    # 检查temp目录是否还存在文件
+    def has_files(self):
+        for t in self.types:
+            temp_all_folder = os.path.join(self.path, t + "_" + self.temp_folder)
+            if not os.path.exists(temp_all_folder):
+                os.makedirs(temp_all_folder)
+            # 使用 os.scandir() 遍历目录
+            with os.scandir(temp_all_folder) as entries:
+                for entry in entries:
+                    if entry.is_file():  # 判断是否是文件
+                        return True
+        return False
     # 运行结束
     def join(self):
         self.running = False
@@ -157,61 +206,50 @@ class Img_process(Thread):
     def run(self):
         self.running = True
         while (self.running):
-                # 接收线程与图像处理线程同步
-                if self.type=="FL":
-                    with global_setting.get_setting("condition_FL"):
-                        # 等待直到所有发送 X 类型数据的线程发送完数据
-                        global_setting.get_setting("condition_FL").wait()
-                        # 处理数据
-                        if len(global_setting.get_setting("data_buffer_FL")) >= int(
-                                global_setting.get_setting("server_config")['Sender_FL']['device_nums']):
-                            # 如果是大于的说明上一次接收到的数据并不是所有的终端设备发过来的 有缺失
-                            if len(global_setting.get_setting("data_buffer_YL")) > int(
-                                    global_setting.get_setting("server_config")['Sender_YL']['device_nums']):
-                                report_logger.warning(f"{self.type}无上传数据")
-                                pass
-                            self.image_processing()
-                            # 清空数据缓冲区以准备下一轮发送
-                            global_setting.set_setting("data_buffer_FL",[])
-                            # 给图表更新线程放行
-                            global_setting.get_setting("processing_done").set()
-                    pass
-                else:
-                    with global_setting.get_setting("condition_YL"):
-                        # 等待直到所有发送 X 类型数据的线程发送完数据
-                        global_setting.get_setting("condition_YL").wait()
-                        if len(global_setting.get_setting("data_buffer_YL")) >= int(
-                                global_setting.get_setting("server_config")['Sender_YL']['device_nums']):
-                            # 如果是大于的说明上一次接收到的数据并不是所有的终端设备发过来的 有缺失
-                            if len(global_setting.get_setting("data_buffer_YL")) > int(
-                                    global_setting.get_setting("server_config")['Sender_YL']['device_nums']):
-                                report_logger.warning(f"{self.type}无上传数据")
-                                pass
-                            # 处理数据
-                            self.image_processing()
-                            # 清空数据缓冲区以准备下一轮发送
-                            global_setting.set_setting("data_buffer_YL", [])
-                            # 给图表更新线程放行
-                            global_setting.get_setting("processing_done").set()
-                    pass
+                # 处理数据
 
+
+                # 接收线程与图像处理线程同步
+                with global_setting.get_setting("condition"):
+                    global_setting.get_setting("condition").wait()
+                    if len(global_setting.get_setting("data_buffer")) >= int(
+                            global_setting.get_setting("server_config")['Sender_FL']['device_nums'])+int(
+                            global_setting.get_setting("server_config")['Sender_YL']['device_nums']):
+                        # 如果是大于的说明上一次接收到的数据并不是所有的终端设备发过来的 有缺失
+                        if len(global_setting.get_setting("data_buffer")) > int(
+                                global_setting.get_setting("server_config")['Sender_YL']['device_nums'])+int(
+                            global_setting.get_setting("server_config")['Sender_FL']['device_nums']):
+                            report_logger.warning(f"FL或YL有无上传数据")
+                            pass
+                        # 创建这次的新report文件
+                        self.data_save.csv_create()
+                        self.image_processing()
+                        # 清空数据缓冲区以准备下一轮发送
+                        global_setting.set_setting("data_buffer",[])
+                        # 给图表更新线程放行
+                        global_setting.get_setting("processing_done").set()
                 time.sleep(float(global_setting.get_setting("server_config")['Image_Process']['delay']))
 
-                pass
         pass
     def image_processing(self):
-        # # 为了保持图像识别在图像获取之后，所以第一次运行先阻塞该线程
-        # if self.is_first_run:
-        #     time.sleep(float(global_setting.get_setting("server_config")['Image_Process']['block_delay']))
         # 1.寻找temp文件夹中的图片
         images = self.get_image_files()
         # 没有文件
         if (len(images) == 0):
-            report_logger.warning(f"{self.type}无上传数据")
+            report_logger.warning(f"FL或YL有无上传数据")
 
             time.sleep(float(global_setting.get_setting("server_config")['Image_Process']['delay']))
             return
         # 处理并更新报告
+        # 获取最新report文件读取
+        latest_file_report_path =self.data_save.get_latest_file(
+            folder_path=global_setting.get_setting('server_config')['Storage'][
+                            'fold_path'] + f"/{global_setting.get_setting('server_config')['Storage']['report_fold_name']}")
+        # 没获取到就创建
+        if latest_file_report_path is None:
+            self.data_save.csv_create()
+        else:
+            self.data_save.file_path = latest_file_report_path
         for image in images:
             name = image.split('_')[0] + '_' + image.split('_')[1]
             nums = self.image_handle(image)
@@ -221,20 +259,16 @@ class Img_process(Thread):
             self.data_save.update_data(date, time_single, name, nums)
             report_logger.info(f"完成{name}数据分析")
             # 3.归档
-            shutil.move(self.path + self.temp_folder + image, self.path + self.record_folder)
+            shutil.move(self.path +image.split('_')[0]+"_"+ self.temp_folder + image, self.path +image.split('_')[0]+"_"+self.record_folder)
         self.data_save.csv_close()
-        # if self.is_first_run:
-        #     time.sleep(float(global_setting.get_setting("server_config")['Image_Process']['delay']) - float(
-        #         global_setting.get_setting("server_config")['Image_Process']['block_delay']))
-        #     self.is_first_run = False
-        # else:
     def image_handle(self,image_path):
         """
         图像识别算法
         :return:数量
         """
         try:
-            imge = imread(self.path+self.temp_folder+image_path)
+            logger.info(f"处理数据{self.path+ image_path.split('_')[0] + '_'+self.temp_folder+image_path}")
+            imge = imread(self.path+ image_path.split('_')[0] + '_'+self.temp_folder+image_path)
         except Exception as e:
             report_logger.error(f"{image_path}图片已损坏")
             return 0

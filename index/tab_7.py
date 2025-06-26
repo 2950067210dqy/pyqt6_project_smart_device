@@ -195,7 +195,13 @@ class Tab_7(ThemedWidget):
         pass
 
     def openSL_Folder(self):
-
+        # 获取当前工作目录
+        current_directory = Path.cwd()
+        open_direct = Path.joinpath(current_directory,
+                                    global_setting.get_setting("server_config")['Storage']['fold_path'],
+                                    "SL_" + global_setting.get_setting("server_config")['Video_Process']['fold_suffix'])
+        open_direct.mkdir(parents=True, exist_ok=True)
+        os.startfile(open_direct)  # 替换为你要打开的文件夹路径
         pass
 
     def openFL_Folder(self):
@@ -211,9 +217,10 @@ class Tab_7(ThemedWidget):
         # 获取当前工作目录
         current_directory = Path.cwd()
         open_direct = Path.joinpath(current_directory,
-                                    global_setting.get_setting("server_config")['Storage']['fold_path'],
-                                     global_setting.get_setting("server_config")['Image_Process']['report_file_name'])
-        # open_direct.mkdir(parents=True, exist_ok=True)
+                                    global_setting.get_setting("server_config")['Storage']['fold_path']+global_setting.get_setting("server_config")['Storage']['report_fold_name']
+                                     )
+        print(open_direct)
+        open_direct.mkdir(parents=True, exist_ok=True)
         os.startfile(open_direct)  # 替换为你要打开的文件夹路径
         pass
 

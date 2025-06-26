@@ -1,26 +1,18 @@
+
+# Author: Qinyou Deng
 import os
 import sys
 import threading
-import time
-import traceback
-from itertools import chain
-from pathlib import Path
 
 import psutil
 from PyQt6.QtCore import QThreadPool
-from PyQt6.QtWidgets import QApplication
 from loguru import logger
 
 
-# Author: Qinyou Deng
-# Create Time:2025-03-01
-# Update Time:2025-04-07
 from config.global_setting import global_setting
 from config.ini_parser import ini_parser
-from index.all_windows import AllWindows
-from server.image_process import Img_process
+
 from server.sender import Sender
-from server.server import Server
 from theme.ThemeManager import ThemeManager
 
 
@@ -43,13 +35,11 @@ def load_global_setting():
     configer = ini_parser_obj.read("./gui_smart_device_configer.ini")
     if configer is None:
         logger.error(f"./gui_smart_device_configer.ini配置文件读取失败")
-        quit_qt_application()
     global_setting.set_setting("configer", configer)
     # 读取server配置文件
     server_configer = ini_parser_obj.read("./server_config.ini")
     if server_configer is None:
         logger.error(f"./server_config.ini配置文件读取失败")
-        quit_qt_application()
     global_setting.set_setting("server_config", server_configer)
     # 风格默认是dark  light
     global_setting.set_setting("style", configer['theme']['default'])
@@ -62,34 +52,6 @@ def load_global_setting():
     pass
 
 
-def quit_qt_application():
-    """
-    退出QT程序
-    :return:
-    """
-    logger.info(f"{'-' * 40}quit Qt application{'-' * 40}")
-    #如果gui进程退出 则将其他的线程全部终止
-    if server_thread is not None and server_thread.is_alive():
-
-        server_thread.stop()
-        logger.error("server_thread子线程已退出")
-        server_thread.join(timeout=2)
-
-    if len(sender_thread_list) > 0:
-        i=1
-        for sender_thread in sender_thread_list:
-            if sender_thread is not None and sender_thread.is_alive():
-                sender_thread.stop()
-                logger.error(f"sender_thread{i}子线程已退出")
-                sender_thread.join(timeout=2)
-
-            i+=1
-    # 等待5秒系统退出
-    # step = 5
-    # while step >= 0:
-    #     step -= 1
-    #     time.sleep(1)
-    sys.exit(0)
 
 
 
@@ -113,19 +75,7 @@ def kill_process_tree(pid, including_parent=True):
         if psutil.pid_exists(pid):
             parent.terminate()
             parent.wait(5)
-def find_images(folder_path):
-    folder = Path(folder_path)
-    if not folder.exists():
-        folder.mkdir(parents=True, exist_ok=True)
-    # 定义可以被视为图片的文件扩展名
-    image_extensions = ('.jpg', '.jpeg', '.png', '.gif', '.bmp', '.tiff', '.svg')
 
-    # 创建生成器并使用 itertools.chain 合并
-    image_files = chain.from_iterable(
-        folder.rglob('*' + ext) for ext in image_extensions
-    )
-
-    return list(image_files)  # 转换为列表返回
 
 
 
@@ -135,20 +85,13 @@ if __name__ == "__main__" and os.path.basename(__file__) == "main_send.py":
     # logger.remove()
     # 加载日志配置
     logger.add(
-        "./log/gui_smart_device/gui_{time:YYYY-MM-DD}.log",
+        "./log/gui_smart_device/send_{time:YYYY-MM-DD}.log",
         rotation="00:00",  # 日志文件转存
         retention="30 days",  # 多长时间之后清理
         enqueue=True,
         format="{time:YYYY-MM-DD HH:mm:ss} | {level} |{process.name} | {thread.name} |  {name} : {module}:{line} | {message}"
     )
-    logger.add(
-        "./log/report_smart_device/report_{time:YYYY-MM-DD}.log",
-        rotation="00:00",  # 日志文件转存
-        retention="30 days",  # 多长时间之后清理
-        enqueue=True,
-        format="{time:YYYY.MM.DD HH:mm:ss} {message}",
-        filter=lambda record: record["extra"].get("category") == "report_logger"
-    )
+
     logger.info(f"{'-' * 40}gui_start{'-' * 40}")
 
     # 加载全局配置

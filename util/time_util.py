@@ -96,3 +96,9 @@ class time_util():
         formatted_time = datetime.fromtimestamp(time_vir).strftime("%Y_%m_%d_%H_%M_%S_%f")[:-3]
         return formatted_time
         pass
+
+    @classmethod
+    def get_format_file_from_time_no_millSecond(cls, time_vir=time.time()):
+        formatted_time = datetime.fromtimestamp(time_vir).strftime("%Y_%m_%d_%H_%M_%S")
+        return formatted_time
+        pass

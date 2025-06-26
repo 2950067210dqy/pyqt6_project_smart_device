@@ -1,12 +1,9 @@
-import os
 import time
-from functools import partial
-from unittest import case
 
 from PyQt6.QtCharts import QChart, QBarSet, QBarSeries, QBarCategoryAxis, QValueAxis, QChartView, QHorizontalBarSeries
 from PyQt6.QtCore import Qt, QThread, pyqtSignal
 from PyQt6.QtGui import QPainter
-from PyQt6.QtWidgets import QVBoxLayout, QGraphicsSimpleTextItem, QPushButton, QHBoxLayout
+from PyQt6.QtWidgets import QVBoxLayout, QGraphicsSimpleTextItem
 from loguru import logger
 
 from config.global_setting import global_setting
@@ -24,12 +21,8 @@ class Data_thread(QThread):
         self.update_status_main_signal: pyqtSignal = update_status_main_signal
 
         self.data= []
-
-        self.data_save = report_writing(
-
-            file_path=global_setting.get_setting('server_config')['Storage'][
-                                                      'fold_path'] + f"/{global_setting.get_setting('server_config')['Storage']['report_fold_name']}", file_name_preffix=global_setting.get_setting('server_config')['Storage']['report_file_name_preffix'],
-            file_name_suffix=global_setting.get_setting('server_config')['Storage']['report_file_name_suffix'])
+        self.data_save = report_writing(file_path=global_setting.get_setting('server_config')['Storage'][
+                                                      'fold_path'] + f"/{global_setting.get_setting('server_config')['Image_Process']['report_file_name']}")
         pass
 
 
@@ -38,11 +31,6 @@ class Data_thread(QThread):
             # 等待图像处理线程处理完在运行
             global_setting.get_setting("processing_done").wait()
             logger.info("获取图表数据中")
-            # 获取最新report文件读取
-            latest_file_report_path = self.data_save.get_latest_file(
-                folder_path=global_setting.get_setting('server_config')['Storage'][
-                                'fold_path'] + f"/{global_setting.get_setting('server_config')['Storage']['report_fold_name']}")
-            self.data_save.file_path=latest_file_report_path
             self.data = self.data_save.csv_read_not_dict()
             self.data_save.csv_close()
             self.update_status_main_signal.emit(self.data)
@@ -56,15 +44,10 @@ class Data_thread(QThread):
 
 # 创建柱状图
 class BarChartApp(ThemedWidget):
-    data_types=["蜚蠊","蝇类","鼠类"]
     update_data_main_signal_gui_update = pyqtSignal(list)
     def __init__(self,parent: QVBoxLayout = None, object_name: str = ""):
         super().__init__()
-        # 图表按钮存放
-        self.chart_btns={}
-        self.choose_type_index=0
-        self.orgin_title_suffix="数量柱状图"
-        self.orgin_title=f"{self.data_types[self.choose_type_index]}{self.orgin_title_suffix}"
+        self.orgin_title="FL和YL分组数量柱状图"
         # 父布局
         self.parent_layout = parent
         # obejctName
@@ -101,62 +84,22 @@ class BarChartApp(ThemedWidget):
         for i in range(self.send_nums_YL ):
             self.yl_data[f'YL_{i+1:06}']=0
 
-        try:
-            self.send_nums_SL = int(global_setting.get_setting("server_config")["Sender_SL"]["device_nums"])
-        except Exception as e:
-            logger.error(f"server_config配置文件Send_SL-device_nums错误！{e}")
-            self.send_nums_SL = 0
-        for i in range(self.send_nums_SL):
-            self.sl_data[f'SL_{i + 1:06}'] = 0
         self.categories=None
         self.data_thread=None
         self._init_ui()
-        self.init_function()
 
     def _init_ui(self):
         self.chart_view = QChartView()
         self.chart_view.setMouseTracking(True)  # 开启鼠标追踪
 
-        self.chart_view.setFixedSize(300, 300)  # 固定大小
+        self.chart_view.setFixedSize(300, 600)  # 固定大小
 
         self.chart_view.setRenderHint(QPainter.RenderHint.Antialiasing)  # 关键设置 抗锯齿
         self.chart_view.setObjectName(f"{self.object_name}")
-
-
-        self.init_chart_btn()
+        self.parent_layout.addWidget(self.chart_view)
         # 初始化图表
         self._init_chart()
         pass
-    def init_chart_btn(self):
-        # 实例化图表按钮
-        chart_main_layout = QVBoxLayout()
-        chart_main_layout.setObjectName(f"chart_main_layout")
-
-        chart_btn_layout = QHBoxLayout()
-        chart_btn_layout.setObjectName("chart_btn_layout")
-        i=0
-        for  type in self.data_types:
-
-            self.chart_btns[type] = QPushButton(type)
-            self.chart_btns[type].setObjectName(f"{type}_btn")
-            chart_btn_layout.addWidget(self.chart_btns[type])
-            if i==0:
-            #     默认按钮
-                self.chart_btns[type].setEnabled(False)
-            else:
-                self.chart_btns[type].setEnabled(True)
-            i+=1
-
-
-        chart_layout = QVBoxLayout()
-        chart_layout.setObjectName(f"chart_layout")
-        chart_layout.addWidget(self.chart_view)
-        chart_main_layout.addLayout(chart_btn_layout)
-        chart_main_layout.addLayout(chart_layout)
-        self.parent_layout.addLayout(chart_main_layout)
-        pass
-
-
     def _init_chart(self):
         # 创建图表对象
 
@@ -180,40 +123,7 @@ class BarChartApp(ThemedWidget):
         self.set_style()
         # 添加到视图
         self.chart_view.setChart(self.chart)
-    def init_function(self):
-        i=0
-        for btn_name in self.chart_btns:
-            self.chart_btns[btn_name].clicked.connect(partial(self. chart_btn_click, i,btn_name))
-            i+=1
-        # 实例化按钮功能
-        pass
-    def chart_btn_click(self,id=0,name=data_types[0]):
 
-        # 更改选择索引
-        self.choose_type_index=id
-        i=0
-        for btn_name,btn in self.chart_btns.items():
-            if i==id:
-                btn.setEnabled(False)
-            else:
-                btn.setEnabled(True)
-            i+=1
-        pass
-        # 更新图表
-        nums=1
-
-        match self.choose_type_index:
-            case 0:
-                nums=self.send_nums_FL
-            case 1:
-                nums=self.send_nums_YL
-            case 2:
-                nums = self.send_nums_SL
-            case _:
-                pass
-        self.chart_view.setFixedSize(300, 200+50*(nums))  # 固定大小
-        self.orgin_title=f"{self.data_types[self.choose_type_index]}{self.orgin_title_suffix}"
-        self.update_charts()
     def get_data_start(self):
         # 将更新status信号绑定更新status界面函数
         self.update_data_main_signal_gui_update.connect(self.get_data)
@@ -227,20 +137,16 @@ class BarChartApp(ThemedWidget):
         # self.fl_data = {item["设备号"]: item["数量"] for item in self.data if item["设备号"].startswith("FL")}
         # self.yl_data = {item["设备号"]: item["数量"] for item in self.data if item["设备号"].startswith("YL")}
         self.data = data
-        self.update_charts()
-    def update_charts(self):
-        # 更新图表
         title = ""
-        for item in self.data:
+        for item in self.data :
             if item["设备号"].startswith("FL"):
-                self.fl_data[item["设备号"]] = int(item["数量"])
+                self.fl_data[item["设备号"]]=int(item["数量"])
                 pass
-            elif item["设备号"].startswith("YL"):
-                self.yl_data[item["设备号"]] = int(item["数量"])
             else:
-                self.sl_data[item["设备号"]] = int(item["数量"])
-            title = item['日期'] + "-"+ item['时间']
-        self.chart.setTitle(title  + self.orgin_title)
+                self.yl_data[item["设备号"]] =int(item["数量"])
+                pass
+            title = item['日期']+item['时间']
+        self.chart.setTitle(title+"  "+self.orgin_title)
         try:
             self._set_data_set()
             # 设置序列 和图表类型
@@ -251,55 +157,93 @@ class BarChartApp(ThemedWidget):
             # 设置坐标轴
             self._set_x_axis()
             self._set_y_axis()
-        except Exception as e:
+
+            # # 为每个数据点添加一个标签
+            # for i in range(len(self.yl_set)):
+            #     value = self.yl_set.at(i)
+            #     label_item = QGraphicsSimpleTextItem(str(value))
+            #     label_item.setPos(i, value)  # 设置标签的位置
+            #     # label_item.setDefaultTextColor(Qt.black)  # 设置文字颜色
+            #     label_item.setZValue(1)  # 将标签放在顶层
+            #     self.chart.scene().addItem(label_item)
+        except Exception as  e:
             logger.error(f"charts报错，原因：{e}")
         pass
+
+    def extend_and_return_new_lists_insert_0(self,list1,list1_type, list2,list2_type):
+        # 两个数据项长度不一致，短的那个补0
+        len1, len2 = len(list1), len(list2)
+        return_data={}
+        if len1 < len2:
+            new_list1 = list1 + [0] * (len2 - len1)
+            return_data[list1_type]=new_list1
+            new_list2 = list2
+            return_data[list2_type] = new_list2
+        else:
+            new_list1 = list1
+            return_data[list1_type] = new_list1
+            new_list2 = list2 + [0] * (len1 - len2)
+            return_data[list2_type] = new_list2
+        return return_data
+
+    def extend_and_return_new_lists_insert_elem(self,list1,list1_type, list2,list2_type):
+        # 计算两个列表的长度
+        len1, len2 = len(list1), len(list2)
+        return_data = {}
+        # 找到较长和较短的列表
+        if len1 < len2:
+            short_list = list1
+            long_list = list2
+        else:
+            short_list = list2
+            long_list = list1
+
+        # 计算需要补充的元素个数
+        to_add = len(long_list) - len(short_list)
+
+        # 从长列表中取出要补充的新元素
+        extended_short_list = short_list + long_list[len(short_list):len(long_list)]
+
+        # 返回新的两个列表
+        if len1 < len2:
+            return_data[list1_type]=extended_short_list
+            return_data[list2_type] =list2
+            return return_data
+        else:
+            return_data[list1_type] = list1
+            return_data[list2_type] = extended_short_list
+            return return_data
     def _set_data_set(self):
         # 创建数据集、
-
-
-        fl_set_temp =[int(i) for i in list(self.fl_data.values())]
-        yl_set_temp =[int(i) for i in list(self.yl_data.values())]
-        sl_set_temp = [int(i) for i in list(self.sl_data.values())]
-        # 柱状图横向过后，数据标签x轴从上往下是大到小的设备号排列，我们需要逆转一下从小到大排列 相应的数据也要逆转
-        fl_set_temp.reverse()
-        yl_set_temp.reverse()
-        sl_set_temp.reverse()
         self.fl_set = QBarSet("FL")
-        self.fl_set.append(fl_set_temp)
+
+        extenal_list_data= self.extend_and_return_new_lists_insert_0([int(i) for i in list(self.fl_data.values())],"FL",[int(i) for i in list(self.yl_data.values())],"YL")
+        # 柱状图横向过后，数据标签x轴从上往下是大到小的设备号排列，我们需要逆转一下从小到大排列 相应的数据也要逆转
+        extenal_list_data['FL'].reverse()
+        extenal_list_data['YL'].reverse()
+        self.fl_set.append(extenal_list_data['FL'])
         self.yl_set = QBarSet("YL")
-        self.yl_set.append(yl_set_temp)
-        self.sl_set = QBarSet("SL")
-        self.sl_set.append(sl_set_temp)
+        self.yl_set.append(extenal_list_data['YL'])
+
 
         # 添加数据
-        # print(f"fl_data:{self.fl_data}",f"fl_data_values:{self.fl_data.values()}")
-        # print(f"yl_data:{self.yl_data}", f"yl_data_values:{self.yl_data.values()}")
-        # print(f"extenal_list_data:{extenal_list_data}")
+        print(f"fl_data:{self.fl_data}",f"fl_data_values:{self.fl_data.values()}")
+        print(f"yl_data:{self.yl_data}", f"yl_data_values:{self.yl_data.values()}")
+        print(f"extenal_list_data:{extenal_list_data}")
 
         pass
     def _set_series(self):
         # 创建柱状系列
         if self.series is None:
             self.series = QHorizontalBarSeries()
-            match self.choose_type_index:
-                case 0: self.series.append(self.fl_set)
-                case 1: self.series.append(self.yl_set)
-                case 2: self.series.append(self.sl_set)
-                case _: pass
+            self.series.append(self.fl_set)
+            self.series.append(self.yl_set)
             self.chart.addSeries(self.series)
         else:
             self.series.clear()
             self.series = QHorizontalBarSeries()
-            match self.choose_type_index:
-                case 0:
-                    self.series.append(self.fl_set)
-                case 1:
-                    self.series.append(self.yl_set)
-                case 2:
-                    self.series.append(self.sl_set)
-                case _:
-                    pass
+            self.series.append(self.fl_set)
+            self.series.append(self.yl_set)
             self.chart.removeAllSeries()
             self.chart.addSeries(self.series)
         # 显示数据标签
@@ -318,14 +262,14 @@ class BarChartApp(ThemedWidget):
             self.x_axis = QValueAxis()
             self.x_axis.setTitleText("生物数量（个）")
             self.x_axis.setRange(0, max(max([int(i) for i in list(self.fl_data.values())]),
-                                        max([int(i) for i in list(self.yl_data.values())]),max([int(i) for i in list(self.sl_data.values())])) + 5)
+                                        max([int(i) for i in list(self.yl_data.values())])) + 5)
             self.x_axis.setLabelFormat("%d")
             self.chart.addAxis(self.x_axis, Qt.AlignmentFlag.AlignTop)
             self.series.attachAxis(self.x_axis)
         else:
 
             self.x_axis.setRange(0, max(max([int(i) for i in list(self.fl_data.values())]),
-                                        max([int(i) for i in list(self.yl_data.values())]),max([int(i) for i in list(self.sl_data.values())])) + 5)
+                                        max([int(i) for i in list(self.yl_data.values())])) + 5)
             self.x_axis.setLabelFormat("%d")
             self.chart.removeAxis(self.x_axis)
             self.chart.addAxis(self.x_axis, Qt.AlignmentFlag.AlignTop)
@@ -336,20 +280,11 @@ class BarChartApp(ThemedWidget):
     def _set_y_axis(self):
         # 设置 Y 轴
         # 短的数据项后边补充0
-        # extenal_list_data= self.extend_and_return_new_lists_insert_elem(list(self.fl_data.keys()),"FL",list(self.yl_data.keys()),"YL")
-        # keys = []
-        # for value in zip(extenal_list_data['FL'], extenal_list_data['YL']):
-        #     keys.append(value[0].split("_")[0] + "/" + value[1].split("_")[0]+f"{int(value[1].split('_')[1])}")
-        # 柱状图横向过后，数据标签x轴从上往下是大到小的设备号排列，我们需要逆转一下从小到大排列
+        extenal_list_data= self.extend_and_return_new_lists_insert_elem(list(self.fl_data.keys()),"FL",list(self.yl_data.keys()),"YL")
         keys = []
-        choose_data_keys=[]
-        match self.choose_type_index:
-            case 0:choose_data_keys=list(self.fl_data.keys())
-            case 1:choose_data_keys=list(self.yl_data.keys())
-            case 2:choose_data_keys = list(self.sl_data.keys())
-            case _:pass
-        for value in  choose_data_keys:
-            keys.append(value)
+        for value in zip(extenal_list_data['FL'], extenal_list_data['YL']):
+            keys.append(value[0].split("_")[0] + "/" + value[1].split("_")[0]+f"{int(value[1].split('_')[1])}")
+        # 柱状图横向过后，数据标签x轴从上往下是大到小的设备号排列，我们需要逆转一下从小到大排列
         keys.reverse()
         self.categories = keys
         if self.y_axis is None:
@@ -370,6 +305,4 @@ class BarChartApp(ThemedWidget):
 
     def set_style(self):
         pass
-
-
 
