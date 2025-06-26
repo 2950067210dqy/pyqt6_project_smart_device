@@ -5,7 +5,7 @@ import shutil
 import time
 from threading import Thread
 
-import cv2
+from cv2 import imread
 from loguru import logger
 
 from config.global_setting import global_setting
@@ -234,7 +234,7 @@ class Img_process(Thread):
         :return:数量
         """
         try:
-            imge = cv2.imread(self.path+self.temp_folder+image_path)
+            imge = imread(self.path+self.temp_folder+image_path)
         except Exception as e:
             report_logger.error(f"{image_path}图片已损坏")
             return 0

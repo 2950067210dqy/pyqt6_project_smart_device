@@ -175,7 +175,7 @@ if __name__ == "__main__" and os.path.basename(__file__) == "main.py":
             server_thread.join(timeout=5)
         pass
 
-    if bool(global_setting.get_setting("server_config")["DeBug"]["send_debug"]):
+    if bool(int(global_setting.get_setting("server_config")["DeBug"]["send_debug"])):
         # 模拟终端发送
         # FL终端
         try:

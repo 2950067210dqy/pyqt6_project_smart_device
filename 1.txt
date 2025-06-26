@@ -1,0 +1,2 @@
+
+pipreqs . --encoding=utf8 --ignore ./build,./dist,./data_smart_device,./log,./venv,/venv2 --force

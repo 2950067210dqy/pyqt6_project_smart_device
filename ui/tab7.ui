@@ -187,7 +187,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <rect>
       <x>-1</x>
       <y>0</y>
-      <width>571</width>
+      <width>581</width>
       <height>41</height>
      </rect>
     </property>
@@ -205,7 +205,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>567</width>
+          <width>577</width>
           <height>37</height>
          </rect>
         </property>
@@ -214,7 +214,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>571</width>
+           <width>581</width>
            <height>41</height>
           </rect>
          </property>
@@ -306,30 +306,6 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <string>00:00/00:00</string>
     </property>
    </widget>
-  </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>911</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <widget class="QMenu" name="menu">
-    <property name="title">
-     <string>设置菜单</string>
-    </property>
-    <addaction name="action123132"/>
-    <addaction name="separator"/>
-   </widget>
-   <widget class="QMenu" name="menu_2">
-    <property name="title">
-     <string>设置菜单2</string>
-    </property>
-   </widget>
-   <addaction name="menu"/>
-   <addaction name="menu_2"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="action123132">
