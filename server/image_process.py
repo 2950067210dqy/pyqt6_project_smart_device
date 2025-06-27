@@ -28,6 +28,8 @@ class report_writing:
         self.file_path = file_path+self.file_name_preffix+time_util.get_format_file_from_time(time.time())+self.file_name_suffix
 
     def get_latest_file(self, folder_path):
+        if not os.path.exists(folder_path):
+            os.makedirs(folder_path)
         # 获取文件夹内所有文件的完整路径
         files = [os.path.join(folder_path, f) for f in os.listdir(folder_path) if
                  os.path.isfile(os.path.join(folder_path, f))]
